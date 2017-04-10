@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SUPER BLOG</title>
+    <title>{% block title %}DMB Blog{% endblock %}</title>
 
     <!-- Lato Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
@@ -30,8 +30,10 @@
     <nav>
         <div class="container">
             <div class="logo col s3 brand-logo">
-                <i class="material-icons">&#xE02F;</i>
-                <span>Jean Forteroche</span>
+                {% block logo %}
+                    <i class="material-icons">&#xE02F;</i>
+                    <span>Jean Forteroche</span>
+                {% endblock %}
             </div>
             <!--burger menu-->
             <a href="#" data-activates="mobile-demo" class="button-collapse">
@@ -41,37 +43,7 @@
 
             <!--destop menu-->
             <ul class="col s9 right hide-on-med-and-down">
-                <li class="active">
-                    <a href="#">
-                        Home
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        About me and this book
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        Crowdfund this book
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="images/profil_picture.jpg" alt="profil picture avatar" class="circle">
-                    </a>
-                </li>
-            </ul>
-            <!--end destop menu-->
-
-            <!--mobile menu-->
-            <div class="side-nav" id="mobile-demo">
-                <div class="connected_card">
-                    <img src="images/profil_picture.jpg" alt="avatar mme michue" class="circle">
-                    <p>Hi Carolyn Reynolds!</p>
-                </div>
-                <ul>
+                {% block header_navigation %}
                     <li class="active">
                         <a href="#">
                             Home
@@ -87,15 +59,57 @@
                             Crowdfund this book
                         </a>
                     </li>
-                </ul>
+                    <li>
+                        <a href="#" class="avatar">
+                            <img src="images/profil_picture.jpg" alt="profil picture avatar" class="circle">
+                        </a>
+                    </li>
+                {% endblock %}
+            </ul>
+            <!--end destop menu-->
+
+            <!--mobile menu-->
+            <div class="side-nav" id="mobile-demo">
+                {% block header_navigation_mobile %}
+                    <div class="connected_card">
+                        <img src="images/profil_picture.jpg" alt="avatar mme michue" class="circle">
+                        <p>Hi Carolyn Reynolds!</p>
+                    </div>
+                    <ul>
+                        <li class="active">
+                            <a href="#">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                About me and this book
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Crowdfund this book
+                            </a>
+                        </li>
+                    </ul>
+                {% endblock %}
             </div>
             <!--end mobile menu-->
         </div>
     </nav>
     <h1>
-        Super titre du livre
+        {% block main_title %}
+            Super titre du livre
+        {% endblock %}
     </h1>
 </header>
+
+<div class="content container">
+    {% block content %}
+        Super story to be done here
+    {% endblock %}
+</div>
+
 <!-- Core Javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="materialize/js/materialize.min.js"></script>

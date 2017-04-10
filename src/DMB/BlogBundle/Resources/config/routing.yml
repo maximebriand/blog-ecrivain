@@ -1,0 +1,3 @@
+dmb_blog_homepage:
+    path:     /
+    defaults: { _controller: DMBBlogBundle:Default:index }

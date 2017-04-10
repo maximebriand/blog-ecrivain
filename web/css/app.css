@@ -33,6 +33,9 @@ header nav ul li img.circle {
     height: 55px;
     padding-top: 10px;
 }
+header nav ul li a.avatar {
+    line-height: 2;
+}
 
 header nav ul li.active a:hover{
     background-color: transparent;
