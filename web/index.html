@@ -8,13 +8,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Gallery</title>
+    <title>SUPER BLOG</title>
 
     <!-- Lato Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="css/app.css">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -25,11 +26,84 @@
 
 <body>
 
-<h1>Hello World!</h1>
+<header>
+    <nav>
+        <div class="container">
+            <div class="logo col s3 brand-logo">
+                <i class="material-icons">&#xE02F;</i>
+                <span>Jean Forteroche</span>
+            </div>
+            <!--burger menu-->
+            <a href="#" data-activates="mobile-demo" class="button-collapse">
+                <i class="material-icons">menu</i>
+            </a>
+            <!--end burger menu-->
 
+            <!--destop menu-->
+            <ul class="col s9 right hide-on-med-and-down">
+                <li class="active">
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        About me and this book
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Crowdfund this book
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="images/profil_picture.jpg" alt="profil picture avatar" class="circle">
+                    </a>
+                </li>
+            </ul>
+            <!--end destop menu-->
+
+            <!--mobile menu-->
+            <div class="side-nav" id="mobile-demo">
+                <div class="connected_card">
+                    <img src="images/profil_picture.jpg" alt="avatar mme michue" class="circle">
+                    <p>Hi Carolyn Reynolds!</p>
+                </div>
+                <ul>
+                    <li class="active">
+                        <a href="#">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            About me and this book
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Crowdfund this book
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--end mobile menu-->
+        </div>
+    </nav>
+    <h1>
+        Super titre du livre
+    </h1>
+</header>
 <!-- Core Javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="materialize/js/materialize.min.js"></script>
+
+<script>
+    $( document ).ready(function(){    $(".button-collapse").sideNav();
+    })
+</script>
 
 </body>
 </html>

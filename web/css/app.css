@@ -1,0 +1,62 @@
+/* CSS DIRECTORY
+	1. =GLOBAL
+	2. =PRIMARY
+	3. =HEADER
+	4. =SIDENAV
+	5. =FOOTER
+*/
+
+
+
+/* 3. =HEADER
+   ============================= */
+header{
+    height: 350px;
+    /*background: url("img/cover_typewriter_overlay.jpg") 50% 50% no-repeat;*/
+    background: #28b5f4;
+}
+
+header nav {
+    background: #0085c1;
+}
+
+header nav div.logo{
+    display: flex;
+}
+
+header nav ul li {
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+header nav ul li img.circle {
+    height: 55px;
+    padding-top: 10px;
+}
+
+header nav ul li.active a:hover{
+    background-color: transparent;
+}
+
+header h1 {
+    text-align: center;
+    color: #fff;
+    margin-top: 90px
+}
+
+
+/* 4. =SIDENAV
+   ============================= */
+
+div.side-nav div.connected_card {
+    background: #0085c1;
+    text-align: center;
+    padding: 25px 0;
+    margin-bottom: 15px;
+}
+div.side-nav div.connected_card p {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+
