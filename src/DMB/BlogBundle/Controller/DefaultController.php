@@ -14,4 +14,18 @@ class DefaultController extends Controller
 
         return $this->render('DMBBlogBundle:Default:index.html.twig', compact('posts'));
     }
+
+    public function postAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $post = $em->getRepository('DMBBlogBundle:Post')->find($id);
+        if (null === $post) {
+            throw new NotFoundHttpException("Le chapitre avec l'id " . $id . " n'a pas encore été rédigé.");
+        }
+
+        return $this->render('DMBBlogBundle:Default:post.html.twig', compact('post'));
+
+
+    }
 }

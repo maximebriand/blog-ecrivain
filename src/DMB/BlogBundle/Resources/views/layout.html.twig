@@ -14,8 +14,8 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/app.css">
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -61,7 +61,7 @@
                     </li>
                     <li>
                         <a href="#" class="avatar">
-                            <img src="images/profil_picture.jpg" alt="profil picture avatar" class="circle">
+                            <img src="/images/profil_picture.jpg" alt="profil picture avatar" class="circle">
                         </a>
                     </li>
                 {% endblock %}
@@ -72,7 +72,7 @@
             <div class="side-nav" id="mobile-demo">
                 {% block header_navigation_mobile %}
                     <div class="connected_card">
-                        <img src="images/profil_picture.jpg" alt="avatar mme michue" class="circle">
+                        <img src="/images/profil_picture.jpg" alt="avatar mme michue" class="circle">
                         <p>Hi Carolyn Reynolds!</p>
                     </div>
                     <ul>
@@ -112,18 +112,12 @@
 
 <!-- Core Javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="materialize/js/materialize.min.js"></script>
-<script src="scripts/masonry.min.js"></script>
-<script src="scripts/app.js"></script>
+<script src="/materialize/js/materialize.min.js"></script>
+<script src="/scripts/app.js"></script>
 
 <script>
     $( document ).ready(function(){
         $(".button-collapse").sideNav();
-        $('.grid').masonry({
-            // options
-            itemSelector: '.grid-item',
-            columnWidth: 290
-        });
     })
 
 </script>

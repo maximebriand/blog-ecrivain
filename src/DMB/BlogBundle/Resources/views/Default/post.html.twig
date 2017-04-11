@@ -1,0 +1,13 @@
+{% extends "DMBBlogBundle::layout.html.twig" %}
+
+{% block content %}
+    {{ post.author }}
+    {{ post.title }}
+    {{ post.publishedDate|date }}
+    {{ post.chapterNumber }}
+    {{ post.content }}
+    <img src="{{ post.coverImage}}" alt="">
+    
+    
+    
+{% endblock %}

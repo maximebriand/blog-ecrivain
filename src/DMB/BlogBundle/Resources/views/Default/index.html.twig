@@ -1,108 +1,99 @@
 {% extends "DMBBlogBundle::layout.html.twig" %}
 
 {% block content %}
-    <div class="grid">
+    <div class="list_posts">
         {% for post in posts  %}
-            <div class="grid-item">
-                <div class="row">
-                    <a href="{{ post.url }}">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ post.coverImage }}" alt="blop">
-                                <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                                <span class="chapter_number">
-                                {{ post.chapterNumber }}
-                            </span>
-                            </div>
-                            <div class="card-content">
-                                <p>{{ post.content|slice(0, 50)}}...</p>
-                            </div>
+            <div class="row">
+                <a href="{{ post.url }}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ post.coverImage }}" alt="blop">
+                            <span class="card-title">
+                            {{ post.title }}
+                        </span>
+                            <span class="chapter_number">
+                            {{ post.chapterNumber }}
+                        </span>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="row">
-                    <a href="{{ post.url }}">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ post.coverImage }}" alt="blop">
-                                <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                                <span class="chapter_number">
-                                {{ post.chapterNumber }}
-                            </span>
-                            </div>
-                            <div class="card-content">
-                                <p>{{ post.content }}...</p>
-                            </div>
+                        <div class="card-content">
+                            <p>{{ post.content|slice(0, 50)}}...</p>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
-            <div class="grid-item">
-                <div class="row">
-                    <a href="{{ post.url }}">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ post.coverImage }}" alt="blop">
-                                <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                                <span class="chapter_number">
-                                {{ post.chapterNumber }}
-                            </span>
-                            </div>
-                            <div class="card-content">
-                                <p>{{ post.content|slice(0, 150)}}...</p>
-                            </div>
+            <div class="row">
+                <a href="{{ post.url }}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ post.coverImage }}" alt="blop">
+                            <span class="card-title">
+                            {{ post.title }}
+                        </span>
+                            <span class="chapter_number">
+                            {{ post.chapterNumber }}
+                        </span>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-item">
-                <div class="row">
-                    <a href="{{ post.url }}">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ post.coverImage }}" alt="blop">
-                                <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                                <span class="chapter_number">
-                                {{ post.chapterNumber }}
-                            </span>
-                            </div>
-                            <div class="card-content">
-                                <p>{{ post.content|slice(0, 10)}}...</p>
-                            </div>
+                        <div class="card-content">
+                            <p>{{ post.content }}...</p>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
-            <div class="grid-item">
-                <div class="row">
-                    <a href="{{ post.url }}">
-                        <div class="card">
-                            <div class="card-image">
-                                <img src="{{ post.coverImage }}" alt="blop">
-                                <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                                <span class="chapter_number">
-                                {{ post.chapterNumber }}
-                            </span>
-                            </div>
-                            <div class="card-content">
-                                <p>{{ post.content|slice(0, 150)}}...</p>
-                            </div>
+            <div class="row">
+                <a href="{{ post.url }}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ post.coverImage }}" alt="blop">
+                            <span class="card-title">
+                            {{ post.title }}
+                        </span>
+                            <span class="chapter_number">
+                            {{ post.chapterNumber }}
+                        </span>
                         </div>
-                    </a>
-                </div>
+                        <div class="card-content">
+                            <p>{{ post.content|slice(0, 150)}}...</p>
+                        </div>
+                    </div>
+                </a>
             </div>
+            <div class="row">
+                <a href="{{ post.url }}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ post.coverImage }}" alt="blop">
+                            <span class="card-title">
+                            {{ post.title }}
+                        </span>
+                            <span class="chapter_number">
+                            {{ post.chapterNumber }}
+                        </span>
+                        </div>
+                        <div class="card-content">
+                            <p>{{ post.content|slice(0, 10)}}...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="row">
+                <a href="{{ post.url }}">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="{{ post.coverImage }}" alt="blop">
+                            <span class="card-title">
+                            {{ post.title }}
+                        </span>
+                            <span class="chapter_number">
+                            {{ post.chapterNumber }}
+                        </span>
+                        </div>
+                        <div class="card-content">
+                            <p>{{ post.content|slice(0, 150)}}...</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
 
 
 

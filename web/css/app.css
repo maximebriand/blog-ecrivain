@@ -4,7 +4,7 @@
 	3. =HEADER
 	4. =SIDENAV
 	5. =FOOTER
-	6. =MASONRY
+	6. =INDEX
 
 */
 
@@ -68,17 +68,16 @@ div.side-nav div.connected_card p {
 
 
 
-/* 6. =MASONRY
+/* 6. =INDEX
    ============================= */
 
-/* clearfix */
-.grid:after {
-    content: '';
-    display: block;
-    clear: both;
-}
+div.list_posts {
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
 
-.grid-item {
-    float: left;
-    width: 250px;
+}
+div.list_posts .row {
+    width:250px;
+    margin-left: 45px;
 }
