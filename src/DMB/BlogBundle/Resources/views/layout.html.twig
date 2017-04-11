@@ -113,10 +113,19 @@
 <!-- Core Javascript -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="materialize/js/materialize.min.js"></script>
+<script src="scripts/masonry.min.js"></script>
+<script src="scripts/app.js"></script>
 
 <script>
-    $( document ).ready(function(){    $(".button-collapse").sideNav();
+    $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+        $('.grid').masonry({
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 290
+        });
     })
+
 </script>
 
 </body>

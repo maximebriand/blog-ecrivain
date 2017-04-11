@@ -4,6 +4,8 @@
 	3. =HEADER
 	4. =SIDENAV
 	5. =FOOTER
+	6. =MASONRY
+
 */
 
 
@@ -63,3 +65,20 @@ div.side-nav div.connected_card p {
 }
 
 
+
+
+
+/* 6. =MASONRY
+   ============================= */
+
+/* clearfix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.grid-item {
+    float: left;
+    width: 250px;
+}
