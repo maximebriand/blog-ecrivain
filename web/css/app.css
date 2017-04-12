@@ -129,3 +129,13 @@ p.comment_heading {
     color: #0085c1;
     font-weight: 500;
 }
+
+div.comments div.form_submit_comment {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.comments div.form_submit_comment button {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}

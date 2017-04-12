@@ -21,8 +21,56 @@
 
 
 
-    <div class="comments">
+    <div class="comments row">
         <h4>Les commentaires sur ce chapitre</h4>
+        {{ form_start(form, {'attr': {'class': 'col s12'}}) }}
+        <div class="col s12 form_id row col s12">
+            <div class="col s12">
+                <div class="col m6">
+                    {# Textarea #}
+                    {{ form_label(form.author, "Votre nom") }}
+                    {{ form_errors(form.author) }}
+                    {{ form_widget(form.author, {'attr': {'class': 'materialize-textarea'}}) }}
+                    {# End Textarea #}
+                </div>
+                <div class="col m6">
+                    {# Textarea #}
+                    {{ form_label(form.email, "Votre email") }}
+                    {{ form_errors(form.email) }}
+                    {{ form_widget(form.email, {'attr': {'class': 'materialize-textarea'}}) }}
+                    {# End Textarea #}
+                </div>
+            </div>
+            <div class="col s12 form_submit_comment">
+                <div class="col s10">
+                    {# Textarea #}
+                    {{ form_label(form.content, "Votre commentaire") }}
+                    {{ form_errors(form.content) }}
+                    {{ form_widget(form.content, {'attr': {'class': 'materialize-textarea'}}) }}
+                    {# End Textarea #}
+                </div>
+                {{ form_widget(form.save, { 'label': 'Valider'}) }}
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+            {{ form_label(form.content, 'Your Name', {'label_attr': {'class': ''}} ) }}
+
+            {{ form_row(form.save, { 'label': 'Valider', 'attr': {'class': 'btn waves-effect waves-light'}}) }}
+
+
+        {{ form_end(form) }}
+
         <ul class="collection">
             {% for comment in comments %}
                 <li class="collection-item avatar">
