@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="DMB\BlogBundle\Repository\postRepository")
  */
-class post
+class Post
 {
     /**
      * @var int
@@ -217,5 +217,9 @@ class post
     {
         return $this->coverImage;
     }
-}
 
+    public function getUrl()
+    {
+        return "/post/" . $this->getId();
+    }
+}

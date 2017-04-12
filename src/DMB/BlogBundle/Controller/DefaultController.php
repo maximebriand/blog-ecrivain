@@ -2,6 +2,7 @@
 
 namespace DMB\BlogBundle\Controller;
 
+use DMB\BlogBundle\Entity\Comment;
 use DMB\BlogBundle\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -24,8 +25,12 @@ class DefaultController extends Controller
             throw new NotFoundHttpException("Le chapitre avec l'id " . $id . " n'a pas encore été rédigé.");
         }
 
-        return $this->render('DMBBlogBundle:Default:post.html.twig', compact('post'));
+        $comments = $em
+            ->getRepository('DMBBlogBundle:Comment')
+            ->findBy(array('post' => $id))
+        ;
 
+        return $this->render('DMBBlogBundle:Default:post.html.twig', compact('post', 'comments'));
 
     }
 }

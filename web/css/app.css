@@ -5,10 +5,17 @@
 	4. =SIDENAV
 	5. =FOOTER
 	6. =INDEX
+	7. =POST
+	8. =COMMENTS
 
 */
 
-
+/* 1. =GLOBAL
+   ============================= */
+img {
+    border: 0;
+    max-width: 100%;
+}
 
 /* 3. =HEADER
    ============================= */
@@ -46,9 +53,19 @@ header nav ul li.active a:hover{
 header h1 {
     text-align: center;
     color: #fff;
-    margin-top: 90px
+    margin-top: 0;
 }
 
+header div.titles {
+    position: relative;
+    padding-top: 90px;
+    height:calc(100% - 65px); /*remove header height*/
+}
+header div.subheading {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
 
 /* 4. =SIDENAV
    ============================= */
@@ -80,4 +97,35 @@ div.list_posts {
 div.list_posts .row {
     width:250px;
     margin-left: 45px;
+}
+
+div.list_posts .row .chapter_number {
+    text-align: center;
+}
+
+/* 7. =POST
+   ============================= */
+div.container div.post {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height:33px;
+}
+
+div.container div.post_content::first-letter {
+    font-weight: 500;
+    font-size: 250%;
+}
+
+
+div.container div.post_content {
+    text-align: justify;
+}
+
+
+/* 8. =COMMENTS
+   ============================= */
+p.comment_heading {
+    color: #0085c1;
+    font-weight: 500;
 }

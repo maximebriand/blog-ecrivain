@@ -97,11 +97,17 @@
             <!--end mobile menu-->
         </div>
     </nav>
-    <h1>
-        {% block main_title %}
-            Super titre du livre
-        {% endblock %}
-    </h1>
+    <div class="container titles">
+        <h1>
+            {% block main_title %}
+                Super titre du livre
+            {% endblock %}
+        </h1>
+        <div class="subheading">
+            {% block subheading %}
+            {% endblock %}
+        </div>
+    </div>
 </header>
 
 <div class="content container">

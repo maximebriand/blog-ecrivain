@@ -1,13 +1,50 @@
 {% extends "DMBBlogBundle::layout.html.twig" %}
 
-{% block content %}
-    {{ post.author }}
+{% block main_title %}
+    Chapitre n°{{ post.chapterNumber }} :
     {{ post.title }}
-    {{ post.publishedDate|date }}
-    {{ post.chapterNumber }}
-    {{ post.content }}
-    <img src="{{ post.coverImage}}" alt="">
-    
-    
-    
+{% endblock %}
+{% block subheading %}
+    <p>
+        Publié par {{ post.author }} le {{ post.publishedDate|date }}.
+    </p>
+{% endblock %}
+
+{% block content %}
+    <div class="post">
+        <div class="post_content">
+            {{ post.content|raw }}
+        </div>
+        <img src="{{ post.coverImage}}" alt="">
+    </div>
+
+
+
+
+    <div class="comments">
+        <h4>Les commentaires sur ce chapitre</h4>
+        <ul class="collection">
+            {% for comment in comments %}
+                <li class="collection-item avatar">
+                    <i class="material-icons circle green">toys</i>
+                    <div>
+                        <p class="comment_heading">
+                            {{ comment.author }}
+                            {{ comment.email }}
+                            {{ comment.date|date }}
+                        </p>
+                        {{ comment.content|raw }}
+
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">comment</i>
+        </a>
+    </div>
 {% endblock %}
