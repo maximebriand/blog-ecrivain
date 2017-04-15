@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new DMB\BlogBundle\DMBBlogBundle(),
         ];
 
+
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();

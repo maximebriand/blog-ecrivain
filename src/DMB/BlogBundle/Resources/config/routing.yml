@@ -4,3 +4,10 @@ dmb_blog_homepage:
 dmb_blog_post:
     path:     /post/{id}
     defaults: { _controller: DMBBlogBundle:Default:post }
+login:
+    path:     /login
+    defaults: { _controller: DMBBlogBundle:Secutiry:login}
+login_check:
+    path:     /login_check
+logout:
+    path:     /logout

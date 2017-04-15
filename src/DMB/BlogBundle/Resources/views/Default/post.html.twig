@@ -11,6 +11,13 @@
 {% endblock %}
 
 {% block content %}
+    {% for message in app.session.flashbag.get('notice') %}
+        <div class="alert">
+            <p>
+                {{ message }}
+            </p>
+        </div>
+    {% endfor %}
     <div class="post">
         <div class="post_content">
             {{ post.content|raw }}
@@ -23,7 +30,8 @@
 
     <div class="comments row">
         <h4>Les commentaires sur ce chapitre</h4>
-        {{ form_start(form, {'attr': {'class': 'col s12'}}) }}
+        <form action="{{ path('dmb_blog_post', {'id': post.id}) }}" method="post" class="col s12">
+
         <div class="col s12 form_id row col s12">
             <div class="col s12">
                 <div class="col m6">
@@ -50,6 +58,8 @@
                     {# End Textarea #}
                 </div>
                 {{ form_widget(form.save, { 'label': 'Valider'}) }}
+                {{ form_rest(form) }}
+
             </div>
 
 
@@ -68,9 +78,7 @@
 
             {{ form_row(form.save, { 'label': 'Valider', 'attr': {'class': 'btn waves-effect waves-light'}}) }}
 
-
-        {{ form_end(form) }}
-
+        </form>
         <ul class="collection">
             {% for comment in comments %}
                 <li class="collection-item avatar">
@@ -95,4 +103,6 @@
             <i class="large material-icons">comment</i>
         </a>
     </div>
+
+
 {% endblock %}

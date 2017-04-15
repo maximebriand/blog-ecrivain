@@ -139,3 +139,12 @@ div.comments div.form_submit_comment button {
     align-self: flex-end;
     margin-bottom: 20px;
 }
+
+/* 8. =ALERTS
+   ============================= */
+
+div.alert {
+    background: #72e7ff;
+    padding: 5px 30px;
+    margin: 25px auto 35px;
+}

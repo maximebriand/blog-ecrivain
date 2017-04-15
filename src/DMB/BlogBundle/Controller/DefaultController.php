@@ -11,6 +11,9 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
+
+use DMB\BlogBundle\Form\CommentType;
 
 class DefaultController extends Controller
 {
@@ -22,40 +25,47 @@ class DefaultController extends Controller
         return $this->render('DMBBlogBundle:Default:index.html.twig', compact('posts'));
     }
 
-    public function postAction($id)
+    public function postAction($id, Request $request)
     {
-        $comment = new Comment;
-        $formBuilder = $this->get('form.factory')->createBuilder(FormType::class, $comment);
-
-        $formBuilder
-            ->add('date',      DateType::class)
-            ->add('content',   TextareaType::class)
-            ->add('author',    TextType::class)
-            ->add('email',     TextType::class)
-            ->add('save',      SubmitType::class, array(
-                'attr' => array('class' => 'col s2 btn waves-effect waves-light')
-            ))
-        ;
-
-        $form = $formBuilder->getForm();
-
         $em = $this->getDoctrine()->getManager();
-
         $post = $em->getRepository('DMBBlogBundle:Post')->find($id);
         if (null === $post) {
             throw new NotFoundHttpException("Le chapitre avec l'id " . $id . " n'a pas encore été rédigé.");
         }
 
+        $comment = new Comment;
+        $form = $this->get('form.factory')->create(CommentType::class, $comment);
+
+
+        // Si la requête est en POST
+        if ($request->isMethod('POST')) {
+
+            // On fait le lien Requête <-> Formulaire
+            // À partir de maintenant, la variable $advert contient les valeurs entrées dans le formulaire par le visiteur
+            $form->handleRequest($request);
+            $comment
+                ->setDate(new \DateTime(('now')))
+                ->setPost($post)
+            ;
+
+
+            if ($form->isValid()) {
+                $em->persist($comment);
+                $em->flush();
+                $request->getSession()->getFlashBag()->add('notice', 'Votre commentaire a bien été enregistré.');
+                return $this->redirectToRoute('dmb_blog_post', array('id' => $id));
+            }
+
+        }
+
         $comments = $em
             ->getRepository('DMBBlogBundle:Comment')
-            ->findBy(array('post' => $id))
+            ->findBy(array('post' => $id), array('id' => 'desc'))
         ;
-
         return $this->render('DMBBlogBundle:Default:post.html.twig', array(
             'form' => $form->createView(),
             'post' => $post,
             'comments' => $comments,
         ));
-
     }
 }
