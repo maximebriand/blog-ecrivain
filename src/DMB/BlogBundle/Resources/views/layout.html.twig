@@ -58,9 +58,16 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="avatar">
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            {{ app.user.username }}
+                            -
+                            <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+                        {% endif %}
+                        {#<a href="#" class="avatar">
                             <img src="/images/profil_picture.jpg" alt="profil picture avatar" class="circle">
-                        </a>
+                        </a>#}
                     </li>
                 {% endblock %}
             </ul>

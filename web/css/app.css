@@ -92,6 +92,8 @@ div.list_posts {
     margin-top: 45px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+
 
 }
 div.list_posts .row {
