@@ -23,6 +23,8 @@ class DefaultController extends Controller
         $posts = $em->getRepository('DMBBlogBundle:Post')->findAll();
 
         return $this->render('DMBBlogBundle:Default:index.html.twig', compact('posts'));
+
+
     }
 
     public function postAction($id, Request $request)

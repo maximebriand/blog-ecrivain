@@ -148,3 +148,6 @@ div.alert {
     padding: 5px 30px;
     margin: 25px auto 35px;
 }
+div.alert-danger {
+    background: #ff72a2;
+}
