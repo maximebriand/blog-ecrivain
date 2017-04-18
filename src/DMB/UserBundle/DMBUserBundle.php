@@ -10,5 +10,4 @@ class DMBUserBundle extends Bundle
     {
         return 'FOSUserBundle';
     }
-
 }

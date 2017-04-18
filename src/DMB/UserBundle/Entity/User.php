@@ -23,35 +23,6 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=255, unique=true)
-     */
-    protected $username;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="password", type="string", length=255)
-     */
-    protected $password;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="salt", type="string", length=255)
-     */
-    protected $salt;
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="roles", type="array")
-     */
-    protected $roles;
-
-
     public function eraseCredentials()
     {
 
