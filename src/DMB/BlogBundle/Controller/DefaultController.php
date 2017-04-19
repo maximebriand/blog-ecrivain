@@ -36,8 +36,7 @@ class DefaultController extends Controller
         }
 
         $comment = new Comment;
-        $form = $this->get('form.factory')->create(CommentType::class, $comment);
-
+        $form = $this->createForm(CommentType::class, $comment);
 
         // Si la requête est en POST
         if ($request->isMethod('POST')) {
