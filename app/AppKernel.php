@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new DMB\UserBundle\DMBUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
+
         ];
 
 
