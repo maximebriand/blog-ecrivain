@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new DMB\BlogBundle\DMBBlogBundle(),
             new DMB\UserBundle\DMBUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
         ];
 
 

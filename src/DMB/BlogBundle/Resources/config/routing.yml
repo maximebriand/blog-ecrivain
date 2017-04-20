@@ -1,6 +1,7 @@
 dmb_blog_homepage:
     path:     /
     defaults: { _controller: DMBBlogBundle:Default:index }
+
 dmb_blog_post:
     path:     /post/{id}
     defaults: { _controller: DMBBlogBundle:Default:post }

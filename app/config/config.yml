@@ -85,4 +85,11 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: DMB\UserBundle\Entity\User
+    from_email:
+      address: "danymaxbrice@gmail.com"
+      sender_name: "moi%"
 
+
+assetic:
+  debug:          '%kernel.debug%'
+  use_controller: '%kernel.debug%'
