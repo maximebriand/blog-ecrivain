@@ -61,16 +61,12 @@
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <div class="circle valign-wrapper">
                                 <img src="{{ vich_uploader_asset(app.user, 'imageFile')}}" alt="avatar de {{ app.user.username }}"/>
-                                <i class="material-icons">add</i>
                             </div>
-                            <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                            <i class="material-icons">arrow_drop_down</i>
                         {% else %}
                             <a href="{{ path('fos_user_security_login') }}">Connexion</a> |
                             <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
                         {% endif %}
-                        {#<a href="#" class="avatar">
-                            <img src="/images/profil_picture.jpg" alt="profil picture avatar" class="circle">
-                        </a>#}
                     </li>
                 {% endblock %}
             </ul>
@@ -79,10 +75,17 @@
             <!--mobile menu-->
             <div class="side-nav" id="mobile-demo">
                 {% block header_navigation_mobile %}
-                    <div class="connected_card">
-                        <img src="/images/profil_picture.jpg" alt="avatar mme michue" class="circle">
-                        <p>Hi Carolyn Reynolds!</p>
-                    </div>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <div class="connected_card center-align">
+                            <div class="circle valign-wrapper">
+                                <img src="{{ vich_uploader_asset(app.user, 'imageFile')}}" alt="avatar de {{ app.user.username }}"/>
+                            </div>
+                            <p>Hi {{ app.user.username }}!</p>
+                        </div>
+                    {% else %}
+                        <a href="{{ path('fos_user_security_login') }}">Connexion</a> |
+                        <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
+                    {% endif %}
                     <ul>
                         <li class="active">
                             <a href="#">

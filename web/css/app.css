@@ -37,6 +37,7 @@ header nav ul li {
     padding: 0 15px;
     cursor: pointer;
     display: flex;
+    height: 63px; /*define in order to verticaly align items*/
 }
 
 header nav ul li div.circle {
@@ -81,8 +82,14 @@ header div.subheading {
 div.side-nav div.connected_card {
     background: #0085c1;
     text-align: center;
-    padding: 25px 0;
-    margin-bottom: 15px;
+    height: 250px;
+    padding-top: 25px;
+}
+div.side-nav div.connected_card div.circle {
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    margin: auto;
 }
 div.side-nav div.connected_card p {
     font-size: 18px;
