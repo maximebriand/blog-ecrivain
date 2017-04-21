@@ -57,13 +57,16 @@
                             Crowdfund this book
                         </a>
                     </li>
-                    <li>
+                    <li class="valign-wrapper">
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                            {{ app.user.username }}
-                            -
+                            <div class="circle valign-wrapper">
+                                <img src="{{ vich_uploader_asset(app.user, 'imageFile')}}" alt="avatar de {{ app.user.username }}"/>
+                                <i class="material-icons">add</i>
+                            </div>
                             <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
                         {% else %}
-                            <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+                            <a href="{{ path('fos_user_security_login') }}">Connexion</a> |
+                            <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
                         {% endif %}
                         {#<a href="#" class="avatar">
                             <img src="/images/profil_picture.jpg" alt="profil picture avatar" class="circle">

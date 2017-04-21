@@ -36,12 +36,20 @@ header nav div.logo{
 header nav ul li {
     padding: 0 15px;
     cursor: pointer;
+    display: flex;
 }
 
-header nav ul li img.circle {
+header nav ul li div.circle {
     height: 55px;
-    padding-top: 10px;
+    width: 55px;
+    overflow: hidden;
 }
+
+header nav ul li div.circle img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
 header nav ul li a.avatar {
     line-height: 2;
 }

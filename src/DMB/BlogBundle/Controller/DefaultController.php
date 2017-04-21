@@ -4,6 +4,7 @@ namespace DMB\BlogBundle\Controller;
 
 use DMB\BlogBundle\Entity\Comment;
 use DMB\BlogBundle\Entity\Post;
+use DMB\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;

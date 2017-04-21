@@ -7,6 +7,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    app.path.avatar_images: /images/avatars
 
 framework:
     #esi:             ~
@@ -37,6 +38,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form_themes:
+      - 'VichUploaderBundle:Form:fields.html.twig'
 
 # Doctrine Configuration
 doctrine:
@@ -88,6 +91,9 @@ fos_user:
     from_email:
       address: "danymaxbrice@gmail.com"
       sender_name: "moi%"
+    registration:
+        form:
+            type: DMB\UserBundle\Form\RegistrationType
 
 
 assetic:
@@ -95,4 +101,8 @@ assetic:
   use_controller: '%kernel.debug%'
 
 vich_uploader:
-    db_driver: orm
+  db_driver: orm
+  mappings:
+    avatar_images:
+      uri_prefix:         '%app.path.avatar_images%'
+      upload_destination: '%kernel.root_dir%/../web/images/avatars'
