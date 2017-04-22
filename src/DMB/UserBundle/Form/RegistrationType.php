@@ -12,11 +12,15 @@ class RegistrationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('imageFile', VichImageType::class, [
+            'attr' => [
+              'class' =>  'file-field input-field'
+            ],
             'required' => false,
             'allow_delete' => true, // optional, default is true
             'download_link' => true, // optional, default is true
         ]);
     }
+
 
     public function getParent()
     {
