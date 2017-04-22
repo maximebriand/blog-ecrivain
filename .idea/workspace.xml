@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1b4cf00-9eac-438c-9d99-540b4e8d3074" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/DMB/UserBundle/Resources/views/Form/fields.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/UserBundle/Form/RegistrationType.php" afterPath="$PROJECT_DIR$/src/DMB/UserBundle/Form/RegistrationType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/app.css" afterPath="$PROJECT_DIR$/web/css/app.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,54 +22,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/layout.html.twig">
+      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="82" column="62" lean-forward="false" selection-start-line="82" selection-start-column="62" selection-end-line="82" selection-end-column="62" />
+            <state relative-caret-position="482">
+              <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/post.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="88" column="37" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Form/CommentType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="28" column="14" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="28" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/css/app.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DMB/UserBundle/Form/RegistrationType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding>
-                <element signature="e#39#79#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -76,28 +35,18 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="41" column="23" lean-forward="false" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
+            <state relative-caret-position="504">
+              <caret line="113" column="38" lean-forward="true" selection-start-line="113" selection-start-column="38" selection-end-line="113" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fields.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/vich/uploader-bundle/Resources/views/Form/fields.html.twig">
+      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fields.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DMB/UserBundle/Resources/views/Form/fields.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
-              <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+            <state relative-caret-position="466">
+              <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -118,6 +67,7 @@
       <find>mm</find>
       <find>avatar_images</find>
       <find>DMB</find>
+      <find>SecurityBundle</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -141,19 +91,19 @@
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/post.html.twig" />
         <option value="$PROJECT_DIR$/src/DMB/UserBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/var/logs/dev.log" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/var/cache/dev/twig/e1/e1adea0f452cac9de4d4ab8413bc21f9d610abea382b8bfeee6fe3aa000356e7.php" />
         <option value="$PROJECT_DIR$/src/DMB/UserBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/DMB/UserBundle/Form/RegistrationType.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/DMB/UserBundle/Resources/views/Form/fields.html.twig" />
         <option value="$PROJECT_DIR$/web/css/app.css" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/config.yml" />
+        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml" />
       </list>
     </option>
   </component>
@@ -588,11 +538,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -694,7 +640,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21301000" />
+    <option name="totallyTimeSpent" value="21519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="-753" width="1920" height="1002" extended-state="6" />
@@ -924,20 +870,12 @@
         <state relative-caret-position="418">
           <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
           <folding>
-            <marker date="1492679118000" expanded="true" signature="1065:1156" ph="{&quot;sensio/generator-bundle&quot;: &quot;^3.0&quot;...}" />
-            <marker date="1492679118000" expanded="true" signature="1173:2344" ph="{...}" />
-            <marker date="1492679118000" expanded="true" signature="1203:1756" ph="[...]" />
-            <marker date="1492679118000" expanded="true" signature="1785:2338" ph="[...]" />
-            <marker date="1492679118000" expanded="true" signature="2613:2672" ph="{&quot;file&quot;: &quot;app/config/parameters.yml&quot;...}" />
+            <marker date="1492854789000" expanded="true" signature="1173:1264" ph="{&quot;sensio/generator-bundle&quot;: &quot;^3.0&quot;...}" />
+            <marker date="1492854789000" expanded="true" signature="1281:2452" ph="{...}" />
+            <marker date="1492854789000" expanded="true" signature="1311:1864" ph="[...]" />
+            <marker date="1492854789000" expanded="true" signature="1893:2446" ph="[...]" />
+            <marker date="1492854789000" expanded="true" signature="2721:2780" ph="{&quot;file&quot;: &quot;app/config/parameters.yml&quot;...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="37" column="32" lean-forward="true" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,73 +891,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
           <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
-          <folding>
-            <marker date="1492781899000" expanded="true" signature="1829:2042" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="1836:2042" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="2649:2771" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="2659:2771" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="2669:2771" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="2703:2771" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="2754:2771" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="3015:3085" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="3213:3230" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="3494:3511" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="3759:3785" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="3772:3785" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="3952:3965" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="4154:4159" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="4511:4610" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="4548:4599" ph="{...}" />
-            <marker date="1492781899000" expanded="true" signature="7357:7365" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="8859:8986" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="8898:8960" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="9011:9156" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="9050:9130" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="9181:9323" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="9220:9297" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="9348:9373" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="12193:12380" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="12405:12997" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="12451:12594" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="12494:12564" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="12623:12784" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="12666:12754" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="12813:12971" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="12856:12941" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="24868:26358" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="18272:19024" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="24868:26350" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="24868:25891" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="24868:25595" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="24868:25584" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="19137:19330" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="19220:19228" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="19445:19515" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="21611:21926" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="19731:19858" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="19770:19832" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="19883:20028" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="19922:20002" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="20053:20195" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="20092:20169" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="21611:21877" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="21704:21849" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="24868:25534" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="22153:22340" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="24892:25484" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="24938:25081" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="24981:25051" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="25110:25271" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="25153:25241" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="25300:25458" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="25343:25428" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="25632:25881" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="25645:25758" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="25793:25870" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="25926:26012" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="26242:26341" ph="..." />
-            <marker date="1492781899000" expanded="true" signature="26279:26330" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1057,68 +929,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DMB/UserBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/post.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="88" column="37" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Form/CommentType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="28" column="14" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="28" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/UserBundle/Form/RegistrationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="e#39#79#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/layout.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="82" column="62" lean-forward="false" selection-start-line="82" selection-start-column="62" selection-end-line="82" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vich/uploader-bundle/Resources/views/Form/fields.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="41" column="23" lean-forward="false" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1163,6 +977,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="130" column="18" lean-forward="true" selection-start-line="130" selection-start-column="18" selection-end-line="130" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Form/CommentType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="28" column="14" lean-forward="false" selection-start-line="26" selection-start-column="48" selection-end-line="28" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/post.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="88" column="37" lean-forward="false" selection-start-line="88" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="82" column="62" lean-forward="false" selection-start-line="82" selection-start-column="62" selection-end-line="82" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DMB/UserBundle/Form/RegistrationType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/vich/uploader-bundle/Resources/views/Form/fields.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DMB/UserBundle/Resources/views/Form/fields.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
@@ -1171,10 +1035,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/app.css">
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="132" column="0" lean-forward="true" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+        <state relative-caret-position="482">
+          <caret line="27" column="55" lean-forward="false" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="113" column="38" lean-forward="true" selection-start-line="113" selection-start-column="38" selection-end-line="113" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
           <folding />
         </state>
       </provider>
