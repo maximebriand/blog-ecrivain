@@ -3,12 +3,14 @@
 namespace DMB\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * post
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="DMB\BlogBundle\Repository\postRepository")
+ * @Vich\Uploadable
  */
 class Post
 {
@@ -57,18 +59,30 @@ class Post
     private $content;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="coverImage", type="string", length=255)
-     */
-    private $coverImage;
-
-    /**
      * @var boolean
      *
      * @ORM\Column(name="is_activated", type="boolean")
      */
     private $isActivated;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @var string
+     */
+    private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="cover_images", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @var \DateTime
+     */
+    private $updatedAt;
+
 
 
     /**
@@ -252,5 +266,33 @@ class Post
     public function getIsActivated()
     {
         return $this->isActivated;
+    }
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function getImage()
+    {
+        return $this->image;
     }
 }

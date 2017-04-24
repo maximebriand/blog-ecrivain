@@ -7,6 +7,8 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    app.path.cover_images: /uploads/images/covers
+
 
 framework:
     #esi: ~
@@ -72,22 +74,35 @@ swiftmailer:
 
 
 easy_admin:
+    design:
+            form_theme: ['horizontal', 'VichUploaderBundle:Form:fields.html.twig']
+
     entities:
         Posts:
             class: DMB\BlogBundle\Entity\Post
             label: 'Chapitres'
+            show:
+              fields:
+                  - { property: 'image', type: 'image', base_path: '%app.path.cover_images%' }
+
             list:
               title: "Tous les chapitres"
-            fields:
-              - { property: 'cover image', type: 'image' }
+              fields:
+                - {property: 'chapterNumber', label:'Numéro du chapitre'}
+                - {property: 'title', label: 'Chapitre'}
+                - { property: 'image', type: 'image', base_path: '%app.path.cover_images%' }
 
             form:
               fields:
+                - author
                 - {property: 'chapterNumber', type: 'integer' }
                 - isActivated
                 - {property: 'title', type: 'text'}
                 - {property: 'content', type: 'ckeditor' }
-                - {property: 'coverImage'}
+                - { type: 'group', css_class: 'col-sm-4', label: 'Attachments', icon: 'paperclip' }
+                - { property: 'imageFile', type: 'vich_image', type_options: { required: true } }
+                - {property: 'publishedDate', type: 'date'}
+
         Users:
           class: DMB\UserBundle\Entity\User
           label: 'Membres'
@@ -112,3 +127,11 @@ fos_user:
     from_email:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
+
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+            cover_images:
+                uri_prefix:         '%app.path.cover_images%'
+                upload_destination: '%kernel.root_dir%/../web/uploads/images/covers'

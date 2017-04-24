@@ -20,9 +20,9 @@
     {% endfor %}
     <div class="post">
         <div class="post_content">
+            <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
             {{ post.content|raw }}
         </div>
-        <img src="{{ post.coverImage}}" alt="">
     </div>
 
 
