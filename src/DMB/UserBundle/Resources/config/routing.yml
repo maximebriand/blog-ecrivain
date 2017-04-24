@@ -1,0 +1,3 @@
+dmb_user_homepage:
+    path:     /
+    defaults: { _controller: DMBUserBundle:Default:index }

@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new DMB\BlogBundle\DMBBlogBundle(),
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new DMB\UserBundle\DMBUserBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

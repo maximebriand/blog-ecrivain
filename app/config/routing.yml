@@ -1,3 +1,7 @@
+dmb_user:
+    resource: "@DMBUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 dmb_blog:
     resource: "@DMBBlogBundle/Resources/config/routing.yml"
     prefix:   /
