@@ -6,7 +6,8 @@ dmb_blog_post:
     path:     /post/{id}
     defaults: { _controller: DMBBlogBundle:Default:post }
 
-#easy_admin_bundle:
- #   resource: "@EasyAdminBundle/Controller/AdminController.php"
-  #  type:     annotation
-   # prefix:   /admin
+
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /backend
