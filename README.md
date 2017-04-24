@@ -1,6 +1,4 @@
-Blog Ecrivain
+blog
 ====
 
-An educative project based on the framework Symfony3
-https://openclassrooms.com/projects/creez-un-blog-pour-un-ecrivain
-
+A Symfony project created on April 24, 2017, 9:48 am.
