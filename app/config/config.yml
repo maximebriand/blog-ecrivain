@@ -108,14 +108,26 @@ easy_admin:
           label: 'Membres'
           list:
             title: "Tous les membres"
-          form:
+          edit:
             fields:
-              - {property: 'username' }
-              - { property: 'email', type: 'email', type_options: { trim: true } }
-              - { type: 'divider' }
-              - 'enabled'
-              - {property: 'lastLogin'}
-              - {property: 'roles' }
+              - username
+              - email
+              - enabled
+              - { property: 'plainPassword', type: 'text', type_options: { required: false} }
+              - lastLogin
+              # if administrators are allowed to edit users' passwords and roles, add this:
+              - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'Membres': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' } } }
+          new:
+            fields:
+              - username
+              - email
+              - enabled
+              - { property: 'plainPassword', type: 'text', type_options: { required: true} }
+              - lastLogin
+              # if administrators are allowed to edit users' passwords and roles, add this:
+              - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'Membres': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' } } }
+
+
 
     site_name: 'Jean Forteroche'
 
