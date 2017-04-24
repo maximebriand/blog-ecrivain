@@ -63,6 +63,13 @@ class Post
      */
     private $coverImage;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_activated", type="boolean")
+     */
+    private $isActivated;
+
 
     /**
      * Get id

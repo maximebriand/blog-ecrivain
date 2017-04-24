@@ -74,3 +74,17 @@ easy_admin:
     entities:
         Customer:
             class: DMB\BlogBundle\Entity\Post
+            label: 'Chapitres'
+            list:
+              title: "Tous les chapitres"
+            fields:
+              - { property: 'cover image', type: 'image' }
+
+            form:
+              fields:
+                - {property: 'chapterNumber', type: 'integer' }
+                - isActivated
+                - {property: 'title', type: 'text'}
+                - {property: 'content', type: 'textarea' }
+                - {property: 'coverImage'}
+    site_name: 'Jean Forteroche'

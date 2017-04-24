@@ -63,6 +63,13 @@ class Post
      */
     private $coverImage;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_activated", type="boolean")
+     */
+    private $isActivated;
+
 
     /**
      * Get id
@@ -221,5 +228,29 @@ class Post
     public function getUrl()
     {
         return "/post/" . $this->getId();
+    }
+
+    /**
+     * Set isActivated
+     *
+     * @param boolean $isActivated
+     *
+     * @return Post
+     */
+    public function setIsActivated($isActivated)
+    {
+        $this->isActivated = $isActivated;
+
+        return $this;
+    }
+
+    /**
+     * Get isActivated
+     *
+     * @return boolean
+     */
+    public function getIsActivated()
+    {
+        return $this->isActivated;
     }
 }
