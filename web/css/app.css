@@ -7,7 +7,6 @@
 	6. =INDEX
 	7. =POST
 	8. =COMMENTS
-
 */
 
 /* 1. =GLOBAL
@@ -36,12 +35,21 @@ header nav div.logo{
 header nav ul li {
     padding: 0 15px;
     cursor: pointer;
+    display: flex;
+    height: 63px; /*define in order to verticaly align items*/
 }
 
-header nav ul li img.circle {
+header nav ul li div.circle {
     height: 55px;
-    padding-top: 10px;
+    width: 55px;
+    overflow: hidden;
 }
+
+header nav ul li div.circle img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
 header nav ul li a.avatar {
     line-height: 2;
 }
@@ -73,8 +81,14 @@ header div.subheading {
 div.side-nav div.connected_card {
     background: #0085c1;
     text-align: center;
-    padding: 25px 0;
-    margin-bottom: 15px;
+    height: 250px;
+    padding-top: 25px;
+}
+div.side-nav div.connected_card div.circle {
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    margin: auto;
 }
 div.side-nav div.connected_card p {
     font-size: 18px;
@@ -92,6 +106,8 @@ div.list_posts {
     margin-top: 45px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+
 
 }
 div.list_posts .row {
@@ -147,4 +163,7 @@ div.alert {
     background: #72e7ff;
     padding: 5px 30px;
     margin: 25px auto 35px;
+}
+div.alert-danger {
+    background: #ff72a2;
 }
