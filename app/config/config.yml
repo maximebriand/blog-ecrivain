@@ -88,6 +88,11 @@ easy_admin:
                 - {property: 'title', type: 'text'}
                 - {property: 'content', type: 'textarea' }
                 - {property: 'coverImage'}
+        Users:
+          class: DMB\UserBundle\Entity\User
+          label: 'Membres'
+          list:
+            title: "Tous les membres"
     site_name: 'Jean Forteroche'
 
 
