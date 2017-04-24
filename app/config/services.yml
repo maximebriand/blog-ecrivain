@@ -19,3 +19,10 @@ services:
                     class: DMB\UserBundle\Form\RegistrationType
                     tags:
                         - { name: form.type, alias: app_user_registration }
+
+    admin.post:
+            class: DMB\BlogBundle\Admin\PostAdmin
+            arguments: [~, DMB\BlogBundle\Entity\Post, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Chapitre }
+

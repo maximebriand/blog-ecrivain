@@ -223,3 +223,4 @@ class Post
         return "/post/" . $this->getId();
     }
 }
+

@@ -51,6 +51,9 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset:  UTF8
+        types:
+          json: Sonata\Doctrine\Types\JsonType
+
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
         #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
@@ -60,8 +63,13 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
+
+        entity_managers:
+          default:
+            naming_strategy: doctrine.orm.naming_strategy.underscore
+            auto_mapping: true
+            mappings:
+              SonataMediaBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -113,3 +121,65 @@ sonata_block:
         # enable the SonataAdminBundle block
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+sonata_admin:
+  title: 'Jean Forteroche'
+  title_logo: 'http://www.logodesignlove.com/images/negative/wwf-logo-design.jpg'
+  assets:
+    stylesheets:
+      - bundles/sonatacore/vendor/bootstrap/dist/css/bootstrap.min.css
+      - bundles/sonatacore/vendor/components-font-awesome/css/font-awesome.min.css
+      - bundles/sonatacore/vendor/ionicons/css/ionicons.min.css
+      - bundles/sonataadmin/vendor/admin-lte/dist/css/AdminLTE.min.css
+      - bundles/sonataadmin/vendor/admin-lte/dist/css/skins/skin-black.min.css
+      - bundles/sonataadmin/vendor/iCheck/skins/square/blue.css
+      - bundles/sonatacore/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css
+      - bundles/sonataadmin/vendor/jqueryui/themes/base/jquery-ui.css
+      - bundles/sonatacore/vendor/select2/select2.css
+      - bundles/sonatacore/vendor/select2-bootstrap-css/select2-bootstrap.min.css
+      - bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css
+      - bundles/sonataadmin/css/styles.css
+      - bundles/sonataadmin/css/layout.css
+      - bundles/sonataadmin/css/tree.css
+      - bundles/sonataadmin/css/colors.css
+      - css/admin.css
+
+
+sonata_media:
+    providers:
+        image:
+            resizer: sonata.media.resizer.square
+
+    # if you don't use default namespace configuration
+    #class:
+    #    media: MyVendor\MediaBundle\Entity\Media
+    #    gallery: MyVendor\MediaBundle\Entity\Gallery
+    #    gallery_has_media: MyVendor\MediaBundle\Entity\GalleryHasMedia
+    db_driver: doctrine_orm # or doctrine_mongodb, doctrine_phpcr it is mandatory to choose one here
+    default_context: default # you need to set a context
+    contexts:
+        default:  # the default context is mandatory
+            providers:
+                - sonata.media.provider.dailymotion
+                - sonata.media.provider.youtube
+                - sonata.media.provider.image
+                - sonata.media.provider.file
+                - sonata.media.provider.vimeo
+
+            formats:
+                small: { width: 100 , quality: 70}
+                big:   { width: 500 , quality: 70}
+
+    cdn:
+        server:
+            path: /uploads/media # http://media.sonata-project.org/
+
+    filesystem:
+        local:
+            directory:  "%kernel.root_dir%/../web/uploads/media"
+            create:     false
+
+
+sonata_doctrine_orm_admin:
+    # default value is null, so doctrine uses the value defined in the configuration
+    entity_manager: '@doctrine.orm.entity_manager'
