@@ -73,7 +73,7 @@ swiftmailer:
 
 easy_admin:
     entities:
-        Customer:
+        Posts:
             class: DMB\BlogBundle\Entity\Post
             label: 'Chapitres'
             list:
@@ -86,13 +86,22 @@ easy_admin:
                 - {property: 'chapterNumber', type: 'integer' }
                 - isActivated
                 - {property: 'title', type: 'text'}
-                - {property: 'content', type: 'textarea' }
+                - {property: 'content', type: 'ckeditor' }
                 - {property: 'coverImage'}
         Users:
           class: DMB\UserBundle\Entity\User
           label: 'Membres'
           list:
             title: "Tous les membres"
+          form:
+            fields:
+              - {property: 'username' }
+              - { property: 'email', type: 'email', type_options: { trim: true } }
+              - { type: 'divider' }
+              - 'enabled'
+              - {property: 'lastLogin'}
+              - {property: 'roles' }
+
     site_name: 'Jean Forteroche'
 
 

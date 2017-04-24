@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new DMB\UserBundle\DMBUserBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
