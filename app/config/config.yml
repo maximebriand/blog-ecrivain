@@ -8,7 +8,7 @@ imports:
 parameters:
     locale: en
     app.path.cover_images: /uploads/images/covers
-    app.path.avatar_images: /uploads/images/avatars
+    app.path.avatar_images: /uploads/images/covers
 
 
 
@@ -43,6 +43,10 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes:
+        # other form themes
+        - 'DMBUserBundle:Form:fields.html.twig'
+
 
 # Doctrine Configuration
 doctrine:
