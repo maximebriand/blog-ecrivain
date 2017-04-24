@@ -10,4 +10,7 @@ dmb_blog_post:
 easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/AdminController.php"
     type:     annotation
-    prefix:   /backend
+    prefix:   /admin
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
