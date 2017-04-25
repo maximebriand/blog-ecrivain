@@ -1,0 +1,26 @@
+easy_admin:
+    entities:
+        Posts:
+            class: DMB\BlogBundle\Entity\Post
+            label: 'Chapitres'
+            show:
+              fields:
+                  - { property: 'image', type: 'image', base_path: '%app.path.cover_images%' }
+
+            list:
+              title: "Tous les chapitres"
+              fields:
+                - {property: 'chapterNumber', label: 'Numéro du chapitre'}
+                - {property: 'title', label: 'Chapitre'}
+                - { property: 'image', type: 'image', base_path: '%app.path.cover_images%' }
+
+            form:
+              fields:
+                - author
+                - {property: 'chapterNumber', type: 'integer' }
+                - isActivated
+                - {property: 'title', type: 'text'}
+                - {property: 'content', type: 'ckeditor' }
+                - { type: 'group', css_class: 'col-sm-4', label: 'Attachments', icon: 'paperclip' }
+                - { property: 'imageFile', type: 'vich_image', type_options: { required: true } }
+                - {property: 'publishedDate', type: 'date'}

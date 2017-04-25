@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: easyadmin/ }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -77,67 +78,6 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
-
-
-easy_admin:
-    design:
-            form_theme: ['horizontal', 'VichUploaderBundle:Form:fields.html.twig']
-
-    entities:
-        Posts:
-            class: DMB\BlogBundle\Entity\Post
-            label: 'Chapitres'
-            show:
-              fields:
-                  - { property: 'image', type: 'image', base_path: '%app.path.cover_images%' }
-
-            list:
-              title: "Tous les chapitres"
-              fields:
-                - {property: 'chapterNumber', label: 'Numéro du chapitre'}
-                - {property: 'title', label: 'Chapitre'}
-                - { property: 'image', type: 'image', base_path: '%app.path.cover_images%' }
-
-            form:
-              fields:
-                - author
-                - {property: 'chapterNumber', type: 'integer' }
-                - isActivated
-                - {property: 'title', type: 'text'}
-                - {property: 'content', type: 'ckeditor' }
-                - { type: 'group', css_class: 'col-sm-4', label: 'Attachments', icon: 'paperclip' }
-                - { property: 'imageFile', type: 'vich_image', type_options: { required: true } }
-                - {property: 'publishedDate', type: 'date'}
-
-        Users:
-          class: DMB\UserBundle\Entity\User
-          label: 'Membres'
-          list:
-            title: "Tous les membres"
-          edit:
-            fields:
-              - username
-              - email
-              - enabled
-              - { property: 'plainPassword', type: 'text', type_options: { required: false} }
-              - lastLogin
-              # if administrators are allowed to edit users' passwords and roles, add this:
-              - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'Membres': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' } } }
-          new:
-            fields:
-              - name
-              - username
-              - email
-              - enabled
-              - { property: 'plainPassword', type: 'text', type_options: { required: true} }
-              - lastLogin
-              # if administrators are allowed to edit users' passwords and roles, add this:
-              - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'Membres': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' } } }
-
-
-
-    site_name: 'Jean Forteroche'
-
 
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'

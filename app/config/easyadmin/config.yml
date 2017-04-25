@@ -1,0 +1,4 @@
+easy_admin:
+    design:
+            form_theme: ['horizontal', 'VichUploaderBundle:Form:fields.html.twig']
+    site_name: 'Jean Forteroche'
