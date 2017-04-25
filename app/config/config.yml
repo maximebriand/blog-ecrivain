@@ -8,7 +8,7 @@ imports:
 parameters:
     locale: en
     app.path.cover_images: /uploads/images/covers
-    app.path.avatar_images: /uploads/images/covers
+    app.path.avatar_images: /uploads/images/avatars
 
 
 
@@ -149,6 +149,9 @@ fos_user:
     registration:
       form:
         type: DMB\UserBundle\Form\RegistrationType
+    profile:
+      form:
+        type: DMB\UserBundle\Form\ProfileFormType
 
 
 vich_uploader:
