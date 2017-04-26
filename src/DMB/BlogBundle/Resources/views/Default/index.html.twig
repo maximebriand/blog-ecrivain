@@ -18,7 +18,7 @@
                         </div>
                         <div class="card-content">
                             <p>
-                                {{ post.content|slice(0, 50)|raw}}...
+                                {{ post.content|slice(0, 50)|striptags|raw  }}...
                             </p>
                         </div>
                         <div class="card-action">
