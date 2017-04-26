@@ -10,4 +10,11 @@ namespace DMB\BlogBundle\Repository;
  */
 class postRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllActivePosts()
+    {
+        return $this->createQueryBuilder('p')
+            ->where("p.isActivated = true")
+            ->getQuery()
+            ->getResult();
+    }
 }

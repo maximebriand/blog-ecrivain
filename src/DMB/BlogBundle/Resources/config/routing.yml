@@ -6,37 +6,25 @@ dmb_blog_post:
     path:     /post/{id}
     defaults: { _controller: DMBBlogBundle:Default:post }
 
-fos_user_security:
-    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+dmb_blog_page:
+    path:     /post/{id}
+    defaults: { _controller: DMBBlogBundle:Default:post }
 
-fos_user_profile:
-    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-    prefix: /profile
+dmb_blog_draft_post:
+    path:     /post-draft/{id}
+    defaults: { _controller: DMBBlogBundle:Default:post }
 
-fos_user_register:
-    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix: /register
+dmb_blog_premium_post:
+    path:     /post-premium/{id}
+    defaults: { _controller: DMBBlogBundle:Default:post }
 
-fos_user_resetting:
-    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-    prefix: /resetting
+easy_admin_bundle:
+    resource: "@EasyAdminBundle/Controller/AdminController.php"
+    type:     annotation
+    prefix:   /admin
 
-fos_user_change_password:
-    resource: "@FOSUserBundle/"
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-admin_area:
-    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
-    prefix: /admin
-
-_sonata_admin:
-    resource: .
-    type: sonata_admin
-    prefix: /admin
-
-gallery:
-    resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
-    prefix: /media/gallery
-
-media:
-    resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
-    prefix: /media
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"

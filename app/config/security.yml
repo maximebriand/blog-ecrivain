@@ -1,14 +1,25 @@
-# app/config/security.yml
-
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
 security:
+<<<<<<< HEAD
   encoders:
     Symfony\Component\Security\Core\User\User: plaintext
     DMB\UserBundle\Entity\User: plaintext
+=======
+>>>>>>> EasyAdmin
 
-  role_hierarchy:
-    ROLE_ADMIN:       ROLE_USER
-    ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
 
+    role_hierarchy:
+        ROLE_ADMIN:       ROLE_USER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username
+
+<<<<<<< HEAD
   providers:
     main:
       entity:
@@ -31,6 +42,24 @@ security:
         target:     /
       remember_me:
         secret: %secret%
+=======
+    firewalls:
+        main:
+            pattern: ^/
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                # if you are using Symfony < 2.8, use the following config instead:
+                # csrf_provider: form.csrf_provider
 
-  access_control:
-    #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+            logout:       true
+            anonymous:    true
+>>>>>>> EasyAdmin
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/post-premium/, role: ROLE_USER }
+        - { path: ^/post-draft/, role: ROLE_ADMIN }
+        - { path: ^/admin/, role: ROLE_ADMIN }

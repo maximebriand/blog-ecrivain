@@ -3,294 +3,64 @@
 {% block content %}
     <div class="list_posts">
         {% for post in posts  %}
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
+            {% if (post.ispremium and is_granted("IS_AUTHENTICATED_REMEMBERED")) or post.ispremium == false %}
+                <div class="row">
+                    <a href="{{ post.url }}">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
+                                <span class="card-title">
                                 {{ post.title }}
                             </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
+                                <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
+                                    {{ post.chapterNumber }}
+                                </a>
 
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    {{ post.content|slice(0, 500)|striptags|raw  }}...
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 50)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
+                    </a>
+                </div>
+
+            {% else %}
+                <div class="row inactive">
+                    <div class="card">
+                        <div>
+                            <div class="card-image">
+                                <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
+                                <span class="card-title">
+                            {{ post.title }}
+                        </span>
+                                <span class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
+                                {{ post.chapterNumber }}
                             </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
 
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    {{ post.content|slice(0, 500)|striptags|raw  }}...
+                                </p>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 50)|raw}}...
-                            </p>
-                        </div>
+                        <div class="overlay"></div>
                         <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
+                            <a href="#">Chapitre réservé aux membres premium</a>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
+                </div>
+            {% endif %}
 
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 250)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
 
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 150)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
 
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 50)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
 
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 50)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
 
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 250)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
-
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 150)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
-
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 50)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
-
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 50)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
-
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 250)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ post.coverImage }}" alt="blop">
-                            <span class="card-title">
-                                {{ post.title }}
-                            </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
-
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 150)|raw}}...
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
 
         {% endfor %}
     </div>

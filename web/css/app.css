@@ -7,7 +7,6 @@
 	6. =INDEX
 	7. =POST
 	8. =COMMENTS
-
 */
 
 /* 1. =GLOBAL
@@ -128,7 +127,10 @@ div.side-nav div.connected_card div.circle {
     width: 150px;
     overflow: hidden;
     margin: auto;
+<<<<<<< HEAD
     display: flex;
+=======
+>>>>>>> EasyAdmin
 }
 
 div.side-nav div.connected_card p {
@@ -152,7 +154,7 @@ div.list_posts {
 
 }
 div.list_posts .row {
-    width:250px;
+    width:450px;
     margin-left: 45px;
 }
 
@@ -160,8 +162,28 @@ div.list_posts .row .chapter_number {
     text-align: center;
 }
 
+div.list_posts .card div.overlay {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(176, 198, 207, 0.49);
+    z-index: 2;
+}
+
+div.list_posts .inactive .card-action {
+    z-index: 3;
+}
+
 /* 7. =POST
    ============================= */
+div.container div.post img{
+    max-width: 33%;
+    height:auto;
+    float: left;
+    margin-right: 15px;
+}
 div.container div.post {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
@@ -197,6 +219,8 @@ div.comments div.form_submit_comment button {
     margin-bottom: 20px;
 }
 
+
+
 /* 8. =ALERTS
    ============================= */
 
@@ -208,3 +232,6 @@ div.alert {
 div.alert-danger {
     background: #ff72a2;
 }
+
+
+

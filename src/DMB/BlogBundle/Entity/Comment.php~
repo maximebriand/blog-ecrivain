@@ -31,6 +31,7 @@ class Comment
     private $id;
 
     /**
+<<<<<<< HEAD
      * @var string
      *
      * @ORM\Column(name="author", type="string", length=255)
@@ -43,8 +44,12 @@ class Comment
      *
      * @ORM\Column(name="email", type="string", length=255)
      * @Assert\Length(min=2)
+=======
+     * @ORM\ManyToOne(targetEntity="DMB\UserBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
+>>>>>>> EasyAdmin
      */
-    private $email;
+    private $member;
 
     /**
      * @var string

@@ -2,6 +2,7 @@
 
 namespace DMB\BlogBundle\Controller;
 
+use DMB\BlogBundle\DMBBlogBundle;
 use DMB\BlogBundle\Entity\Comment;
 use DMB\BlogBundle\Entity\Post;
 use DMB\UserBundle\Entity\User;
@@ -21,7 +22,16 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $posts = $em->getRepository('DMBBlogBundle:Post')->findAll();
+
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
+        {
+            $posts = $em->getRepository('DMBBlogBundle:Post')->findAll();
+        }
+        else
+        {
+            $posts = $em->getRepository('DMBBlogBundle:Post')->findAllActivePosts();
+        }
+
 
         return $this->render('DMBBlogBundle:Default:index.html.twig', compact('posts'));
 
@@ -46,6 +56,7 @@ class DefaultController extends Controller
             // À partir de maintenant, la variable $advert contient les valeurs entrées dans le formulaire par le visiteur
             $form->handleRequest($request);
             $comment
+                ->setMember($this->getUser())
                 ->setDate(new \DateTime(('now')))
                 ->setPost($post)
             ;
@@ -69,5 +80,13 @@ class DefaultController extends Controller
             'post' => $post,
             'comments' => $comments,
         ));
+    }
+
+    public function menuAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $pages = $em->getRepository('DMBBlogBundle:Page')->findAll();
+
+        return $this->render('DMBBlogBundle:Default:menu.html.twig', compact('pages'));
     }
 }
