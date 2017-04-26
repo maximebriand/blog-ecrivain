@@ -83,6 +83,12 @@ class Post
      */
     private $updatedAt;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_premium", type="boolean")
+     */
+    private $isPremium;
 
 
     /**
@@ -241,7 +247,18 @@ class Post
 
     public function getUrl()
     {
-        return "/post/" . $this->getId();
+        if ($this->isPremium)
+        {
+            return "/post-premium/" . $this->getId();
+        }
+        else if ($this->isActivated === false)
+        {
+            return "/post-draft/" . $this->getId();
+        }
+        else
+        {
+            return "/post/" . $this->getId();
+        }
     }
 
     /**
@@ -294,5 +311,53 @@ class Post
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Set updatedAt
+     *
+     * @param \DateTime $updatedAt
+     *
+     * @return Post
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * Get updatedAt
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set isPremium
+     *
+     * @param boolean $isPremium
+     *
+     * @return Post
+     */
+    public function setIsPremium($isPremium)
+    {
+        $this->isPremium = $isPremium;
+
+        return $this;
+    }
+
+    /**
+     * Get isPremium
+     *
+     * @return boolean
+     */
+    public function getIsPremium()
+    {
+        return $this->isPremium;
     }
 }
