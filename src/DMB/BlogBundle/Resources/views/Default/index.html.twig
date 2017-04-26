@@ -3,30 +3,63 @@
 {% block content %}
     <div class="list_posts">
         {% for post in posts  %}
-            <div class="row">
-                <a href="{{ post.url }}">
-                    <div class="card hoverable">
-                        <div class="card-image">
-                            <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
-                            <span class="card-title">
+            {% if post.ispremium and is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <div class="row">
+                    <a href="{{ post.url }}">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
+                                <span class="card-title">
                                 {{ post.title }}
                             </span>
-                            <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </a>
+                                <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
+                                    {{ post.chapterNumber }}
+                                </a>
 
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    {{ post.content|slice(0, 50)|striptags|raw  }}...
+                                </p>
+                            </div>
+                            <div class="card-action">
+                                <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
+                            </div>
                         </div>
-                        <div class="card-content">
-                            <p>
-                                {{ post.content|slice(0, 50)|striptags|raw  }}...
-                            </p>
+                    </a>
+                </div>
+
+            {% else %}
+                <div class="row inactive">
+                    <div class="card">
+                        <div>
+                            <div class="card-image">
+                                <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
+                                <span class="card-title">
+                            {{ post.title }}
+                        </span>
+                                <span class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
+                                {{ post.chapterNumber }}
+                            </span>
+
+                            </div>
+                            <div class="card-content">
+                                <p>
+                                    {{ post.content|slice(0, 50)|striptags|raw  }}...
+                                </p>
+                            </div>
                         </div>
+                        <div class="overlay"></div>
                         <div class="card-action">
-                            <a href="{{ post.url }}">Lire le chapitre {{ post.chapterNumber }}</a>
+                            <a href="#">Chapitre réservé aux membres premium</a>
                         </div>
                     </div>
-                </a>
-            </div>
+                </div>
+            {% endif %}
+
+
+
+
 
 
         {% endfor %}
