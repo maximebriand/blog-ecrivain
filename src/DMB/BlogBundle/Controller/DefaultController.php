@@ -2,6 +2,7 @@
 
 namespace DMB\BlogBundle\Controller;
 
+use DMB\BlogBundle\DMBBlogBundle;
 use DMB\BlogBundle\Entity\Comment;
 use DMB\BlogBundle\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -77,5 +78,13 @@ class DefaultController extends Controller
             'post' => $post,
             'comments' => $comments,
         ));
+    }
+
+    public function menuAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $pages = $em->getRepository('DMBBlogBundle:Page')->findAll();
+
+        return $this->render('DMBBlogBundle:Default:menu.html.twig', compact('pages'));
     }
 }

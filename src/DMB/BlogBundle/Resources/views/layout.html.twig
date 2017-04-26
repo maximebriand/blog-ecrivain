@@ -49,16 +49,7 @@
                             Home
                         </a>
                     </li>
-                    <li>
-                        <a href="#">
-                            About me and this book
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Crowdfund this book
-                        </a>
-                    </li>
+                    {{ render(controller("DMBBlogBundle:Default:menu")) }}
                     <li>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <a href="{{ path('fos_user_profile_edit') }}" class="valign-wrapper">

@@ -1,0 +1,15 @@
+easy_admin:
+    entities:
+        Pages:
+            class: DMB\BlogBundle\Entity\Page
+            label: 'Pages statiques'
+
+            list:
+              title: "Toutes les pages"
+              fields:
+                - {property: 'title', label: 'Titre de la page'}
+
+            form:
+              fields:
+                - {property: 'title', type: 'text'}
+                - {property: 'content', type: 'ckeditor' }

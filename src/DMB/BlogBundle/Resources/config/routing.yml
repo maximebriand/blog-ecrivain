@@ -6,6 +6,10 @@ dmb_blog_post:
     path:     /post/{id}
     defaults: { _controller: DMBBlogBundle:Default:post }
 
+dmb_blog_page:
+    path:     /post/{id}
+    defaults: { _controller: DMBBlogBundle:Default:post }
+
 dmb_blog_draft_post:
     path:     /post-draft/{id}
     defaults: { _controller: DMBBlogBundle:Default:post }
@@ -21,3 +25,6 @@ easy_admin_bundle:
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
