@@ -19,6 +19,7 @@ easy_admin:
                 - author
                 - {property: 'chapterNumber', type: 'integer' }
                 - isActivated
+                - isPremium
                 - {property: 'title', type: 'text'}
                 - {property: 'content', type: 'ckeditor' }
                 - { type: 'group', css_class: 'col-sm-4', label: 'Attachments', icon: 'paperclip' }

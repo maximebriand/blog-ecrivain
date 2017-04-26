@@ -31,20 +31,10 @@ class Comment
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="author", type="string", length=255)
-     * @Assert\Length(min=2)
+     * @ORM\ManyToOne(targetEntity="DMB\UserBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $author;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="email", type="string", length=255)
-     * @Assert\Length(min=2)
-     */
-    private $email;
+    private $member;
 
     /**
      * @var string
@@ -75,53 +65,7 @@ class Comment
         return $this->id;
     }
 
-    /**
-     * Set author
-     *
-     * @param string $author
-     *
-     * @return Comment
-     */
-    public function setAuthor($author)
-    {
-        $this->author = $author;
 
-        return $this;
-    }
-
-    /**
-     * Get author
-     *
-     * @return string
-     */
-    public function getAuthor()
-    {
-        return $this->author;
-    }
-
-    /**
-     * Set email
-     *
-     * @param string $email
-     *
-     * @return Comment
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-
-        return $this;
-    }
-
-    /**
-     * Get email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
 
     /**
      * Set content
@@ -193,5 +137,29 @@ class Comment
     public function getPost()
     {
         return $this->post;
+    }
+
+    /**
+     * Set member
+     *
+     * @param \DMB\UserBundle\Entity\User $member
+     *
+     * @return Comment
+     */
+    public function setMember(\DMB\UserBundle\Entity\User $member)
+    {
+        $this->member = $member;
+
+        return $this;
+    }
+
+    /**
+     * Get member
+     *
+     * @return \DMB\UserBundle\Entity\User
+     */
+    public function getMember()
+    {
+        return $this->member;
     }
 }

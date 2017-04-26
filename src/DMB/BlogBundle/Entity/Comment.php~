@@ -4,6 +4,9 @@ namespace DMB\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+// N'oubliez pas de rajouter ce « use », il définit le namespace pour les annotations de validation
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Comment
  *
@@ -28,23 +31,16 @@ class Comment
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="author", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="DMB\UserBundle\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $author;
+    private $member;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255)
-     */
-    private $email;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="content", type="string", length=255)
+     * @ORM\Column(name="content", type="text")
+     * @Assert\NotBlank()
      */
     private $content;
 
@@ -52,6 +48,7 @@ class Comment
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="datetime")
+     * @Assert\DateTime()
      */
     private $date;
 
@@ -162,5 +159,29 @@ class Comment
     public function getDate()
     {
         return $this->date;
+    }
+
+    /**
+     * Set post
+     *
+     * @param \DMB\BlogBundle\Entity\Post $post
+     *
+     * @return Comment
+     */
+    public function setPost(\DMB\BlogBundle\Entity\Post $post)
+    {
+        $this->post = $post;
+
+        return $this;
+    }
+
+    /**
+     * Get post
+     *
+     * @return \DMB\BlogBundle\Entity\Post
+     */
+    public function getPost()
+    {
+        return $this->post;
     }
 }

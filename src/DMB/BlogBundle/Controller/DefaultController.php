@@ -53,6 +53,7 @@ class DefaultController extends Controller
             // À partir de maintenant, la variable $advert contient les valeurs entrées dans le formulaire par le visiteur
             $form->handleRequest($request);
             $comment
+                ->setMember($this->getUser())
                 ->setDate(new \DateTime(('now')))
                 ->setPost($post)
             ;

@@ -3,7 +3,7 @@
 {% block content %}
     <div class="list_posts">
         {% for post in posts  %}
-            {% if post.ispremium and is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {% if (post.ispremium and is_granted("IS_AUTHENTICATED_REMEMBERED")) or post.ispremium == false %}
                 <div class="row">
                     <a href="{{ post.url }}">
                         <div class="card hoverable">

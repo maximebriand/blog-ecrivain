@@ -25,71 +25,38 @@
         </div>
     </div>
 
-
-
-
     <div class="comments row">
         <h4>Les commentaires sur ce chapitre</h4>
         <form action="{{ path('dmb_blog_post', {'id': post.id}) }}" method="post" class="col s12">
-
-        <div class="col s12 form_id row col s12">
-            <div class="col s12">
-                <div class="col m6">
-                    {# Textarea #}
-                    {{ form_label(form.author, "Votre nom") }}
-                    {{ form_errors(form.author) }}
-                    {{ form_widget(form.author, {'attr': {'class': 'materialize-textarea'}}) }}
-                    {# End Textarea #}
+            <div class="col s12 form_id row col s12">
+                <div class="col s12">
+                    <p>Commenter en tant que {{ app.user.username }}</p>
+                    <p>Ce n'est pas vous ? <a href="{{ path('fos_user_security_logout') }}"> Se déconnecter</a></p>
                 </div>
-                <div class="col m6">
-                    {# Textarea #}
-                    {{ form_label(form.email, "Votre email") }}
-                    {{ form_errors(form.email) }}
-                    {{ form_widget(form.email, {'attr': {'class': 'materialize-textarea'}}) }}
-                    {# End Textarea #}
+                <div class="col s12 form_submit_comment">
+                    <div class="col s10">
+                        {{ form_label(form.content, "Votre commentaire") }}
+                        {{ form_errors(form.content) }}
+                        {{ form_widget(form.content, {'attr': {'class': 'materialize-textarea'}}) }}
+                    </div>
+                    {{ form_widget(form.save, { 'label': 'Valider'}) }}
+                    {{ form_rest(form) }}
                 </div>
             </div>
-            <div class="col s12 form_submit_comment">
-                <div class="col s10">
-                    {# Textarea #}
-                    {{ form_label(form.content, "Votre commentaire") }}
-                    {{ form_errors(form.content) }}
-                    {{ form_widget(form.content, {'attr': {'class': 'materialize-textarea'}}) }}
-                    {# End Textarea #}
-                </div>
-                {{ form_widget(form.save, { 'label': 'Valider'}) }}
-                {{ form_rest(form) }}
-
-            </div>
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-            {{ form_label(form.content, 'Your Name', {'label_attr': {'class': ''}} ) }}
-
-            {{ form_row(form.save, { 'label': 'Valider', 'attr': {'class': 'btn waves-effect waves-light'}}) }}
-
         </form>
         <ul class="collection">
             {% for comment in comments %}
                 <li class="collection-item avatar">
-                    <i class="material-icons circle green">toys</i>
+                    <div class="circle valign-wrapper">
+                        <img src="{{ vich_uploader_asset(comment.member, 'imageFile')}}" alt="avatar de {{ app.user.username }}"/>
+                    </div>
                     <div>
                         <p class="comment_heading">
-                            {{ comment.author }}
-                            {{ comment.email }}
-                            {{ comment.date|date }}
+                            Le {{ comment.date|date }},
+                            par {{ comment.member.username }}
+
                         </p>
-                        {{ comment.content|raw }}
+                        {{ comment.content }}
 
                     </div>
                 </li>
