@@ -20,7 +20,7 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $posts = $em->getRepository('DMBBlogBundle:Post')->findAll();
+        $posts = $em->getRepository('DMBBlogBundle:Post')->findAllActivePosts();
 
         return $this->render('DMBBlogBundle:Default:index.html.twig', compact('posts'));
     }
