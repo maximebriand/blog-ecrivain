@@ -29,8 +29,10 @@
         <div class="container">
             <div class="logo col s3 brand-logo">
                 {% block logo %}
-                    <i class="material-icons">&#xE02F;</i>
-                    <span>Jean Forteroche</span>
+                    <a href="{{ path('dmb_blog_homepage') }}">
+                        <i class="material-icons">&#xE02F;</i>
+                        <span>Jean Forteroche</span>
+                    </a>
                 {% endblock %}
             </div>
             <!--burger menu-->
@@ -43,7 +45,7 @@
             <ul class="col s9 right hide-on-med-and-down">
                 {% block header_navigation %}
                     <li class="active">
-                        <a href="#">
+                        <a href="{{ path('dmb_blog_homepage') }}">
                             Home
                         </a>
                     </li>
@@ -57,12 +59,14 @@
                             Crowdfund this book
                         </a>
                     </li>
-                    <li class="valign-wrapper">
+                    <li>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                            <div class="circle valign-wrapper">
-                                <img src="{{ vich_uploader_asset(app.user, 'imageFile')}}" alt="avatar de {{ app.user.username }}"/>
-                            </div>
-                            <i class="material-icons">arrow_drop_down</i>
+                            <a href="{{ path('fos_user_profile_edit') }}" class="valign-wrapper">
+                                <div class="circle valign-wrapper">
+                                    <img src="{{ vich_uploader_asset(app.user, 'imageFile')}}" alt="avatar de {{ app.user.username }}"/>
+                                </div>
+                                <i class="material-icons">arrow_drop_down</i>
+                            </a>
                         {% else %}
                             <a href="{{ path('fos_user_security_login') }}">Connexion</a> |
                             <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
