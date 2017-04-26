@@ -111,7 +111,7 @@ div.list_posts {
 
 }
 div.list_posts .row {
-    width:250px;
+    width:450px;
     margin-left: 45px;
 }
 
@@ -135,6 +135,12 @@ div.list_posts .inactive .card-action {
 
 /* 7. =POST
    ============================= */
+div.container div.post img{
+    max-width: 33%;
+    height:auto;
+    float: left;
+    margin-right: 15px;
+}
 div.container div.post {
     font-family: 'Lato', sans-serif;
     font-weight: 300;

@@ -1,4 +1,8 @@
 blog
 ====
 
-A Symfony project created on April 24, 2017, 9:48 am.
+to do:
+---
+
+- add pagination in posts with a words limit
+- add read next and previous chapter
