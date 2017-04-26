@@ -251,7 +251,7 @@ class Post
         {
             return "/post-premium/" . $this->getId();
         }
-        else if ($this->isActivated === false)
+        else if (!$this->isActivated)
         {
             return "/post-draft/" . $this->getId();
         }
