@@ -360,5 +360,11 @@ class Post
     {
         return $this->isPremium;
     }
+
+
+    /*add this method to add the post title in the admin for comment*/
+    public function __toString() {
+        return $this->getTitle();
+    }
 }
 

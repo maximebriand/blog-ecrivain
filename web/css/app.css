@@ -127,12 +127,7 @@ div.side-nav div.connected_card div.circle {
     width: 150px;
     overflow: hidden;
     margin: auto;
-<<<<<<< HEAD
-    display: flex;
-=======
->>>>>>> EasyAdmin
 }
-
 div.side-nav div.connected_card p {
     font-size: 18px;
     line-height: 18px;
