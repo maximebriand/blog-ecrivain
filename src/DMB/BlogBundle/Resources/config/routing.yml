@@ -7,8 +7,8 @@ dmb_blog_post:
     defaults: { _controller: DMBBlogBundle:Default:post }
 
 dmb_blog_page:
-    path:     /post/{id}
-    defaults: { _controller: DMBBlogBundle:Default:post }
+    path:     /page/{id}
+    defaults: { _controller: DMBBlogBundle:Default:page }
 
 dmb_blog_draft_post:
     path:     /post-draft/{id}

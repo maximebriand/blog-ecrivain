@@ -89,4 +89,16 @@ class DefaultController extends Controller
 
         return $this->render('DMBBlogBundle:Default:menu.html.twig', compact('pages'));
     }
+
+    public function pageAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $page = $em->getRepository('DMBBlogBundle:Page')->find($id);
+        if (null === $page) {
+            throw new NotFoundHttpException("La page avec l'id " . $id . " n'existe pas.");
+        }
+
+        return $this->render('DMBBlogBundle:Default:page.html.twig', compact('page'));
+
+    }
 }
