@@ -1,6 +1,7 @@
 <?php
 
 namespace DMB\BlogBundle\Repository;
+use Doctrine\Common\Collections;
 
 /**
  * postRepository
@@ -16,5 +17,13 @@ class postRepository extends \Doctrine\ORM\EntityRepository
             ->where("p.isActivated = true")
             ->getQuery()
             ->getResult();
+    }
+
+    public function findByIdChapterNumber($chapterNumber)
+    {
+        return $this->createQueryBuilder('p')
+            ->where("p.chapterNumber = $chapterNumber")
+            ->getQuery()
+            ->getOneOrNullResult(); //use to fetch the object
     }
 }

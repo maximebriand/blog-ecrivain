@@ -22,12 +22,12 @@ class DefaultController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
+        //if it is an admin we display all chapters live and draft
         if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
         {
             $posts = $em->getRepository('DMBBlogBundle:Post')->findAll();
         }
-        else
+        else //we display only live chapter
         {
             $posts = $em->getRepository('DMBBlogBundle:Post')->findAllActivePosts();
         }
@@ -46,16 +46,23 @@ class DefaultController extends Controller
             throw new NotFoundHttpException("Le chapitre avec l'id " . $id . " n'a pas encore été rédigé.");
         }
 
+        //generate previous and next chapter
+        $chapterNumber = $post->getChapterNumber();
+        $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber - 1);
+        $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber + 1);
+
+
+
+
+
         $comment = new Comment;
         $form = $this->createForm(CommentType::class, $comment);
 
-        // Si la requête est en POST
+        // If it is a POST request we manage to add comment
         if ($request->isMethod('POST')) {
 
-            // On fait le lien Requête <-> Formulaire
-            // À partir de maintenant, la variable $advert contient les valeurs entrées dans le formulaire par le visiteur
             $form->handleRequest($request);
-            $comment
+            $comment //content is get from the form we add the date, the chapter (post) and the active user
                 ->setMember($this->getUser())
                 ->setDate(new \DateTime(('now')))
                 ->setPost($post)
@@ -71,6 +78,7 @@ class DefaultController extends Controller
 
         }
 
+        //display all comments from the specific post
         $comments = $em
             ->getRepository('DMBBlogBundle:Comment')
             ->findBy(array('post' => $id), array('id' => 'desc'))
@@ -79,6 +87,8 @@ class DefaultController extends Controller
             'form' => $form->createView(),
             'post' => $post,
             'comments' => $comments,
+            'previousChapter' => $previousChapter,
+            'nextChapter' => $nextChapter,
         ));
     }
 

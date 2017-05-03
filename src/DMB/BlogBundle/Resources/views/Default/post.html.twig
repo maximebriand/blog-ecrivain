@@ -23,6 +23,22 @@
             <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
             {{ post.content|raw }}
         </div>
+
+        <div class="chapter_navigation">
+            <ul>
+                {% if previousChapter %}
+                    <li>
+                        <a href="{{ previousChapter.Url }}">Chapitre Précédent</a>
+                    </li>
+                {% endif %}
+                {% if nextChapter %}
+                    <li>
+                        <a href="{{ nextChapter.Url }}">Chapitre Suivant</a>
+                    </li>
+                {% endif %}
+            </ul>
+
+        </div>
     </div>
 
     <div class="comments row">

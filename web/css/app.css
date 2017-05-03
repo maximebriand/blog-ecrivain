@@ -199,6 +199,10 @@ div.container div.post_content {
 
 /* 8. =COMMENTS
    ============================= */
+div.comments {
+    clear: both;
+    margin-top: 25px;
+}
 p.comment_heading {
     color: #0085c1;
     font-weight: 500;
