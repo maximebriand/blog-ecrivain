@@ -15,6 +15,7 @@ class postRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->createQueryBuilder('p')
             ->where("p.isActivated = true")
+            ->andWhere("p.publishedDate < CURRENT_TIMESTAMP()")
             ->getQuery()
             ->getResult();
     }

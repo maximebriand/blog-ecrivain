@@ -1,5 +1,7 @@
 {% extends "DMBBlogBundle::layout.html.twig" %}
-
+{#
+date(post.publishedDate) < date()
+#}
 {% block content %}
     <div class="list_posts">
         {% for post in pagination  %}
@@ -30,14 +32,15 @@
                         </div>
                     </a>
                 </div>
-
             {% else %}
                 {# if the user is not register #}
                 <div class="row inactive">
                     <div class="card">
                         <div>
                             <div class="card-image">
-                                <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
+                                <div class="img_card valign-wrapper">
+                                    <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre" class="center-align">
+                                </div>
                                 <span class="card-title">
                                     {{ post.title }}
                                 </span>

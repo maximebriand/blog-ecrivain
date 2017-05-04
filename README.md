@@ -10,5 +10,8 @@ blog
 - translation
 - ~~image mandotory on submit in the chapter admin~~
 - use the publish date to display or not a chapter
-- fix user creation
+- ~~fix user creation~~
 - send emails
+- make homepage title manageable
+- manage case when next chapter is alone (should be on right)
+- manage case when next/previous chapter is premium are draft
