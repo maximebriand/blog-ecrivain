@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 use DMB\BlogBundle\Form\CommentType;
 
@@ -49,54 +50,60 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $post = $em->getRepository('DMBBlogBundle:Post')->find($id);
-        if (null === $post) {
-            throw new NotFoundHttpException("Le chapitre avec l'id " . $id . " n'a pas encore été rédigé.");
-        }
 
-        //generate previous and next chapter
-        $chapterNumber = $post->getChapterNumber();
-        $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber - 1);
-        $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber + 1);
+        if (
+            ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN') and $post !== null)
+            or ($post !== null and $post->getPublishedDate() < (new \DateTime(('now'))))
+        )
+        {
+            //generate previous and next chapter
+            $chapterNumber = $post->getChapterNumber();
+            $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber - 1);
+            $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber + 1);
 
 
 
 
 
-        $comment = new Comment;
-        $form = $this->createForm(CommentType::class, $comment);
+            $comment = new Comment;
+            $form = $this->createForm(CommentType::class, $comment);
 
-        // If it is a POST request we manage to add comment
-        if ($request->isMethod('POST')) {
+            // If it is a POST request we manage to add comment
+            if ($request->isMethod('POST')) {
 
-            $form->handleRequest($request);
-            $comment //content is get from the form we add the date, the chapter (post) and the active user
+                $form->handleRequest($request);
+                $comment //content is get from the form we add the date, the chapter (post) and the active user
                 ->setMember($this->getUser())
-                ->setDate(new \DateTime(('now')))
-                ->setPost($post)
-            ;
+                    ->setDate(new \DateTime(('now')))
+                    ->setPost($post)
+                ;
 
 
-            if ($form->isValid()) {
-                $em->persist($comment);
-                $em->flush();
-                $request->getSession()->getFlashBag()->add('notice', 'Votre commentaire a bien été enregistré.');
-                return $this->redirectToRoute('dmb_blog_post', array('id' => $id));
+                if ($form->isValid()) {
+                    $em->persist($comment);
+                    $em->flush();
+                    $request->getSession()->getFlashBag()->add('notice', 'Votre commentaire a bien été enregistré.');
+                    return $this->redirectToRoute('dmb_blog_post', array('id' => $id));
+                }
+
             }
 
+            //display all comments from the specific post
+            $comments = $em
+                ->getRepository('DMBBlogBundle:Comment')
+                ->findBy(array('post' => $id), array('id' => 'desc'))
+            ;
+            return $this->render('DMBBlogBundle:Default:post.html.twig', array(
+                'form' => $form->createView(),
+                'post' => $post,
+                'comments' => $comments,
+                'previousChapter' => $previousChapter,
+                'nextChapter' => $nextChapter,
+            ));
+        } else
+        {
+            throw new NotFoundHttpException("Le chapitre avec l'id " . $id . " n'a pas encore été rédigé.");
         }
-
-        //display all comments from the specific post
-        $comments = $em
-            ->getRepository('DMBBlogBundle:Comment')
-            ->findBy(array('post' => $id), array('id' => 'desc'))
-        ;
-        return $this->render('DMBBlogBundle:Default:post.html.twig', array(
-            'form' => $form->createView(),
-            'post' => $post,
-            'comments' => $comments,
-            'previousChapter' => $previousChapter,
-            'nextChapter' => $nextChapter,
-        ));
     }
 
     public function menuAction()
