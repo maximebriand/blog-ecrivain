@@ -1,4 +1,4 @@
-.skin-black .main-header>.logo {
-    display: flex;
-    align-items: center;
+.admin_img .vich-image img {
+    max-width: 80%;
+    height: auto;
 }

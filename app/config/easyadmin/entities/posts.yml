@@ -13,15 +13,25 @@ easy_admin:
                 - {property: 'chapterNumber', label: 'Numéro du chapitre'}
                 - {property: 'title', label: 'Chapitre'}
                 - { property: 'image', type: 'image', base_path: '%app.path.cover_images%' }
-
-            form:
+            new:
               fields:
                 - author
                 - {property: 'chapterNumber', type: 'integer' }
+                - {property: 'publishedDate', type: 'date'}
                 - isActivated
                 - isPremium
                 - {property: 'title', type: 'text'}
                 - {property: 'content', type: 'ckeditor' }
-                - { type: 'group', css_class: 'col-sm-4', label: 'Attachments', icon: 'paperclip' }
-                - { property: 'imageFile', type: 'vich_image', type_options: { required: false } }
+                - { type: 'group', css_class: 'col-sm-12', label: 'Attachments', icon: 'paperclip' }
+                - { property: 'imageFile', type: 'vich_image', css_class: 'admin_img', type_options: { required: true } }
+            edit:
+              fields:
+                - author
+                - {property: 'chapterNumber', type: 'integer' }
                 - {property: 'publishedDate', type: 'date'}
+                - isActivated
+                - isPremium
+                - {property: 'title', type: 'text'}
+                - {property: 'content', type: 'ckeditor' }
+                - { type: 'group', css_class: 'col-sm-12', label: 'Attachments', icon: 'paperclip' }
+                - { property: 'imageFile', type: 'vich_image', css_class: 'admin_img', type_options: { required: false } }
