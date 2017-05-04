@@ -57,9 +57,28 @@ class DefaultController extends Controller
         )
         {
             //generate previous and next chapter
-            $chapterNumber = $post->getChapterNumber();
-            $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber - 1);
-            $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber + 1);
+            //if it's an admin we display all chapter navagation button
+            if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
+            {
+                $chapterNumber = $post->getChapterNumber();
+                $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber - 1);
+                $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber + 1);
+            }
+            elseif ($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
+                //if it's a registered user
+            {
+                $chapterNumber = $post->getChapterNumber();
+                $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberUser($chapterNumber - 1);
+                $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberUser($chapterNumber + 1);
+            }
+            else //if it's anon user
+            {
+                $chapterNumber = $post->getChapterNumber();
+                $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberAnon($chapterNumber - 1);
+                $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberAnon($chapterNumber + 1);
+            }
+
+
 
 
 

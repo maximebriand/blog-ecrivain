@@ -20,6 +20,7 @@ class postRepository extends \Doctrine\ORM\EntityRepository
             ->getResult();
     }
 
+    //find next and previous for Admin
     public function findByIdChapterNumber($chapterNumber)
     {
         return $this->createQueryBuilder('p')
@@ -27,4 +28,27 @@ class postRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->getOneOrNullResult(); //use to fetch the object
     }
+
+    //find next and previous for user
+    public function findByIdChapterNumberUser($chapterNumber)
+    {
+        return $this->createQueryBuilder('p')
+            ->where("p.chapterNumber = $chapterNumber")
+            ->andWhere("p.isActivated = true")
+            ->getQuery()
+            ->getOneOrNullResult(); //use to fetch the object
+    }
+
+    //find next and previous for anon
+    public function findByIdChapterNumberAnon($chapterNumber)
+    {
+        return $this->createQueryBuilder('p')
+            ->where("p.chapterNumber = $chapterNumber")
+            ->andWhere("p.isActivated = true")
+            ->andWhere("p.isPremium = false")
+            ->getQuery()
+            ->getOneOrNullResult(); //use to fetch the object
+    }
+
+
 }
