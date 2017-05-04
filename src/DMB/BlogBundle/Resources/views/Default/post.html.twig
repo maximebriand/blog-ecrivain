@@ -25,16 +25,17 @@
         </div>
 
         <div class="chapter_navigation">
-            <ul>
                 {% if previousChapter %}
-                    <li>
-                        <a href="{{ previousChapter.Url }}">Chapitre Précédent</a>
-                    </li>
+                    <a href="{{ previousChapter.Url }}" class="waves-effect waves-light btn">
+                        <i class="material-icons">keyboard_arrow_left</i>
+                        Chapitre Précédent
+                    </a>
                 {% endif %}
                 {% if nextChapter %}
-                    <li>
-                        <a href="{{ nextChapter.Url }}">Chapitre Suivant</a>
-                    </li>
+                    <a href="{{ nextChapter.Url }}" class="waves-effect waves-light btn">
+                        Chapitre Suivant
+                        <i class="material-icons">keyboard_arrow_right</i>
+                    </a>
                 {% endif %}
             </ul>
 

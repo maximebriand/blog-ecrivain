@@ -196,6 +196,11 @@ div.container div.post_content {
     text-align: justify;
 }
 
+div.container div.chapter_navigation {
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+}
 
 /* 8. =COMMENTS
    ============================= */
