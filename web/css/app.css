@@ -210,9 +210,14 @@ div.container div.post_content {
 }
 
 div.container div.chapter_navigation {
+    padding-top: 25px;
     clear: both;
     display: flex;
     justify-content: space-between;
+}
+
+div.container div.chapter_navigation.right_navigation {
+    justify-content: flex-end;
 }
 
 /* 8. =COMMENTS

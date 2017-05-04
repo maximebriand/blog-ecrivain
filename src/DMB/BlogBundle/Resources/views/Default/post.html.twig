@@ -24,22 +24,30 @@
             {{ post.content|raw }}
         </div>
 
+        {% if nextChapter and previousChapter %}
+            <div class="chapter_navigation">
+                <a href="{{ previousChapter.Url }}" class="waves-effect waves-light btn">
+                    Chapitre Précédent
+                </a>
+                <a href="{{ nextChapter.Url }}" class="waves-effect waves-light btn">
+                    Chapitre Suivant
+                </a>
+            </div>
+        {% elseif previousChapter and nextChapter == null %}
         <div class="chapter_navigation">
-                {% if previousChapter %}
-                    <a href="{{ previousChapter.Url }}" class="waves-effect waves-light btn">
-                        <i class="material-icons">keyboard_arrow_left</i>
-                        Chapitre Précédent
-                    </a>
-                {% endif %}
-                {% if nextChapter %}
-                    <a href="{{ nextChapter.Url }}" class="waves-effect waves-light btn">
-                        Chapitre Suivant
-                        <i class="material-icons">keyboard_arrow_right</i>
-                    </a>
-                {% endif %}
-            </ul>
-
+            <a href="{{ previousChapter.Url }}" class="waves-effect waves-light btn">
+                Chapitre Précédent
+            </a>
         </div>
+
+        {% elseif nextChapter and previousChapter == null%}
+            <div class="chapter_navigation right_navigation">
+                <a href="{{ nextChapter.Url }}" class="waves-effect waves-light btn">
+                    Chapitre Suivant
+                </a>
+            </div>
+        {% endif %}
+
     </div>
 
     <div class="comments row">
