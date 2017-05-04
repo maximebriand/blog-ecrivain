@@ -2,16 +2,17 @@
 
 {% block content %}
     <div class="list_posts">
-        {% for post in posts  %}
+        {% for post in pagination  %}
             {% if (post.ispremium and is_granted("IS_AUTHENTICATED_REMEMBERED")) or post.ispremium == false %}
+                {# if the user is register we display premium chapter #}
                 <div class="row">
                     <a href="{{ post.url }}">
                         <div class="card hoverable">
                             <div class="card-image">
                                 <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
                                 <span class="card-title">
-                                {{ post.title }}
-                            </span>
+                                    {{ post.title }}
+                                </span>
                                 <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
                                     {{ post.chapterNumber }}
                                 </a>
@@ -30,17 +31,18 @@
                 </div>
 
             {% else %}
+                {# if the user is not register #}
                 <div class="row inactive">
                     <div class="card">
                         <div>
                             <div class="card-image">
                                 <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
                                 <span class="card-title">
-                            {{ post.title }}
-                        </span>
+                                    {{ post.title }}
+                                </span>
                                 <span class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
-                                {{ post.chapterNumber }}
-                            </span>
+                            {{ post.chapterNumber }}
+                        </span>
 
                             </div>
                             <div class="card-content">
@@ -56,12 +58,8 @@
                     </div>
                 </div>
             {% endif %}
-
-
-
-
-
-
         {% endfor %}
     </div>
+    {# display pagination #}
+    {{ knp_pagination_render(pagination) }}
 {% endblock %}

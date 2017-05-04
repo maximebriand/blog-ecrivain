@@ -171,6 +171,11 @@ div.list_posts .inactive .card-action {
     z-index: 3;
 }
 
+div.list_posts div.pagination {
+    clear: both;
+}
+
+
 /* 7. =POST
    ============================= */
 div.container div.post img{

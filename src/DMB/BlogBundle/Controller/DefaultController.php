@@ -19,7 +19,7 @@ use DMB\BlogBundle\Form\CommentType;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         //if it is an admin we display all chapters live and draft
@@ -33,7 +33,14 @@ class DefaultController extends Controller
         }
 
 
-        return $this->render('DMBBlogBundle:Default:index.html.twig', compact('posts'));
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $posts, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            10/*limit per page*/
+        );
+
+        return $this->render('DMBBlogBundle:Default:index.html.twig', compact('pagination'));
 
 
     }

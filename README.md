@@ -5,4 +5,6 @@ blog
 - css !
 - add pagination on the homepage to limit number of chapter
 - cache
-
+- comment code
+- limit number of page
+- translation

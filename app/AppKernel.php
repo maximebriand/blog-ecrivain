@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
             new Liip\ImagineBundle\LiipImagineBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
 
         ];
 
