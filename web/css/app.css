@@ -144,13 +144,21 @@ div.list_posts {
     margin-top: 45px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-
-
+    justify-content: space-between;
 }
 div.list_posts .row {
     width:450px;
     margin-left: 45px;
+}
+
+div.list_posts div.img_card {
+    height: 250px;
+    overflow: hidden;
+}
+
+div.list_posts div.img_card img {
+    height: auto;
+    width: 100%;
 }
 
 div.list_posts .row .chapter_number {

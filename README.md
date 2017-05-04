@@ -10,3 +10,5 @@ blog
 - translation
 - ~~image mandotory on submit in the chapter admin~~
 - use the publish date to display or not a chapter
+- fix user creation
+- send emails

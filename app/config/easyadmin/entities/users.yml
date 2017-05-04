@@ -17,7 +17,6 @@ easy_admin:
               - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'Membres': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' } } }
           new:
             fields:
-              - name
               - username
               - email
               - enabled

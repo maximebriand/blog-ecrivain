@@ -9,14 +9,15 @@
                     <a href="{{ post.url }}">
                         <div class="card hoverable">
                             <div class="card-image">
-                                <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
+                                <div class="img_card valign-wrapper">
+                                    <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre" class="center-align">
+                                </div>
                                 <span class="card-title">
                                     {{ post.title }}
                                 </span>
                                 <a href="{{ post.url }}" class="btn-floating halfway-fab waves-effect waves-light red chapter_number">
                                     {{ post.chapterNumber }}
                                 </a>
-
                             </div>
                             <div class="card-content">
                                 <p>
