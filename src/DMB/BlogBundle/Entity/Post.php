@@ -46,7 +46,7 @@ class Post
     /**
      * @var int
      *
-     * @ORM\Column(name="chapterNumber", type="integer")
+     * @ORM\Column(name="chapterNumber", type="integer", nullable=false, unique=true)
      */
     private $chapterNumber;
 
@@ -366,4 +366,3 @@ class Post
         return $this->getTitle();
     }
 }
-

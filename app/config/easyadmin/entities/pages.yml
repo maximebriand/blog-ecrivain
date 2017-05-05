@@ -3,6 +3,8 @@ easy_admin:
         Pages:
             class: DMB\BlogBundle\Entity\Page
             label: 'Pages statiques'
+            help: 'Attention seules les pages en position 1 et 2 seront ajoutées.'
+
 
             list:
               title: "Toutes les pages"
@@ -12,4 +14,5 @@ easy_admin:
             form:
               fields:
                 - {property: 'title', type: 'text'}
+                - { property: 'position' , type: 'integer' }
                 - {property: 'content', type: 'ckeditor' }

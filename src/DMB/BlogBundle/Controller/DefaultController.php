@@ -128,7 +128,7 @@ class DefaultController extends Controller
     public function menuAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $pages = $em->getRepository('DMBBlogBundle:Page')->findAll();
+        $pages = $em->getRepository('DMBBlogBundle:Page')->findTwoPages();
 
         return $this->render('DMBBlogBundle:Default:menu.html.twig', compact('pages'));
     }

@@ -10,4 +10,8 @@ namespace DMB\BlogBundle\Repository;
  */
 class PageRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findTwoPages()
+    {
+        return $this->findBy(array(), array('position' => 'ASC'), $limit = 2);
+    }
 }
