@@ -18,5 +18,6 @@ blog
 - translation
     - make homepage title manageable
 - css !
+    - Responsive
 - cache
 - manage error pages
