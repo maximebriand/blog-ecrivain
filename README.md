@@ -10,8 +10,11 @@ blog
 - ~~manage case when next/previous chapter is premium are draft~~
 - ~~make unique the chapter number~~
 - ~~limit number of page~~
-- comment code
 - send emails
+    - ~~register : have to custom them~~ 
+    - ~~forgot password : have to custom them~~
+    - new chapter: TBD
+- comment code
 - translation
     - make homepage title manageable
 - css !

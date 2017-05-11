@@ -88,11 +88,14 @@ fos_user:
         address: "%mailer_user%"
         sender_name: "%mailer_user%"
     registration:
+      confirmation:
+        enabled: true
       form:
         type: DMB\UserBundle\Form\RegistrationType
     profile:
       form:
         type: DMB\UserBundle\Form\ProfileFormType
+
 
 
 vich_uploader:
