@@ -34,6 +34,8 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
         //if there is at least one new chapter
         if($post)
         {
+            $users = $em->getRepository('DMBUserBundle:User')->findAll();
+            dump($users); die();
             $emailContent = "
                 <p>Bonjour, un nouveau chapitre a été mis en ligne.</p>
                 <p>Le Chapitre numéro " . $post->getChapterNumber() . " a été mis en ligne: <a href='" . $baseUrl . $post->getUrl() . "'>" . $post->getTitle() . "</a></p>
