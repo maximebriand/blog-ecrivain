@@ -27,10 +27,10 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
     {
         $this->getContainer()->get('dmb_blog.checknewchapter')
             ->sendMessage(
-                'danymaxbrice@gmail.com',
-                'danymaxbrice@gmail.com',
-                'test',
-                'coucou'
+                'danymaxbrice@gmail.com', //from
+                'danymaxbrice@gmail.com', //to
+                'test console', //subject
+                'coucou' //body
             )
         ;
     }

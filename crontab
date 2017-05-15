@@ -1,0 +1,1 @@
+* * * * * /Applications/MAMP/htdocs/blog/bin/console cron:run 1>> /dev/null 2>&1

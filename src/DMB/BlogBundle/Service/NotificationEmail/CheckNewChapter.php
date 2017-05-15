@@ -26,21 +26,6 @@ class CheckNewChapter
         $this->templating = $templating;
     }
 
-    public function sendContactMessage($contact)
-    {
-        $template = 'Benji07MainBundle:Mail:contact.html.twig';
-
-        $from = $contact->getEmail();
-
-        $to = 'admin@example.com';
-
-        $subject = '[benjamin.leveque.me] Formulaire de contact';
-
-        $body = $this->templating->render($template, array('contact' => $contact));
-
-        $this->sendMessage($from, $to, $subject, $body);
-    }
-
     public function sendMessage($from, $to, $subject, $body)
     {
         $mail = \Swift_Message::newInstance();
