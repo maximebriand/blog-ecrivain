@@ -14,10 +14,13 @@ blog
     - ~~register : have to custom them~~ 
     - ~~forgot password : have to custom them~~
     - new chapter: TBD
+        - ~~change the status to be notified from false to true~
+        - fetch the complete list of users
 - comment code
 - translation
     - make homepage title manageable
 - css !
     - Responsive
 - cache
-- manage error pages
+- manage error pages~
+- add a message if there is no post

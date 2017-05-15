@@ -89,6 +89,14 @@ class Post
      */
     private $isPremium;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_notified", type="boolean")
+     */
+    private $isNotified = "false";
+
+
 
     /**
      * Get id
@@ -364,5 +372,29 @@ class Post
     /*add this method to add the post title in the admin for comment*/
     public function __toString() {
         return $this->getTitle();
+    }
+
+    /**
+     * Set isNotified
+     *
+     * @param boolean $isNotified
+     *
+     * @return Post
+     */
+    public function setIsNotified($isNotified)
+    {
+        $this->isNotified = $isNotified;
+
+        return $this;
+    }
+
+    /**
+     * Get isNotified
+     *
+     * @return boolean
+     */
+    public function getIsNotified()
+    {
+        return $this->isNotified;
     }
 }

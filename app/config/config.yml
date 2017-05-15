@@ -27,6 +27,7 @@ framework:
     #serializer: { enable_annotations: true }
     templating:
         engines: ['twig']
+#        assets_base_url: "http://http://localhost:8000/"
     default_locale: '%locale%'
     trusted_hosts: ~
     trusted_proxies: ~
@@ -40,6 +41,7 @@ framework:
     php_errors:
         log: true
     translator: ~
+
 
 # Twig Configuration
 twig:

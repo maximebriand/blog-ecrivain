@@ -51,5 +51,16 @@ class postRepository extends \Doctrine\ORM\EntityRepository
             ->getOneOrNullResult(); //use to fetch the object
     }
 
+    public function findChapterToNotify()
+    {
+        return $this->createQueryBuilder('p')
+            ->setMaxResults(1)
+            ->where("p.isActivated = true")
+            ->andWhere("p.isNotified = false")
+            ->andWhere("p.publishedDate < CURRENT_TIMESTAMP()")
+            ->getQuery()
+            ->getOneOrNullResult(); //use to fetch the object
+    }
+
 
 }

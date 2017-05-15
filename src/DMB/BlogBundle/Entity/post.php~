@@ -89,6 +89,14 @@ class Post
      */
     private $isPremium;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="is_notified", type="boolean")
+     */
+    private $isNotified = "false";
+
+
 
     /**
      * Get id
@@ -366,4 +374,3 @@ class Post
         return $this->getTitle();
     }
 }
-
