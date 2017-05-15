@@ -33,7 +33,6 @@ class DefaultController extends Controller
             $posts = $em->getRepository('DMBBlogBundle:Post')->findAllActivePosts();
         }
 
-
         $paginator  = $this->get('knp_paginator');
         $pagination = $paginator->paginate(
             $posts, /* query NOT result */
