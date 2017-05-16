@@ -26,27 +26,31 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
     public function execute(InputInterface $input, OutputInterface $output)
     {
         $em = $this->getContainer()->get('doctrine')->getManager();
-        $post = $em->getRepository('DMBBlogBundle:Post')->findChapterToNotify();
+        $postToNotfied = $em->getRepository('DMBBlogBundle:Post')->findChapterToNotify();
+        //$postToNotfied = $em->getRepository('DMBBlogBundle:Post')->findAll();
         $context = $this->getContainer()->get('router')->getContext();
-
         $baseUrl = $context->getBaseUrl();
+        $emailContent;
 
         //if there is at least one new chapter
-        if($post)
+        if($postToNotfied)
         {
             $usersToNotified = $em->getRepository('DMBUserBundle:User')->findAll();
-
-            $emailContent = "
-                , un nouveau chapitre a été mis en ligne.</p>
-                <p>Le Chapitre numéro " . $post->getChapterNumber() . " a été mis en ligne: <a href='" . $baseUrl . $post->getUrl() . "'>" . $post->getTitle() . "</a></p>
-            ";
+            $emailContent = null;
 
             if ($usersToNotified)
             {
+
+                //for each post we create a li with data from the post
+                foreach ($postToNotfied as $post)
+                {
+                    $emailContent .= "<li>Le chapitre numéro " . $post->getChapterNumber() . " a été mis en ligne: <a href='" . $baseUrl . $post->getUrl()  . "'>" . $post->getTitle() . "</a></li>";
+                }
+
                 foreach ( $usersToNotified as $user )
                 {
-                    $completeContent = "<p>Bonjour " . $user->username . $emailContent;
-                    $userEmail = $user->email;
+                    $completeContent = "<p>Bonjour " . ucfirst($user->getUsername()) . " , un nouveau chapitre a été mis en ligne.</p><ul>" . $emailContent . "</ul>";
+                    $userEmail = $user->getEmail();
 
                     $this->getContainer()->get('dmb_blog.checknewchapter')
                         ->sendMessage(
@@ -58,10 +62,12 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
                     ;
                 }
             }
-
-            $post->setIsNotified(true);
-            $em->persist($post);
-            $em->flush();
+            foreach ($postToNotfied as $post)
+            {
+                $post->setIsNotified(true);
+                $em->persist($post);
+                $em->flush();
+            }
         }
     }
 }

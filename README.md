@@ -10,12 +10,13 @@ blog
 - ~~manage case when next/previous chapter is premium are draft~~
 - ~~make unique the chapter number~~
 - ~~limit number of page~~
-- send emails
+- ~~send emails~~
     - ~~register : have to custom them~~ 
     - ~~forgot password : have to custom them~~
     - ~~new chapter: TBD~~
         - ~~change the status to be notified from false to true~~
         - ~~fetch the complete list of users~~
+        - ~~optimize to send several new chapter~~ 
 - comment code
 - translation
     - make homepage title manageable
@@ -24,4 +25,4 @@ blog
 - cache
 - manage error pages~
 - add a message if there is no post on HP
-- optimize Doctrine requests
+- optimize Doctrine requests (fetch only data required)

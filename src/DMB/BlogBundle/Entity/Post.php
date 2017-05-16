@@ -96,8 +96,6 @@ class Post
      */
     private $isNotified = "false";
 
-
-
     /**
      * Get id
      *
@@ -397,4 +395,5 @@ class Post
     {
         return $this->isNotified;
     }
+
 }
