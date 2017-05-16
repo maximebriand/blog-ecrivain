@@ -34,22 +34,30 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
         //if there is at least one new chapter
         if($post)
         {
-            $users = $em->getRepository('DMBUserBundle:User')->findAll();
-            dump($users); die();
+            $usersToNotified = $em->getRepository('DMBUserBundle:User')->findAll();
+
             $emailContent = "
-                <p>Bonjour, un nouveau chapitre a été mis en ligne.</p>
+                , un nouveau chapitre a été mis en ligne.</p>
                 <p>Le Chapitre numéro " . $post->getChapterNumber() . " a été mis en ligne: <a href='" . $baseUrl . $post->getUrl() . "'>" . $post->getTitle() . "</a></p>
             ";
 
+            if ($usersToNotified)
+            {
+                foreach ( $usersToNotified as $user )
+                {
+                    $completeContent = "<p>Bonjour " . $user->username . $emailContent;
+                    $userEmail = $user->email;
 
-            $this->getContainer()->get('dmb_blog.checknewchapter')
-                ->sendMessage(
-                    'danymaxbrice@gmail.com', //from
-                    'danymaxbrice@gmail.com', //to
-                    'test console', //subject
-                    $emailContent //body
-                )
-            ;
+                    $this->getContainer()->get('dmb_blog.checknewchapter')
+                        ->sendMessage(
+                            'danymaxbrice@gmail.com', //from
+                            $userEmail, //to
+                            'Un nouveau Chapitre a été mis en ligne !', //subject
+                            $completeContent //body
+                        )
+                    ;
+                }
+            }
 
             $post->setIsNotified(true);
             $em->persist($post);

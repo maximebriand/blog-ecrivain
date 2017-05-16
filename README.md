@@ -13,9 +13,9 @@ blog
 - send emails
     - ~~register : have to custom them~~ 
     - ~~forgot password : have to custom them~~
-    - new chapter: TBD
-        - ~~change the status to be notified from false to true~
-        - fetch the complete list of users
+    - ~~new chapter: TBD~~
+        - ~~change the status to be notified from false to true~~
+        - ~~fetch the complete list of users~~
 - comment code
 - translation
     - make homepage title manageable
@@ -23,4 +23,5 @@ blog
     - Responsive
 - cache
 - manage error pages~
-- add a message if there is no post
+- add a message if there is no post on HP
+- optimize Doctrine requests
