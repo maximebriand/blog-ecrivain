@@ -10,7 +10,7 @@ blog
 - ~~manage case when next/previous chapter is premium are draft~~
 - ~~make unique the chapter number~~
 - ~~limit number of page~~
-- ~~send emails~~
+- ~~send emails~
     - ~~register : have to custom them~~ 
     - ~~forgot password : have to custom them~~
     - ~~new chapter: TBD~~
@@ -20,9 +20,10 @@ blog
 - comment code
 - translation
     - make homepage title manageable
+    - email content
 - css !
     - Responsive
 - cache
-- manage error pages~
+- manage error pages
 - add a message if there is no post on HP
 - optimize Doctrine requests (fetch only data required)
