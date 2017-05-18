@@ -34,7 +34,6 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
         $baseUrl = $context->getBaseUrl();
 
 
-        dump(count($postToNotfied)); die();
         //if there is at least one new chapter
         if($postToNotfied)
         {
@@ -52,14 +51,23 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
 
                 foreach ( $usersToNotified as $user )
                 {
-                    $completeContent = "<p>Bonjour " . ucfirst($user->getUsername()) . " , un nouveau chapitre a été mis en ligne.</p><ul>" . $emailContent . "</ul>";
+                    if(count($postToNotfied) === 1)
+                    {
+                        $completeContent = "<p>Bonjour " . ucfirst($user->getUsername()) . " , un nouveau chapitre a été mis en ligne.</p><ul>" . $emailContent . "</ul>";
+                        $emailSubject = "[Jean Forteroche] Un nouveau chapitre est disponible ";
+                    }
+                    else {
+                        $completeContent = "<p>Bonjour " . ucfirst($user->getUsername()) . " , plusieurs nouveaux chapitres ont été mis en ligne.</p><ul>" . $emailContent . "</ul>";
+                        $emailSubject = "[Jean Forteroche] De nouveaux chapitres sontdisponibles";
+                    }
+
                     $userEmail = $user->getEmail();
 
                     $this->getContainer()->get('dmb_blog.sendemail')
                         ->sendMessage(
                             'danymaxbrice@gmail.com', //from
                             $userEmail, //to
-                            'Un nouveau Chapitre a été mis en ligne !', //subject
+                            $emailSubject, //subject
                             $completeContent //body
                         )
                     ;

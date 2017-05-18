@@ -18,7 +18,7 @@ blog
         - ~~fetch the complete list of users~~
         - ~~optimize to send several new chapter~~ 
         - ~~change service name for send email (18/05)~~ 
-        - manage plurials (18/05)
+        - ~~manage plurials (18/05)~~ 
 - comment code (18/05)
 - translation
     - make homepage title manageable
