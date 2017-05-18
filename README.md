@@ -10,20 +10,23 @@ blog
 - ~~manage case when next/previous chapter is premium are draft~~
 - ~~make unique the chapter number~~
 - ~~limit number of page~~
-- ~~send emails~
+- ~~send emails~~
     - ~~register : have to custom them~~ 
     - ~~forgot password : have to custom them~~
     - ~~new chapter: TBD~~
         - ~~change the status to be notified from false to true~~
         - ~~fetch the complete list of users~~
         - ~~optimize to send several new chapter~~ 
-- comment code
+        - change service name for send email (18/05)
+        - manage plurials (18/05)
+- comment code (18/05)
 - translation
     - make homepage title manageable
     - email content
-- css !
+- css ! (18/05)
     - Responsive
-- cache
+- cache (19/05)
 - manage error pages
-- add a message if there is no post on HP
-- optimize Doctrine requests (fetch only data required)
+- ~~add a message if there is no post on HP~~
+- optimize Doctrine requests (fetch only data required) (18/05)
+- create anchor for comments icons (18/05)

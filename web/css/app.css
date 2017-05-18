@@ -147,7 +147,7 @@ div.list_posts {
     justify-content: space-between;
 }
 div.list_posts .row {
-    width:450px;
+    width:45%;
     margin-left: 45px;
 }
 

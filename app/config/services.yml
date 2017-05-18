@@ -12,6 +12,6 @@ services:
         class: DMB\UserBundle\Form\ProfileFormType
         tags:
           - { name: form.type, alias: app_user_modification }
-    dmb_blog.checknewchapter:
-      class: DMB\BlogBundle\Service\NotificationEmail\CheckNewChapter
+    dmb_blog.sendemail:
+      class: DMB\BlogBundle\Service\sendEmail
       arguments: ['@mailer', '@templating']

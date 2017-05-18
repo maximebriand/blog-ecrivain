@@ -41,8 +41,6 @@ class DefaultController extends Controller
         );
 
         return $this->render('DMBBlogBundle:Default:index.html.twig', compact('pagination'));
-
-
     }
 
     public function postAction($id, Request $request)

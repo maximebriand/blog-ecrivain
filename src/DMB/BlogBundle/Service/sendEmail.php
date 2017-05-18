@@ -1,18 +1,18 @@
 <?php
 
-namespace DMB\BlogBundle\Service\NotificationEmail;
+namespace DMB\BlogBundle\Service;
 
 /*
  *
  * Accessible via
- * $container->get('dmb_blog.checknewchapter');
+ * $container->get('dmb_blog.sendemail');
  *
 */
 
 use Symfony\Component\Templating\EngineInterface;
 
 
-class CheckNewChapter
+class sendEmail
 
 {
     protected $mailer;

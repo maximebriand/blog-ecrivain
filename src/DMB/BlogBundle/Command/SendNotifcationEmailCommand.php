@@ -52,7 +52,7 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
                     $completeContent = "<p>Bonjour " . ucfirst($user->getUsername()) . " , un nouveau chapitre a été mis en ligne.</p><ul>" . $emailContent . "</ul>";
                     $userEmail = $user->getEmail();
 
-                    $this->getContainer()->get('dmb_blog.checknewchapter')
+                    $this->getContainer()->get('dmb_blog.sendemail')
                         ->sendMessage(
                             'danymaxbrice@gmail.com', //from
                             $userEmail, //to

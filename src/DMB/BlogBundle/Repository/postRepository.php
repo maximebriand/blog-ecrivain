@@ -18,7 +18,6 @@ class postRepository extends \Doctrine\ORM\EntityRepository
             ->andWhere("p.publishedDate < CURRENT_TIMESTAMP()")
             ->getQuery()
             ->getResult();
-
     }
 
     //find next and previous for Admin
