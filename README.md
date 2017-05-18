@@ -17,7 +17,7 @@ blog
         - ~~change the status to be notified from false to true~~
         - ~~fetch the complete list of users~~
         - ~~optimize to send several new chapter~~ 
-        - change service name for send email (18/05)
+        - ~~change service name for send email (18/05)~~ 
         - manage plurials (18/05)
 - comment code (18/05)
 - translation
@@ -27,6 +27,6 @@ blog
     - Responsive
 - cache (19/05)
 - manage error pages
-- ~~add a message if there is no post on HP~~
+- ~add a message if there is no post on HP~~
 - optimize Doctrine requests (fetch only data required) (18/05)
 - create anchor for comments icons (18/05)

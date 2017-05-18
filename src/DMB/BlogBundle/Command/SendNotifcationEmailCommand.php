@@ -27,11 +27,14 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
     {
         $em = $this->getContainer()->get('doctrine')->getManager();
         $postToNotfied = $em->getRepository('DMBBlogBundle:Post')->findChapterToNotify();
-        //$postToNotfied = $em->getRepository('DMBBlogBundle:Post')->findAll();
+
+
+
         $context = $this->getContainer()->get('router')->getContext();
         $baseUrl = $context->getBaseUrl();
-        $emailContent;
 
+
+        dump(count($postToNotfied)); die();
         //if there is at least one new chapter
         if($postToNotfied)
         {
