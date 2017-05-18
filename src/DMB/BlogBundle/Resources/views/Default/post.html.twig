@@ -51,16 +51,16 @@
     </div>
 
     <div class="comments row">
-        <h4>Les commentaires sur ce chapitre</h4>
+        <h4 id="comments">Les commentaires sur ce chapitre</h4>
         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <form action="{{ path('dmb_blog_post', {'id': post.id}) }}" method="post" class="col s12">
-                <div class="col s12 form_id row col s12">
+                <div class="col s12 form_id row">
                     <div class="col s12">
                         <p>Commenter en tant que {{ app.user.username }}</p>
                         <p>Ce n'est pas vous ? <a href="{{ path('fos_user_security_logout') }}"> Se déconnecter</a></p>
                     </div>
-                    <div class="col s12 form_submit_comment">
-                        <div class="col s10">
+                    <div class="col s12 m4 l8 form_submit_comment">
+                        <div>
                             {{ form_label(form.content, "Votre commentaire") }}
                             {{ form_errors(form.content) }}
                             {{ form_widget(form.content, {'attr': {'class': 'materialize-textarea'}}) }}
@@ -97,7 +97,7 @@
     </div>
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large red">
+        <a href="#comments" class="btn-floating btn-large red">
             <i class="large material-icons">comment</i>
         </a>
     </div>

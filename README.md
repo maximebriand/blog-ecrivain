@@ -19,14 +19,14 @@ blog
         - ~~optimize to send several new chapter~~ 
         - ~~change service name for send email (18/05)~~ 
         - ~~manage plurials (18/05)~~ 
-- comment code (18/05)
+- ~~comment code (18/05)~~ 
 - translation
     - make homepage title manageable
     - email content
-- css ! (18/05)
-    - Responsive
+- ~~css ! (18/05)~~ 
+    - ~~Responsive~~ 
 - cache (19/05)
 - manage error pages
-- ~add a message if there is no post on HP~~
-- optimize Doctrine requests (fetch only data required) (18/05)
-- create anchor for comments icons (18/05)
+- ~~add a message if there is no post on HP~~
+- ~~optimize Doctrine requests (fetch only data required) (18/05)~~ 
+- ~~create anchor for comments icon~s (18/05)~~

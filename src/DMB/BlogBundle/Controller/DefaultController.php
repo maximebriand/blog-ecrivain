@@ -20,6 +20,7 @@ use DMB\BlogBundle\Form\CommentType;
 
 class DefaultController extends Controller
 {
+
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();

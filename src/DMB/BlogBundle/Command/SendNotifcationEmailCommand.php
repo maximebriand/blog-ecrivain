@@ -28,8 +28,6 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
         $em = $this->getContainer()->get('doctrine')->getManager();
         $postToNotfied = $em->getRepository('DMBBlogBundle:Post')->findChapterToNotify();
 
-
-
         $context = $this->getContainer()->get('router')->getContext();
         $baseUrl = $context->getBaseUrl();
 

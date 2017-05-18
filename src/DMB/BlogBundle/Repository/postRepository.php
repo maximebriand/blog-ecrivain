@@ -13,9 +13,9 @@ class postRepository extends \Doctrine\ORM\EntityRepository
 {
     public function findAllActivePosts()
     {
-        return $this->createQueryBuilder('p')
-            ->where("p.isActivated = true")
-            ->andWhere("p.publishedDate < CURRENT_TIMESTAMP()")
+        return $this->createQueryBuilder('post')
+            ->where("post.isActivated = true")
+            ->andWhere("post.publishedDate < CURRENT_TIMESTAMP()")
             ->getQuery()
             ->getResult();
     }
@@ -23,8 +23,8 @@ class postRepository extends \Doctrine\ORM\EntityRepository
     //find next and previous for Admin
     public function findByIdChapterNumber($chapterNumber)
     {
-        return $this->createQueryBuilder('p')
-            ->where("p.chapterNumber = $chapterNumber")
+        return $this->createQueryBuilder('post')
+            ->where("post.chapterNumber = $chapterNumber")
             ->getQuery()
             ->getOneOrNullResult(); //use to fetch the object
     }
@@ -32,9 +32,9 @@ class postRepository extends \Doctrine\ORM\EntityRepository
     //find next and previous for user
     public function findByIdChapterNumberUser($chapterNumber)
     {
-        return $this->createQueryBuilder('p')
-            ->where("p.chapterNumber = $chapterNumber")
-            ->andWhere("p.isActivated = true")
+        return $this->createQueryBuilder('post')
+            ->where("post.chapterNumber = $chapterNumber")
+            ->andWhere("post.isActivated = true")
             ->getQuery()
             ->getOneOrNullResult(); //use to fetch the object
     }
@@ -42,20 +42,20 @@ class postRepository extends \Doctrine\ORM\EntityRepository
     //find next and previous for anon
     public function findByIdChapterNumberAnon($chapterNumber)
     {
-        return $this->createQueryBuilder('p')
-            ->where("p.chapterNumber = $chapterNumber")
-            ->andWhere("p.isActivated = true")
-            ->andWhere("p.isPremium = false")
+        return $this->createQueryBuilder('post')
+            ->where("post.chapterNumber = $chapterNumber")
+            ->andWhere("post.isActivated = true")
+            ->andWhere("post.isPremium = false")
             ->getQuery()
             ->getOneOrNullResult(); //use to fetch the object
     }
 
     public function findChapterToNotify()
     {
-        return $this->createQueryBuilder('p')
-            ->where("p.isActivated = true")
-            ->andWhere("p.isNotified = false")
-            ->andWhere("p.publishedDate < CURRENT_TIMESTAMP()")
+        return $this->createQueryBuilder('post')
+            ->where("post.isActivated = true")
+            ->andWhere("post.isNotified = false")
+            ->andWhere("post.publishedDate < CURRENT_TIMESTAMP()")
             ->getQuery()
             ->getResult();
     }

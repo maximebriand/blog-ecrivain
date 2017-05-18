@@ -7,6 +7,7 @@
 	6. =INDEX
 	7. =POST
 	8. =COMMENTS
+	9. =RESPONSIVE
 */
 
 /* 1. =GLOBAL
@@ -256,4 +257,40 @@ div.alert-danger {
 }
 
 
+/* 9. =RESPONSIVE
+   ============================= */
 
+@media screen and (max-width: 1350px) {
+    header nav ul li {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1140px) {
+    div.logo.col.l3.brand-logo{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    div.list_posts {
+        flex-direction: column;
+    }
+    div.list_posts .row {
+        margin: auto;
+        width:100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    div.chapter_navigation a {
+        font-size: 0.8rem;
+    }
+
+    div.form_submit_comment {
+        display: flex;
+        flex-direction: column;
+    }
+}
