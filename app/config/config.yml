@@ -109,3 +109,9 @@ vich_uploader:
             avatar_images:
                 uri_prefix:         '%app.path.avatar_images%'
                 upload_destination: '%kernel.root_dir%/../web/uploads/images/avatars'
+
+
+doctrine_cache:
+  providers:
+    posts_cache:
+      type: file_system

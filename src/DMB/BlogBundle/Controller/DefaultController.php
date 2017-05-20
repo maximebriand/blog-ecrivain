@@ -23,6 +23,9 @@ class DefaultController extends Controller
 
     public function indexAction(Request $request)
     {
+        $cache = $this->get('doctrine_cache.providers.posts_cache');
+        $key = md5('list posts');
+
         $em = $this->getDoctrine()->getManager();
         //if it is an admin we display all chapters live and draft
         if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
@@ -31,7 +34,16 @@ class DefaultController extends Controller
         }
         else //we display only live chapter
         {
-            $posts = $em->getRepository('DMBBlogBundle:Post')->findAllActivePosts();
+            //cache is used only for non admin user
+            if($cache->contains($key))
+            {
+                $posts = $cache->fetch($key);
+            } else
+            {
+                $posts = $em->getRepository('DMBBlogBundle:Post')->findAllActivePosts();
+                $cache->save($key, $posts);
+            }
+
         }
 
         $paginator  = $this->get('knp_paginator');
@@ -44,10 +56,32 @@ class DefaultController extends Controller
         return $this->render('DMBBlogBundle:Default:index.html.twig', compact('pagination'));
     }
 
-    public function postAction($id, Request $request)
+    public function postAction($id, Request $request) //must think with admin without cache
     {
+        $cache = $this->get('doctrine_cache.providers.posts_cache');
         $em = $this->getDoctrine()->getManager();
-        $post = $em->getRepository('DMBBlogBundle:Post')->find($id);
+
+        $key_post = md5('post' . $id);
+
+        if($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
+        {
+            $post = $em->getRepository('DMBBlogBundle:Post')->find($id);
+            if (null === $post) {
+                throw new NotFoundHttpException("Le chapitre avec l'id " . $id . " n'a pas encore été rédigé.");
+            }
+        } else
+        {
+            //cache is used only for non admin user
+            if($cache->contains($key_post))
+            {
+                $post = $cache->fetch($key_post);
+            } else
+            {
+                $post = $em->getRepository('DMBBlogBundle:Post')->find($id);
+                $cache->save($key_post, $post);
+            }
+        }
+
 
         if (
             ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN') and $post !== null)
@@ -65,23 +99,74 @@ class DefaultController extends Controller
             elseif ($this->get('security.authorization_checker')->isGranted('ROLE_USER'))
                 //if it's a registered user
             {
+                $key_post_member = md5('posts_member' . $id);
+                $key_post_previous_member = md5('posts_previous_member' . $id);
+                $key_post_next_member = md5('posts_next_member' . $id);
+
+                //cache for post
+                if($cache->contains($key_post_member))
+                {
+                    $post = $cache->fetch($key_post_member);
+                } else
+                {
+                    $post = $em->getRepository('DMBBlogBundle:Post')->find($id);
+                    $cache->save($key_post_member, $post);
+                }
+
+                //get next and previous link button
                 $chapterNumber = $post->getChapterNumber();
-                $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberUser($chapterNumber - 1);
-                $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberUser($chapterNumber + 1);
+                //cache for pagination
+                if($cache->contains($key_post_previous_member) && $cache->contains($key_post_next_member))
+                {
+                    $previousChapter = $cache->fetch($key_post_previous_member);
+                    $nextChapter = $cache->fetch($key_post_next_member);
+
+                } else
+                {
+                    $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberUser($chapterNumber - 1);
+                    $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberUser($chapterNumber + 1);
+
+                    $cache->save($key_post_previous_member, $previousChapter);
+                    $cache->save($key_post_next_member, $nextChapter);
+                }
             }
             else //if it's anon user
             {
+                $key_post_anon = md5('posts_anon' . $id);
+                $key_post_previous_anon = md5('posts_previous_anon' . $id);
+                $key_post_next_anon = md5('posts_next_anon' . $id);
+
+                //cache for post
+                if($cache->contains($key_post_anon))
+                {
+                    $post = $cache->fetch($key_post_anon);
+                } else
+                {
+                    $post = $em->getRepository('DMBBlogBundle:Post')->find($id);
+                    $cache->save($key_post_anon, $post);
+                }
+
+                //get next and previous link button
                 $chapterNumber = $post->getChapterNumber();
-                $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberAnon($chapterNumber - 1);
-                $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberAnon($chapterNumber + 1);
+                //cache for pagination
+                if($cache->contains($key_post_previous_anon) && $cache->contains($key_post_next_anon))
+                {
+                    $previousChapter = $cache->fetch($key_post_previous_anon);
+                    $nextChapter = $cache->fetch($key_post_next_anon);
+
+                } else
+                {
+                    $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberAnon($chapterNumber - 1);
+                    $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumberAnon($chapterNumber + 1);
+
+                    $cache->save($key_post_previous_anon, $previousChapter);
+                    $cache->save($key_post_next_anon, $nextChapter);
+
+                }
             }
 
 
-
-
-
-
-
+            //comments part
             $comment = new Comment;
             $form = $this->createForm(CommentType::class, $comment);
 
