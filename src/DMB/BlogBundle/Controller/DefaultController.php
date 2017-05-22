@@ -2,17 +2,8 @@
 
 namespace DMB\BlogBundle\Controller;
 
-use DMB\BlogBundle\DMBBlogBundle;
 use DMB\BlogBundle\Entity\Comment;
-use DMB\BlogBundle\Entity\Post;
-use DMB\UserBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\FormType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -23,21 +14,20 @@ class DefaultController extends Controller
 
     public function indexAction(Request $request)
     {
-        $cache = $this->get('doctrine_cache.providers.posts_cache');
         $key = md5('list posts');
 
         $em = $this->getDoctrine()->getManager();
         //if it is an admin we display all chapters live and draft
         if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
         {
-            $posts = $em->getRepository('DMBBlogBundle:Post')->findAll();
+            $posts = $em->getRepository('DMBBlogBundle:Post')->findAllPostsOrderByChapter();
         }
         else //we display only live chapter
         {
             //cache is used only for non admin user
-            $cache_service = $this->get('dmb_blog.checkcache');
-            $doctrine = $em->getRepository('DMBBlogBundle:Post')->findAllActivePosts();
-            $posts = $cache_service->checkIfStoredInCache($key, $doctrine);
+            $cache = $this->get('dmb_blog.checkcache');
+            $doctrine = $em->getRepository('DMBBlogBundle:Post')->findAllActivePostsOrderByChapter();
+            $posts = $cache->checkIfStoredInCache($key, $doctrine);
 
         }
 
@@ -53,7 +43,6 @@ class DefaultController extends Controller
 
     public function postAction($id, Request $request) //must think with admin without cache
     {
-        $cache = $this->get('doctrine_cache.providers.posts_cache');
         $em = $this->getDoctrine()->getManager();
 
         $key_post = md5('post' . $id);
@@ -67,9 +56,9 @@ class DefaultController extends Controller
         } else
         {
             //cache is used only for non admin user
-            $cache_service = $this->get('dmb_blog.checkcache');
+            $cache = $this->get('dmb_blog.checkcache');
             $doctrine = $em->getRepository('DMBBlogBundle:Post')->find($id);
-            $post = $cache_service->checkIfStoredInCache($key_post, $doctrine);
+            $post = $cache->checkIfStoredInCache($key_post, $doctrine);
         }
 
         $chapterNumber = $post->getChapterNumber();
@@ -93,20 +82,20 @@ class DefaultController extends Controller
                 $key_post_next_member = md5('posts_next_anon' . $id);
 
                 //cache for post
-                $cache_service = $this->get('dmb_blog.checkcache');
+                $cache = $this->get('dmb_blog.checkcache');
 
 
                 $doctrine = $em->getRepository('DMBBlogBundle:Post')->find($id);
-                $post = $cache_service->checkIfStoredInCache($key_post_member, $doctrine);
+                $post = $cache->checkIfStoredInCache($key_post_member, $doctrine);
 
-                $previousChapter = $cache_service
+                $previousChapter = $cache
                     ->checkIfStoredInCache($key_post_previous_member,
                         $em
                             ->getRepository('DMBBlogBundle:Post')
                             ->findByIdChapterNumberUser($chapterNumber - 1)
                     )
                 ;
-                $nextChapter = $cache_service
+                $nextChapter = $cache
                     ->checkIfStoredInCache($key_post_next_member,
                         $em
                             ->getRepository('DMBBlogBundle:Post')
@@ -121,20 +110,20 @@ class DefaultController extends Controller
                 $key_post_next_anon = md5('posts_next_anon' . $id);
 
                 //cache for post
-                $cache_service = $this->get('dmb_blog.checkcache');
+                $cache = $this->get('dmb_blog.checkcache');
 
 
                 $doctrine = $em->getRepository('DMBBlogBundle:Post')->find($id);
-                $post = $cache_service->checkIfStoredInCache($key_post_anon, $doctrine);
+                $post = $cache->checkIfStoredInCache($key_post_anon, $doctrine);
 
-                $previousChapter = $cache_service
+                $previousChapter = $cache
                     ->checkIfStoredInCache($key_post_previous_anon,
                         $em
                             ->getRepository('DMBBlogBundle:Post')
                             ->findByIdChapterNumberUser($chapterNumber - 1)
                     )
                 ;
-                $nextChapter = $cache_service
+                $nextChapter = $cache
                     ->checkIfStoredInCache($key_post_next_anon,
                         $em
                             ->getRepository('DMBBlogBundle:Post')

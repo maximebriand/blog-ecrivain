@@ -26,6 +26,7 @@ blog
 - ~~css ! (18/05)~~ 
     - ~~Responsive~~ 
 - ~~cache (19/05)~~ 
+    - ~~create a service to optimize code~~
 - manage error pages
 - ~~add a message if there is no post on HP~~
 - ~~optimize Doctrine requests (fetch only data required) (18/05)~~ 

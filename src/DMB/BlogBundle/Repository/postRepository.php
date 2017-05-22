@@ -11,10 +11,16 @@ use Doctrine\Common\Collections;
  */
 class postRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function findAllActivePosts()
+
+    public function findAllPostsOrderByChapter()
+    {
+        return $this->findBy(array(), array('chapterNumber' => 'ASC'));
+    }
+    public function findAllActivePostsOrderByChapter()
     {
         return $this->createQueryBuilder('post')
             ->where("post.isActivated = true")
+            ->orderBy("post.chapterNumber")
             ->andWhere("post.publishedDate < CURRENT_TIMESTAMP()")
             ->getQuery()
             ->getResult();

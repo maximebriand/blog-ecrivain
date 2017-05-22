@@ -26,8 +26,6 @@ class checkCache
     }
 
     public function checkIfStoredInCache($key, $doctrine) {
-
-
         if($this->cache->contains($key))
         {
             $value = $this->cache->fetch($key);
@@ -36,8 +34,6 @@ class checkCache
             $value = $doctrine;
             $this->cache->save($key, $value);
         }
-        return $value;
-
         return $value;
     }
 }
