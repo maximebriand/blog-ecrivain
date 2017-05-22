@@ -149,7 +149,9 @@ div.list_posts {
 }
 div.list_posts .row {
     width:45%;
+    /*
     margin-left: 45px;
+    */
 }
 
 div.list_posts div.img_card {
