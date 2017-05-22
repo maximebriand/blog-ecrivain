@@ -35,14 +35,9 @@ class DefaultController extends Controller
         else //we display only live chapter
         {
             //cache is used only for non admin user
-            if($cache->contains($key))
-            {
-                $posts = $cache->fetch($key);
-            } else
-            {
-                $posts = $em->getRepository('DMBBlogBundle:Post')->findAllActivePosts();
-                $cache->save($key, $posts);
-            }
+            $cache_service = $this->get('dmb_blog.checkcache');
+            $doctrine = $em->getRepository('DMBBlogBundle:Post')->findAllActivePosts();
+            $posts = $cache_service->checkIfStoredInCache($key, $doctrine);
 
         }
 

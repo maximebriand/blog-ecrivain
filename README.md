@@ -31,3 +31,8 @@ blog
 - ~~optimize Doctrine requests (fetch only data required) (18/05)~~ 
 - ~~create anchor for comments icon~s (18/05)~~
 - create fixture for the production and installation
+
+
+
+
+puis refaire la logique correctement dans Default Controller et certainement décommenter

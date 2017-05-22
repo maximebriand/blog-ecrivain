@@ -112,6 +112,8 @@ vich_uploader:
 
 
 doctrine_cache:
+  aliases:
+    posts_cache : posts_cache
   providers:
     posts_cache:
       type: file_system

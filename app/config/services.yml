@@ -13,5 +13,8 @@ services:
         tags:
           - { name: form.type, alias: app_user_modification }
     dmb_blog.sendemail:
-      class: DMB\BlogBundle\Service\sendEmail
-      arguments: ['@mailer', '@templating']
+        class: DMB\BlogBundle\Service\sendEmail
+        arguments: ['@mailer', '@templating']
+    dmb_blog.checkcache:
+        class: DMB\BlogBundle\Service\checkCache
+        arguments: ['@posts_cache']
