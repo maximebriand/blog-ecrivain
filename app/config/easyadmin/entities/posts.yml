@@ -2,16 +2,16 @@ easy_admin:
     entities:
         Posts:
             class: DMB\BlogBundle\Entity\Post
-            label: 'Chapitres'
+            label: 'Chapters'
             show:
               fields:
                   - { property: 'image', type: 'image', base_path: '%app.path.cover_images%' }
 
             list:
-              title: "Tous les chapitres"
+              title: "All chapters"
               fields:
-                - {property: 'chapterNumber', label: 'Numéro du chapitre'}
-                - {property: 'title', label: 'Chapitre'}
+                - {property: 'chapterNumber', label: 'Chapter number'}
+                - {property: 'title', label: 'Chapter'}
                 - { property: 'image', type: 'image', base_path: '%app.path.cover_images%' }
             new:
               fields:

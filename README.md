@@ -33,7 +33,8 @@ blog
 - ~~create anchor for comments icon~s (18/05)~~
 - create fixture for the production and installation
 - ~~order by chapter number on the HP~~
-
+- css for comment part
+- Cron remove inactive user to notify
 
 
  

@@ -2,14 +2,14 @@ easy_admin:
     entities:
         Pages:
             class: DMB\BlogBundle\Entity\Page
-            label: 'Pages statiques'
-            help: 'Attention seules les pages en position 1 et 2 seront ajoutées.'
+            label: 'Static Pages'
+            help: 'Warning.post.page'
 
 
             list:
-              title: "Toutes les pages"
+              title: "All pages"
               fields:
-                - {property: 'title', label: 'Titre de la page'}
+                - {property: 'title', label: 'Page title'}
 
             form:
               fields:

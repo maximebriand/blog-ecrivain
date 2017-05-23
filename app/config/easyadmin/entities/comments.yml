@@ -2,18 +2,18 @@ easy_admin:
     entities:
         Posts:
             class: DMB\BlogBundle\Entity\Comment
-            label: 'Modération'
+            label: 'Moderation'
 
             list:
-              title: "Tous les commentaires"
+              title: "All comments"
               fields:
-                - {property: 'post', label: 'Chapitre'}
-                - {property: 'date', label: 'Posté le'}
-                - {property: 'member', label: 'Membre'}
+                - {property: 'post', label: 'Chapter'}
+                - {property: 'date', label: 'Posted on'}
+                - {property: 'member', label: 'Member'}
 
             form:
               fields:
-                - {property: 'post', label: 'Chapitre'}
-                - {property: 'date', label: 'Posté le'}
-                - {property: 'member', label: 'Membre'}
-                - {property: 'content', label: 'Contenu'}
+                - {property: 'post', label: 'Chapter'}
+                - {property: 'date', label: 'Posted on'}
+                - {property: 'member', label: 'Member'}
+                - {property: 'content', label: 'Content'}

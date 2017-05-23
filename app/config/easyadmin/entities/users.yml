@@ -2,9 +2,14 @@ easy_admin:
     entities:
         Users:
           class: DMB\UserBundle\Entity\User
-          label: 'Membres'
+          label: 'Members'
           list:
-            title: "Tous les membres"
+            title: "All members"
+            fields:
+              - username
+              - email
+              - enabled
+              - lastLogin
           edit:
             fields:
               - username
@@ -14,7 +19,7 @@ easy_admin:
               - lastLogin
               - { property: 'imageFile', type: 'vich_image', type_options: { required: true } }
               # if administrators are allowed to edit users' passwords and roles, add this:
-              - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'Membres': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' } } }
+              - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'Members': 'ROLE_USER', 'Administrator': 'ROLE_ADMIN' } } }
           new:
             fields:
               - username
@@ -24,7 +29,7 @@ easy_admin:
               - { property: 'imageFile', type: 'vich_image', type_options: { required: true } }
 
               # if administrators are allowed to edit users' passwords and roles, add this:
-              - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'Membres': 'ROLE_USER', 'Administrateur': 'ROLE_ADMIN' } } }
+              - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'Members': 'ROLE_USER', 'Administrator': 'ROLE_ADMIN' } } }
 
 
 

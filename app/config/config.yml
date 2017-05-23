@@ -11,12 +11,12 @@ parameters:
     locale: fr
     app.path.cover_images: /uploads/images/covers
     app.path.avatar_images: /uploads/images/avatars
-
+    posts_cache_type: file_system
 
 
 framework:
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.root_dir%/config/routing.yml'
@@ -40,7 +40,6 @@ framework:
     assets: ~
     php_errors:
         log: true
-    translator: ~
 
 
 # Twig Configuration
@@ -116,4 +115,4 @@ doctrine_cache:
     posts_cache : posts_cache
   providers:
     posts_cache:
-      type: file_system
+      type: %posts_cache_type%
