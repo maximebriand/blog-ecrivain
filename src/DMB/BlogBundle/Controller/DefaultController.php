@@ -177,7 +177,18 @@ class DefaultController extends Controller
     public function menuAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $pages = $em->getRepository('DMBBlogBundle:Page')->findTwoPages();
+        $key = md5('menu_pages');
+        $doctrine = $em->getRepository('DMBBlogBundle:Page')->findTwoPages();
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
+        {
+            $pages = $doctrine;
+        }
+        else
+        {
+            $cache = $this->get('dmb_blog.checkcache');
+            $pages = $cache->checkIfStoredInCache($key, $doctrine);
+        }
+
 
         return $this->render('DMBBlogBundle:Default:menu.html.twig', compact('pages'));
     }
@@ -185,8 +196,19 @@ class DefaultController extends Controller
     public function pageAction($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $page = $em->getRepository('DMBBlogBundle:Page')->find($id);
-        if (null === $page) {
+        $key = md5('page' . $id);
+        $doctrine = $em->getRepository('DMBBlogBundle:Page')->find($id);
+        if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
+        {
+            $page = $doctrine;
+        }
+        else
+        {
+            $cache = $this->get('dmb_blog.checkcache');
+            $page = $cache->checkIfStoredInCache($key, $doctrine);
+        }
+
+        if ($page === null ) {
             throw new NotFoundHttpException("La page avec l'id " . $id . " n'existe pas.");
         }
 
