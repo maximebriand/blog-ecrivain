@@ -35,7 +35,7 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
         //if there is at least one new chapter
         if($postToNotfied)
         {
-            $usersToNotified = $em->getRepository('DMBUserBundle:User')->findAll();
+            $usersToNotified = $em->getRepository('DMBUserBundle:User')->findAllActiveUsers();
             $emailContent = null;
 
             if ($usersToNotified)

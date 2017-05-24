@@ -10,4 +10,11 @@ namespace DMB\UserBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllActiveUsers()
+    {
+        return $this->createQueryBuilder('user')
+            ->where("user.enabled = true")
+            ->getQuery()
+            ->getResult();
+    }
 }

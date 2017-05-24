@@ -35,7 +35,7 @@ blog
 - create fixture for the production and installation
 - ~~order by chapter number on the HP~~
 - ~~css for comment part~~
-- Cron remove inactive user to notify
+- ~~Cron remove inactive user to notify~~
 - cache add static pages and menu
 
  
