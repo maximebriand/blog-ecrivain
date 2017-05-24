@@ -33,5 +33,9 @@ Author: Auteur
 'Is activated': 'Disponible à la lecture'
 'Is premium': 'Réservé aux membres'
 Attachments: Illustation
-Plain password: Mot de passe
+'Plain password': 'Mot de passe'
 Roles: Rôle
+'%page_title%': 'Super page title'
+'%main_title%': 'Super titre du blog'
+page_title: blop
+main_title: 'super titre'

@@ -20,9 +20,10 @@ blog
         - ~~change service name for send email (18/05)~~ 
         - ~~manage plurials (18/05)~~ 
 - ~~comment code (18/05)~~ 
-- translation
-    - make homepage title manageable
-    - email content
+- ~~translation~~
+    - ~~missing translations~~ 
+    - ~~make homepage title manageable (did on translation file)~~
+    - ~~email content~~
 - ~~css ! (18/05)~~ 
     - ~~Responsive~~ 
 - ~~cache (19/05)~~ 
@@ -35,6 +36,6 @@ blog
 - ~~order by chapter number on the HP~~
 - css for comment part
 - Cron remove inactive user to notify
-
+- cache add static pages and menu
 
  

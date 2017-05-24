@@ -29,7 +29,11 @@ Enabled: Activé
 Title: Titre
 Position: Position
 Author: Auteur
-Published date: Date de publication
-Is activated: Disponible à la lecture
-Is premium: Réservé aux membres
+'Published date': 'Date de publication'
+'Is activated': 'Disponible à la lecture'
+'Is premium': 'Réservé aux membres'
 Attachments: Illustation
+'Plain password': 'Mot de passe'
+Roles: Rôle
+'%page_title%': Super page title
+'%main_title%': Super titre du blog
