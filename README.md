@@ -20,7 +20,7 @@ blog
         - ~~change service name for send email (18/05)~~ 
         - ~~manage plurials (18/05)~~ 
 - ~~comment code (18/05)~~ 
-- ~~translation~~
+- ~~translation~
     - ~~missing translations~~ 
     - ~~make homepage title manageable (did on translation file)~~
     - ~~email content~~
@@ -34,7 +34,7 @@ blog
 - ~~create anchor for comments icon~s (18/05)~~
 - create fixture for the production and installation
 - ~~order by chapter number on the HP~~
-- css for comment part
+- ~~css for comment part~~
 - Cron remove inactive user to notify
 - cache add static pages and menu
 

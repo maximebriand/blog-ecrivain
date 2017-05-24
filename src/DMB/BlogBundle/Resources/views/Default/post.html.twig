@@ -59,7 +59,7 @@
                         <p>Commenter en tant que {{ app.user.username }}</p>
                         <p>Ce n'est pas vous ? <a href="{{ path('fos_user_security_logout') }}"> Se déconnecter</a></p>
                     </div>
-                    <div class="col s12 m4 l8 form_submit_comment">
+                    <div class="col s12 m12 l12 form_submit_comment">
                         <div>
                             {{ form_label(form.content, "Your comment") }}
                             {{ form_errors(form.content) }}

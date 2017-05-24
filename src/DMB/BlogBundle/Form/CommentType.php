@@ -23,7 +23,7 @@ class CommentType extends AbstractType
         $builder
             ->add('content',   TextareaType::class)
             ->add('save',      SubmitType::class, array(
-                'attr' => array('class' => 'col s8 m4 l2 btn waves-effect waves-light')
+                'attr' => array('class' => 'col s4 m2 l2 btn waves-effect waves-light')
             ))
         ;
     }
