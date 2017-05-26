@@ -37,8 +37,8 @@ blog
 - ~~css for comment part~~
 - ~~Cron remove inactive user to notify~~
 - ~~cache add static pages and menu~~ 
-- optimize cache service with roles management
+- ~~optimize cache service with roles management~~
     - ~~page and menu~~
-    - post and index page to do, might have to change the logical in the service
+    - ~~post and index page to do, might have to change the logical in the service~~
 
  

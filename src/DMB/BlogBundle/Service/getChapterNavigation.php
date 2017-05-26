@@ -17,14 +17,14 @@ namespace DMB\BlogBundle\Service;
 
 class getChapterNavigation
 {
-    public function getChapter($roles, $chapterNumber, $post, $id, $em)
+    public function getChapter($roles, $chapterNumber, $post, $id, $em, $cache)
     {
         if (
             ($roles->isGranted('ROLE_ADMIN') and $post !== null)
             or ($post !== null and $post->getPublishedDate() < (new \DateTime(('now'))))
         ) {
             //generate previous and next chapter
-            //if it's an admin we display all chapter navagation button
+            //if it's an admin we display all chapter navigation button
             if ($roles->isGranted('ROLE_ADMIN')) {
                 $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber - 1);
                 $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber + 1);
@@ -34,8 +34,6 @@ class getChapterNavigation
                 $key_post_next_member = md5('posts_next_anon' . $id);
 
                 //cache for post
-                $cache = $this->get('dmb_blog.checkcache');
-
                 $doctrine = $em->getRepository('DMBBlogBundle:Post')->find($id);
                 $post = $cache->checkIfStoredInCache($key_post_member, $doctrine);
 
@@ -58,9 +56,6 @@ class getChapterNavigation
                 $key_post_next_anon = md5('posts_next_anon' . $id);
 
                 //cache for post
-                $cache = $this->get('dmb_blog.checkcache');
-
-
                 $doctrine = $em->getRepository('DMBBlogBundle:Post')->find($id);
                 $post = $cache->checkIfStoredInCache($key_post_anon, $doctrine);
 

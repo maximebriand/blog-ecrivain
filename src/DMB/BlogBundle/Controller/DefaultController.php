@@ -46,6 +46,7 @@ class DefaultController extends Controller
         $em = $this->getDoctrine()->getManager();
         $roles = $this->get('security.authorization_checker');
         $key_post = md5('post' . $id);
+        $cache = $this->get('dmb_blog.checkcache');
 
         if($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
         {
@@ -53,7 +54,6 @@ class DefaultController extends Controller
         } else
         {
             //cache is used only for non admin user
-            $cache = $this->get('dmb_blog.checkcache');
             $doctrine = $em->getRepository('DMBBlogBundle:Post')->find($id);
             $post = $cache->checkIfStoredInCache($key_post, $doctrine);
         }
@@ -64,7 +64,7 @@ class DefaultController extends Controller
 
         $chapterNumber = $post->getChapterNumber();
         $chapterNavigation = $this->get('dmb_blog.getchapternavigation');
-        $chapterNavigationArray = $chapterNavigation->getChapter($roles, $chapterNumber, $post, $id, $em);
+        $chapterNavigationArray = $chapterNavigation->getChapter($roles, $chapterNumber, $post, $id, $em, $cache);
 
         $previousChapter = $chapterNavigationArray["previousChapter"];
         $nextChapter = $chapterNavigationArray["nextChapter"];
