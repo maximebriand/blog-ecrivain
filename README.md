@@ -28,7 +28,7 @@ blog
     - ~~Responsive~~ 
 - ~~cache (19/05)~~ 
     - ~~create a service to optimize code~~
-- manage error pages
+- ~~manage error pages~~
 - ~~add a message if there is no post on HP~~
 - ~~optimize Doctrine requests (fetch only data required) (18/05)~~ 
 - ~~create anchor for comments icon~s (18/05)~~
@@ -41,4 +41,4 @@ blog
     - ~~page and menu~~
     - ~~post and index page to do, might have to change the logical in the service~~
 
- 
+ - fail with post /premium-post can be replace by post

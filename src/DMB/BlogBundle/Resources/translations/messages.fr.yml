@@ -39,3 +39,5 @@ Roles: Rôle
 '%main_title%': 'Super titre du blog'
 page_title: blop
 main_title: 'super titre'
+oups_message: 'Oups une erreur est servenue'
+error_message: 'Veillez nous excuser de la gêne occasionée'
