@@ -18,7 +18,6 @@ namespace DMB\BlogBundle\Service;
 
 class checkCache
 {
-
     private $cache;
 
     public function __construct($cache) {
@@ -34,6 +33,20 @@ class checkCache
             $value = $doctrine;
             $this->cache->save($key, $value);
         }
+        return $value;
+    }
+
+    public function checkIfStoredInCacheByRoles ($key, $doctrine, $roles)
+    {
+        if ($roles->isGranted('ROLE_ADMIN'))
+        {
+            $value = $doctrine;
+        }
+        else
+        {
+            $value = $this->checkIfStoredInCache($key, $doctrine);
+        }
+
         return $value;
     }
 }
