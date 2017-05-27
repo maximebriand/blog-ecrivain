@@ -41,4 +41,4 @@ blog
     - ~~page and menu~~
     - ~~post and index page to do, might have to change the logical in the service~~
 
- - fail with post /premium-post can be replace by post
+ - ~~fail with post /premium-post c~an be replace by post~~ 
