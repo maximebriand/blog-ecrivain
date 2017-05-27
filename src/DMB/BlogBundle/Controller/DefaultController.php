@@ -43,6 +43,8 @@ class DefaultController extends Controller
 
     public function postAction($id, Request $request) //must think with admin without cache
     {
+
+
         $em = $this->getDoctrine()->getManager();
         $roles = $this->get('security.authorization_checker');
         $key_post = md5('post' . $id);
@@ -57,8 +59,14 @@ class DefaultController extends Controller
             $doctrine = $em->getRepository('DMBBlogBundle:Post')->find($id);
             $post = $cache->checkIfStoredInCache($key_post, $doctrine);
         }
-        
-        if ($post === null) {
+
+        if($post !== null)
+        {
+            $post = $this->get('dmb_blog.checkpath')->isProtected($post->getUrl(), $roles, $post);
+        }
+
+
+        if ($post === null || $isAccessible = false) {
             throw new NotFoundHttpException("Le chapitre avec l'id " . $id . " n'a pas encore été rédigé.");
         }
 

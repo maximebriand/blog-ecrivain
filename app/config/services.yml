@@ -21,3 +21,5 @@ services:
     dmb_blog.getchapternavigation:
         class: DMB\BlogBundle\Service\getChapterNavigation
         arguments: ['@posts_cache']
+    dmb_blog.checkpath:
+        class: DMB\BlogBundle\Service\checkPath
