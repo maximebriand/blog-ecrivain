@@ -49,7 +49,7 @@ class LoadUsers  extends AbstractFixture implements OrderedFixtureInterface, Con
                 ->setEnabled(true)
                 ->setUpdatedAt(new \DateTime("now"))
                 ->setPassword($encodedPassword)
-                ->setImage("avatar" . $i .".jpg")
+                ->setImage("avatar_" . ($i + 1) .".jpg")
             ;
 
             $this->addReference('user-'.$i, $user);
