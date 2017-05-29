@@ -35,9 +35,7 @@ Author: Auteur
 Attachments: Illustation
 'Plain password': 'Mot de passe'
 Roles: Rôle
-'%page_title%': 'Super page title'
-'%main_title%': 'Super titre du blog'
-page_title: blop
-main_title: 'super titre'
+page_title: '20 000 Lieux sous les Mers | Le livre en ligne | Blog'
+main_title: '20 000 Lieux sous les Mers'
 oups_message: 'Oups une erreur est servenue'
 error_message: 'Veillez nous excuser de la gêne occasionée'
