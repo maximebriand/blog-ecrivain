@@ -17,4 +17,13 @@ class UserRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findByEmail($email)
+    {
+        return $this->createQueryBuilder('user')
+            ->where("user.email = '$email'")
+            ->getQuery()
+            ->getOneOrNullResult(); //use to fetch the object
+    }
+
 }

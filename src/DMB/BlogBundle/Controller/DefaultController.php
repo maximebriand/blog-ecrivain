@@ -63,6 +63,7 @@ class DefaultController extends Controller
         if($post !== null)
         {
             $post = $this->get('dmb_blog.checkpath')->isProtected($post->getUrl(), $roles, $post);
+
         }
 
 

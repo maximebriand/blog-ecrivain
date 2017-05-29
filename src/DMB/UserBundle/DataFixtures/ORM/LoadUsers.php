@@ -32,7 +32,6 @@ class LoadUsers  extends AbstractFixture implements OrderedFixtureInterface, Con
         $user->setEnabled(true);
         $user->setPassword($encoder->encodePassword($user, '1234'));
         $manager->persist($user);
-
         foreach (range(0, 9) as $i)
         {
 
