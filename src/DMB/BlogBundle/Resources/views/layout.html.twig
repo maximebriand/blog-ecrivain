@@ -81,8 +81,10 @@
                             <p>Hi {{ app.user.username }}!</p>
                         </div>
                     {% else %}
-                        <a href="{{ path('fos_user_security_login') }}">Connexion</a> |
-                        <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
+                        <div class="connected_card center-align">
+                            <a href="{{ path('fos_user_security_login') }}">Connexion</a> |
+                            <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
+                        </div>
                     {% endif %}
                     <ul>
                         <li class="active">
