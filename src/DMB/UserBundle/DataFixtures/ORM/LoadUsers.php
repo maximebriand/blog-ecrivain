@@ -24,28 +24,33 @@ class LoadUsers  extends AbstractFixture implements OrderedFixtureInterface, Con
 
         // 'Jean Forteroche' is the admin user allowed to access the admin
         $user = new User();
-        $user->setUsername('Jean Forteroche');
-        $user->setEmail('jean.forteroche@maximebriand.fr');
-        $user->setRoles(array('ROLE_ADMIN'));
-        $user->setImage("jean_forteroche.jpg");
-        $user->setUpdatedAt(new \DateTime("now"));
-        $user->setEnabled(true);
-        $user->setPassword($encoder->encodePassword($user, '1234'));
+        $user
+            ->setUsername('Jean Forteroche')
+            ->setEmail('jean.forteroche@maximebriand.fr')
+            ->setRoles(array('ROLE_ADMIN'))
+            ->setUpdatedAt(new \DateTime("now"))
+            ->setEnabled(true)
+            ->setPassword($encoder->encodePassword($user, '1234'))
+            ->setImage("jean_forteroche.jpg")
+        ;
+
         $manager->persist($user);
+
         foreach (range(0, 9) as $i)
         {
-
-            $user = new User();
-            $user->setUsername('user'.$i);
-            $user->setEmail('user'.$i.'@example.com');
-            $user->setRoles(array('ROLE_USER'));
-            $user->setEnabled(true);
-            $user->setImage("avatar" . $i .".jpg");
-            $user->setUpdatedAt(new \DateTime("now"));
-
             $plainPassword = 'password'.$i;
             $encodedPassword = $encoder->encodePassword($user, $plainPassword);
-            $user->setPassword($encodedPassword);
+
+            $user = new User();
+            $user
+                ->setUsername('user'.$i)
+                ->setEmail('user'.$i.'@example.com')
+                ->setRoles(array('ROLE_USER'))
+                ->setEnabled(true)
+                ->setUpdatedAt(new \DateTime("now"))
+                ->setPassword($encodedPassword)
+                ->setImage("avatar" . $i .".jpg")
+            ;
 
             $this->addReference('user-'.$i, $user);
             $manager->persist($user);
