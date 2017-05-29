@@ -28,9 +28,9 @@ class LoadComments  extends AbstractFixture implements OrderedFixtureInterface, 
         $comment = new Comment();
         $comment
             ->setContent('Jean Forteroche')
-            ->setMember($user_list[1])
+            ->setMember($user_list[rand(0, 9)])
             ->setDate(new \DateTime('now'))
-            ->setPost($post_list[1])
+            ->setPost($post_list[rand(0, 9)])
         ;
 
         $manager->persist($comment);
