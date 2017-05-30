@@ -86,22 +86,7 @@
                             <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
                         </div>
                     {% endif %}
-                    <ul>
-                        <li class="active">
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                About me and this book
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Crowdfund this book
-                            </a>
-                        </li>
+                    {{ render(controller("DMBBlogBundle:Default:menu")) }}
                     </ul>
                 {% endblock %}
             </div>

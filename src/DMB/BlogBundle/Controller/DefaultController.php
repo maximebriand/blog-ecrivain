@@ -116,7 +116,6 @@ class DefaultController extends Controller
         ));
 
     }
-
     public function menuAction()
     {
         $em = $this->getDoctrine()->getManager();
