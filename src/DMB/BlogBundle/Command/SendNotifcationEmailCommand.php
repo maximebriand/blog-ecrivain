@@ -75,9 +75,9 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
             {
                 $post->setIsNotified(true);
                 $em->persist($post);
-                $em->flush();
             }
         }
+        $em->flush();
     }
 }
 
