@@ -16,6 +16,7 @@ namespace DMB\BlogBundle\Service;
 
 use DMB\BlogBundle\Entity\Post;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class checkPath
 {
@@ -52,6 +53,9 @@ class checkPath
             $isGranted = null;
         }
 
+        if ($isGranted === null) {
+            throw new NotFoundHttpException("Le chapitre avec l'id " . $post->getId() . " n'a pas encore été rédigé.");
+        }
         return $isGranted;
     }
 }

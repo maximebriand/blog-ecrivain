@@ -17,7 +17,7 @@ services:
         arguments: ['@mailer', '@templating']
     dmb_blog.checkcache:
         class: DMB\BlogBundle\Service\checkCache
-        arguments: ['@posts_cache']
+        arguments: ['@posts_cache', '@dmb_blog.checkpath']
     dmb_blog.getchapternavigation:
         class: DMB\BlogBundle\Service\getChapterNavigation
         arguments: ['@posts_cache']

@@ -21,10 +21,13 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 class checkCache
 {
     private $cache;
+    private $path;
 
-    public function __construct($cache) {
+    public function __construct($cache, checkPath $path) {
         $this->cache = $cache;
+        $this->path = $path;
     }
+
 
     public function checkIfStoredInCache($key, $doctrine) {
         if($this->cache->contains($key))
@@ -50,5 +53,17 @@ class checkCache
         }
 
         return $value;
+    }
+
+    public function checkIfPostStoredInCache($key, $dotrine, AuthorizationCheckerInterface $roles)
+    {
+        $post = $this->checkIfStoredInCacheByRoles($key, $dotrine, $roles);
+
+        if($post !== null)
+        {
+            $post = $this->path->isProtected($post->getUrl(), $roles, $post);
+        }
+
+        return $post;
     }
 }

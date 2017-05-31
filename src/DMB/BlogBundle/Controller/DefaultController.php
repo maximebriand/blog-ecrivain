@@ -48,25 +48,8 @@ class DefaultController extends Controller
         $key_post = md5('post' . $id);
         $cache = $this->get('dmb_blog.checkcache');
 
-        if($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
-        {
-            $post = $em->getRepository('DMBBlogBundle:Post')->find($id);
-        } else
-        {
-            //cache is used only for non admin user
-            $doctrine = $em->getRepository('DMBBlogBundle:Post')->find($id);
-            $post = $cache->checkIfStoredInCache($key_post, $doctrine);
-        }
 
-        if($post !== null)
-        {
-            $post = $this->get('dmb_blog.checkpath')->isProtected($post->getUrl(), $roles, $post);
-        }
-
-
-        if ($post === null || $isAccessible = false) {
-            throw new NotFoundHttpException("Le chapitre avec l'id " . $id . " n'a pas encore été rédigé.");
-        }
+        $post = $cache->checkIfPostStoredInCache($key_post, $em->getRepository('DMBBlogBundle:Post')->find($id), $this->get('security.authorization_checker'));
 
         $chapterNumber = $post->getChapterNumber();
         $chapterNavigation = $this->get('dmb_blog.getchapternavigation');
