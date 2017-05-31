@@ -14,10 +14,13 @@ namespace DMB\BlogBundle\Service;
  *
 */
 
+use DMB\BlogBundle\Entity\Post;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
 class checkPath
 {
 
-    public function isProtected($path, $role, $post)
+    public function isProtected($path, AuthorizationCheckerInterface $role, Post $post)
     {
 
         if (preg_match("#draft#", $path))

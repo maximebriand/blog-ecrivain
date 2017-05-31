@@ -15,9 +15,13 @@ namespace DMB\BlogBundle\Service;
 */
 
 
+use DMB\BlogBundle\Entity\Post;
+use Doctrine\ORM\EntityManager;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
 class getChapterNavigation
 {
-    public function getChapter($roles, $chapterNumber, $post, $id, $em, $cache)
+    public function getChapter(AuthorizationCheckerInterface $roles, $chapterNumber,Post $post, $id, EntityManager $em, $cache)
     {
 
         if (

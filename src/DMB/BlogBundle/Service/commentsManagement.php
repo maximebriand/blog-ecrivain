@@ -13,19 +13,29 @@ namespace DMB\BlogBundle\Service;
  * $container->get('dmb_blog.commentsmanagement');
  *
 */
-use DMB\BlogBundle\Form\CommentType;
 use DMB\BlogBundle\Entity\Comment;
+use DMB\BlogBundle\Entity\Post;
+use Doctrine\ORM\EntityManager;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class commentsManagement
 {
-    public function addComment($request, $id, $em, $container, $post,Comment $comment)
+    private $container;
+
+    public function __construct()
+    {
+        $this->container = new ContainerBuilder();
+    }
+
+    public function addComment(Request $request, $id, EntityManager $em,Post $post,Comment $comment)
     {
         // If it is a POST request we manage to add comment
         if ($request->isMethod('POST')) {
 
             $form->handleRequest($request);
             $comment //content is get from the form we add the date, the chapter (post) and the active user
-            ->setMember($container->getUser())
+            ->setMember($this->container->getUser())
                 ->setDate(new \DateTime(('now')))
                 ->setPost($post)
             ;
@@ -35,7 +45,7 @@ class commentsManagement
                 $em->persist($comment);
                 $em->flush();
                 $request->getSession()->getFlashBag()->add('notice', 'Votre commentaire a bien été enregistré.');
-                return $container->redirectToRoute('dmb_blog_post', array('id' => $id));
+                return $this->container->redirectToRoute('dmb_blog_post', array('id' => $id));
             }
 
         }
