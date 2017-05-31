@@ -19,6 +19,7 @@ class getChapterNavigation
 {
     public function getChapter($roles, $chapterNumber, $post, $id, $em, $cache)
     {
+
         if (
             ($roles->isGranted('ROLE_ADMIN') && $post !== null)
             || ($post !== null && $post->getPublishedDate() < (new \DateTime(('now'))))

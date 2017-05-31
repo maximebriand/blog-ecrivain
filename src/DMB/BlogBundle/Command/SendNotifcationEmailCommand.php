@@ -15,7 +15,7 @@ class SendNotifcationEmailCommand extends ContainerAwareCommand
             ->setName('notification:check-new-chapter')
 
             // the short description shown while running "php bin/console list"
-            ->setDescription('Check if there is a new chapter avaible.')
+            ->setDescription('Check if there is a new chapter available.')
 
             // the full command description shown when running the command with
             // the "--help" option

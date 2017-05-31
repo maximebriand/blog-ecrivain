@@ -6,8 +6,8 @@ use DMB\BlogBundle\Entity\Comment;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
 use DMB\BlogBundle\Form\CommentType;
+
 
 class DefaultController extends Controller
 {
@@ -43,8 +43,6 @@ class DefaultController extends Controller
 
     public function postAction($id, Request $request) //must think with admin without cache
     {
-
-
         $em = $this->getDoctrine()->getManager();
         $roles = $this->get('security.authorization_checker');
         $key_post = md5('post' . $id);
@@ -63,7 +61,6 @@ class DefaultController extends Controller
         if($post !== null)
         {
             $post = $this->get('dmb_blog.checkpath')->isProtected($post->getUrl(), $roles, $post);
-
         }
 
 
@@ -81,26 +78,8 @@ class DefaultController extends Controller
         //comments part
         $comment = new Comment;
         $form = $this->createForm(CommentType::class, $comment);
-
-        // If it is a POST request we manage to add comment
-        if ($request->isMethod('POST')) {
-
-            $form->handleRequest($request);
-            $comment //content is get from the form we add the date, the chapter (post) and the active user
-            ->setMember($this->getUser())
-                ->setDate(new \DateTime(('now')))
-                ->setPost($post)
-            ;
-
-
-            if ($form->isValid()) {
-                $em->persist($comment);
-                $em->flush();
-                $request->getSession()->getFlashBag()->add('notice', 'Votre commentaire a bien été enregistré.');
-                return $this->redirectToRoute('dmb_blog_post', array('id' => $id));
-            }
-
-        }
+        $addComment = $this->get('dmb_blog.commentsmanagement');
+        $addComment->addComment($request, $id, $em, $this, $post, $comment);
 
         //display all comments from the specific post
         $comments = $em

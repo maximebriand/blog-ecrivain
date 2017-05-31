@@ -23,3 +23,5 @@ services:
         arguments: ['@posts_cache']
     dmb_blog.checkpath:
         class: DMB\BlogBundle\Service\checkPath
+    dmb_blog.commentsmanagement:
+        class: DMB\BlogBundle\Service\commentsManagement
