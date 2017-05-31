@@ -21,7 +21,15 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 class getChapterNavigation
 {
-    public function getChapter(AuthorizationCheckerInterface $roles, $chapterNumber,Post $post, $id, EntityManager $em, $cache)
+
+    private $em;
+
+    public function __construct(EntityManager $em)
+    {
+        $this->em = $em;
+    }
+
+    public function getChapter(AuthorizationCheckerInterface $roles, $chapterNumber,Post $post, $id, $cache)
     {
 
         if (
@@ -31,21 +39,21 @@ class getChapterNavigation
             //generate previous and next chapter
             //if it's an admin we display all chapter navigation button
             if ($roles->isGranted('ROLE_ADMIN')) {
-                $previousChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber - 1);
-                $nextChapter = $em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber + 1);
+                $previousChapter = $this->em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber - 1);
+                $nextChapter = $this->em->getRepository('DMBBlogBundle:Post')->findByIdChapterNumber($chapterNumber + 1);
             } elseif ($roles->isGranted('ROLE_USER')) {//if it's a registered user
                 $key_post_previous_member = md5('posts_previous_anon' . $id);
                 $key_post_next_member = md5('posts_next_anon' . $id);
 
                 $previousChapter = $cache
                     ->checkIfStoredInCache($key_post_previous_member,
-                        $em
+                        $this->em
                             ->getRepository('DMBBlogBundle:Post')
                             ->findByIdChapterNumberUser($chapterNumber - 1)
                     );
                 $nextChapter = $cache
                     ->checkIfStoredInCache($key_post_next_member,
-                        $em
+                        $this->em
                             ->getRepository('DMBBlogBundle:Post')
                             ->findByIdChapterNumberUser($chapterNumber + 1)
                     );
@@ -56,13 +64,13 @@ class getChapterNavigation
 
                 $previousChapter = $cache
                     ->checkIfStoredInCache($key_post_previous_anon,
-                        $em
+                        $this->em
                             ->getRepository('DMBBlogBundle:Post')
                             ->findByIdChapterNumberUser($chapterNumber - 1)
                     );
                 $nextChapter = $cache
                     ->checkIfStoredInCache($key_post_next_anon,
-                        $em
+                        $this->em
                             ->getRepository('DMBBlogBundle:Post')
                             ->findByIdChapterNumberUser($chapterNumber + 1)
                     );

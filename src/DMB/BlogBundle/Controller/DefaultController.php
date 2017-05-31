@@ -62,7 +62,7 @@ class DefaultController extends Controller
         $comment = new Comment;
         $form = $this->createForm(CommentType::class, $comment);
         $addComment = $this->get('dmb_blog.commentsmanagement');
-        $addComment->addComment($request, $id, $em, $post, $comment);
+        $addComment->addComment($request, $id, $post, $comment);
 
         //display all comments from the specific post
         $comments = $em
