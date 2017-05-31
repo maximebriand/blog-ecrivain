@@ -16,6 +16,8 @@ namespace DMB\BlogBundle\Service;
 
 
 
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
+
 class checkCache
 {
     private $cache;
@@ -36,7 +38,7 @@ class checkCache
         return $value;
     }
 
-    public function checkIfStoredInCacheByRoles ($key, $doctrine, $roles)
+    public function checkIfStoredInCacheByRoles ($key, $doctrine, AuthorizationCheckerInterface $roles)
     {
         if ($roles->isGranted('ROLE_ADMIN'))
         {
