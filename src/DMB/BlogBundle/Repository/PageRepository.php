@@ -12,6 +12,11 @@ class PageRepository extends \Doctrine\ORM\EntityRepository
 {
     public function findTwoPages()
     {
-        return $this->findBy(array(), array('position' => 'ASC'), $limit = 2);
+        return $this->createQueryBuilder('page')
+            ->where('page.position IS NOT NULL')
+            ->orderBy("page.position")
+            ->setMaxResults(2)
+            ->getQuery()
+            ->getResult();
     }
 }
