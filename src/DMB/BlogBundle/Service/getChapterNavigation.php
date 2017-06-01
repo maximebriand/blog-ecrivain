@@ -23,13 +23,15 @@ class getChapterNavigation
 {
 
     private $em;
+    private $cache;
 
-    public function __construct(EntityManager $em)
+    public function __construct(checkCache $cache, EntityManager $em)
     {
+        $this->cache = $cache;
         $this->em = $em;
     }
 
-    public function getChapter(AuthorizationCheckerInterface $roles, $chapterNumber,Post $post, $id, $cache)
+    public function getChapter(AuthorizationCheckerInterface $roles, $chapterNumber,Post $post, $id)
     {
 
         if (
@@ -45,13 +47,13 @@ class getChapterNavigation
                 $key_post_previous_member = md5('posts_previous_anon' . $id);
                 $key_post_next_member = md5('posts_next_anon' . $id);
 
-                $previousChapter = $cache
+                $previousChapter = $this->cache
                     ->checkIfStoredInCache($key_post_previous_member,
                         $this->em
                             ->getRepository('DMBBlogBundle:Post')
                             ->findByIdChapterNumberUser($chapterNumber - 1)
                     );
-                $nextChapter = $cache
+                $nextChapter = $this->cache
                     ->checkIfStoredInCache($key_post_next_member,
                         $this->em
                             ->getRepository('DMBBlogBundle:Post')
@@ -62,13 +64,13 @@ class getChapterNavigation
                 $key_post_previous_anon = md5('posts_previous_anon' . $id);
                 $key_post_next_anon = md5('posts_next_anon' . $id);
 
-                $previousChapter = $cache
+                $previousChapter = $this->cache
                     ->checkIfStoredInCache($key_post_previous_anon,
                         $this->em
                             ->getRepository('DMBBlogBundle:Post')
                             ->findByIdChapterNumberUser($chapterNumber - 1)
                     );
-                $nextChapter = $cache
+                $nextChapter = $this->cache
                     ->checkIfStoredInCache($key_post_next_anon,
                         $this->em
                             ->getRepository('DMBBlogBundle:Post')

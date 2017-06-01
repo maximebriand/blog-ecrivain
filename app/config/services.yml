@@ -20,7 +20,7 @@ services:
         arguments: ['@posts_cache', '@dmb_blog.checkpath']
     dmb_blog.getchapternavigation:
         class: DMB\BlogBundle\Service\getChapterNavigation
-        arguments: ['@doctrine.orm.entity_manager']
+        arguments: ['@dmb_blog.checkcache', '@doctrine.orm.entity_manager']
     dmb_blog.checkpath:
         class: DMB\BlogBundle\Service\checkPath
     dmb_blog.commentsmanagement:
