@@ -62,7 +62,7 @@ class Post
      *
      * @ORM\Column(name="is_activated", type="boolean")
      */
-    private $isActivated;
+    private $activated;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -87,14 +87,14 @@ class Post
      *
      * @ORM\Column(name="is_premium", type="boolean")
      */
-    private $isPremium;
+    private $premium;
 
     /**
      * @var boolean
      *
      * @ORM\Column(name="is_notified", type="boolean")
      */
-    private $isNotified = "false";
+    private $notified = "false";
 
     /**
      * Get id
@@ -252,11 +252,11 @@ class Post
 
     public function getUrl()
     {
-        if ($this->isPremium)
+        if ($this->premium)
         {
             return "/post-premium/" . $this->getId();
         }
-        else if (!$this->isActivated)
+        else if (!$this->activated)
         {
             return "/post-draft/" . $this->getId();
         }
@@ -267,27 +267,27 @@ class Post
     }
 
     /**
-     * Set isActivated
+     * Set activated
      *
-     * @param boolean $isActivated
+     * @param boolean $activated
      *
      * @return Post
      */
-    public function setIsActivated($isActivated)
+    public function setActivated($activated)
     {
-        $this->isActivated = $isActivated;
+        $this->activated = $activated;
 
         return $this;
     }
 
     /**
-     * Get isActivated
+     * Get activated
      *
      * @return boolean
      */
-    public function getIsActivated()
+    public function getActivated()
     {
-        return $this->isActivated;
+        return $this->activated;
     }
 
     public function setImageFile(File $image = null)
@@ -343,27 +343,27 @@ class Post
     }
 
     /**
-     * Set isPremium
+     * Set premium
      *
-     * @param boolean $isPremium
+     * @param boolean $premium
      *
      * @return Post
      */
-    public function setIsPremium($isPremium)
+    public function setPremium($premium)
     {
-        $this->isPremium = $isPremium;
+        $this->premium = $premium;
 
         return $this;
     }
 
     /**
-     * Get isPremium
+     * Get premium
      *
      * @return boolean
      */
-    public function getIsPremium()
+    public function getPremium()
     {
-        return $this->isPremium;
+        return $this->premium;
     }
 
 
@@ -373,27 +373,27 @@ class Post
     }
 
     /**
-     * Set isNotified
+     * Set notified
      *
-     * @param boolean $isNotified
+     * @param boolean $notified
      *
      * @return Post
      */
-    public function setIsNotified($isNotified)
+    public function setNotified($notified)
     {
-        $this->isNotified = $isNotified;
+        $this->notified = $notified;
 
         return $this;
     }
 
     /**
-     * Get isNotified
+     * Get notified
      *
      * @return boolean
      */
-    public function getIsNotified()
+    public function getNotified()
     {
-        return $this->isNotified;
+        return $this->notified;
     }
 
 }
