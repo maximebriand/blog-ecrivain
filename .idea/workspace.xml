@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a90e2044-807b-4f5d-a215-dd54e223b3ef" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkCache.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckCache.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkPath.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckPath.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/commentsManagement.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CommentsManagement.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/getChapterNavigation.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/GetChapterNavigation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/sendEmail.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/SendEmail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/GetChapterNavigation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
-              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+              <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
               <folding>
                 <element signature="e#215#246#0#PHP" expanded="true" />
               </folding>
@@ -83,18 +79,31 @@
         <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckCache.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
-              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/services.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="532">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="742">
+                <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -181,7 +190,6 @@
         <option value="$PROJECT_DIR$/app/config/pagination.yml" />
         <option value="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Admin/PostAdmin.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml" />
@@ -198,6 +206,7 @@
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckPath.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckCache.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -769,7 +778,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92168000" />
+    <option name="totallyTimeSpent" value="92261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1002" extended-state="6" />
@@ -7581,17 +7590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="761">
-            <caret line="53" column="2" lean-forward="false" selection-start-line="53" selection-start-column="2" selection-end-line="53" selection-end-column="2" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Controller/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -7643,7 +7641,7 @@
     <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/GetChapterNavigation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
-          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+          <caret line="30" column="24" lean-forward="false" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding>
             <element signature="e#215#246#0#PHP" expanded="true" />
           </folding>
@@ -7673,7 +7671,7 @@
     <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckCache.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
-          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -7681,8 +7679,19 @@
     <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="742">
+            <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
