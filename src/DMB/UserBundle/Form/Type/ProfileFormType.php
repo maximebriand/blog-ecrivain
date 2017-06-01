@@ -1,6 +1,6 @@
 <?php
 
-namespace DMB\UserBundle\Form;
+namespace DMB\UserBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

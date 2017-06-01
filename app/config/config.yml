@@ -92,10 +92,10 @@ fos_user:
       confirmation:
         enabled: true
       form:
-        type: DMB\UserBundle\Form\RegistrationType
+        type: DMB\UserBundle\Form\Type\RegistrationType
     profile:
       form:
-        type: DMB\UserBundle\Form\ProfileFormType
+        type: DMB\UserBundle\Form\Type\ProfileFormType
 
 
 
