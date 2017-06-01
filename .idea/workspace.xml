@@ -2,62 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a90e2044-807b-4f5d-a215-dd54e223b3ef" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/ApplicationSonataMediaBundle.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Document/Gallery.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Document/Media.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Entity/Gallery.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Entity/GalleryHasMedia.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Entity/Media.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/Gallery.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/GalleryHasMedia.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/GalleryHasMediaRepository.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/GalleryRepository.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/Media.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/PHPCR/MediaRepository.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Gallery.mongodb.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Gallery.orm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Gallery.phpcr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/GalleryHasMedia.orm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/GalleryHasMedia.phpcr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Media.mongodb.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Media.orm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/doctrine/Media.phpcr.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Document.Gallery.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Document.GalleryHasMedia.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Document.Media.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Entity.Gallery.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Entity.GalleryHasMedia.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Application/Sonata/MediaBundle/Resources/config/serializer/Entity.Media.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/avatars/51516021766__DE8C8708-8FC3-44B5-8A01-5EF1F3539DEB.JPG.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/avatars/Capture d’écran 2016-11-24 à 09.59.43.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/avatars/Capture d’écran 2017-01-13 à 08.59.10.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/avatars/Image Messages(810125824).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/uploads/images/avatars/photo_id.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/apple-touch-icon.png" afterPath="$PROJECT_DIR$/web/apple-touch-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favicon.ico" afterPath="$PROJECT_DIR$/web/favicon.ico" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" afterPath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config_dev.yml" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/easyadmin/config.yml" afterPath="$PROJECT_DIR$/app/config/easyadmin/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/easyadmin/entities/pages.yml" afterPath="$PROJECT_DIR$/app/config/easyadmin/entities/pages.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/easyadmin/entities/users.yml" afterPath="$PROJECT_DIR$/app/config/easyadmin/entities/users.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/pagination.yml" afterPath="$PROJECT_DIR$/app/config/pagination.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Admin/PostAdmin.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Admin/PostAdmin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Controller/AdminController.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Controller/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkCache.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkCache.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkPath.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkPath.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/commentsManagement.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/commentsManagement.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/getChapterNavigation.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/getChapterNavigation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/sendEmail.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/sendEmail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/UserBundle/Form/ProfileFormType.php" afterPath="$PROJECT_DIR$/src/DMB/UserBundle/Form/ProfileFormType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/UserBundle/Form/RegistrationType.php" afterPath="$PROJECT_DIR$/src/DMB/UserBundle/Form/RegistrationType.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,13 +16,21 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-796">
+              <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cache =</find>
-      <find>With</find>
-      <find>$roles$roles</find>
       <find>checkIfStoredInCacheByRoles</find>
       <find>get</find>
       <find>checkcache</find>
@@ -105,6 +58,9 @@
       <find>IsActivated</find>
       <find>$cache</find>
       <find>commentsma</find>
+      <find>ispremium</find>
+      <find>isprem</find>
+      <find>is</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -163,13 +119,13 @@
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Admin/PostAdmin.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Controller/AdminController.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkCache.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkPath.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/commentsManagement.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/getChapterNavigation.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/sendEmail.php" />
+        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig" />
       </list>
     </option>
   </component>
@@ -741,17 +697,17 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91530000" />
+    <option name="totallyTimeSpent" value="91611000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1002" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17252396" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17252396" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -7596,14 +7552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -7654,6 +7602,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-796">
+          <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="43" />
           <folding />
         </state>
       </provider>

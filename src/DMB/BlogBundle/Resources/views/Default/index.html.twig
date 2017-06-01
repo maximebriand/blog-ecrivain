@@ -5,7 +5,7 @@
     <div class="list_posts">
         {% if pagination is not empty %}
             {% for post in pagination  %}
-                {% if (post.ispremium and is_granted("IS_AUTHENTICATED_REMEMBERED")) or post.ispremium == false %}
+                {% if (post.premium and is_granted("IS_AUTHENTICATED_REMEMBERED")) or post.premium == false %}
                     {# if the user is register we display premium chapter #}
                     <div class="row">
                         <a href="{{ post.url }}">
