@@ -4,8 +4,6 @@ namespace DMB\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
-use Gedmo\Mapping\Annotation as Gedmo;
-// N'oubliez pas de rajouter ce « use », il définit le namespace pour les annotations de validation
 use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Comment
