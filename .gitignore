@@ -15,6 +15,5 @@
 /vendor/
 /web/bundles/
 /.git
-/.idea
 .idea/
 .idea/*
