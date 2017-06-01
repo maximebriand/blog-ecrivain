@@ -18,7 +18,7 @@ namespace DMB\BlogBundle\Service;
 
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
-class checkCache
+class CheckCache
 {
     private $cache;
     private $path;

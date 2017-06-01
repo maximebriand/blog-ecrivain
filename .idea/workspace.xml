@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a90e2044-807b-4f5d-a215-dd54e223b3ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkCache.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckCache.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkPath.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckPath.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/commentsManagement.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CommentsManagement.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/getChapterNavigation.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/GetChapterNavigation.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/sendEmail.php" afterPath="$PROJECT_DIR$/src/DMB/BlogBundle/Service/SendEmail.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,11 +23,77 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-796">
-              <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="43" />
+            <state relative-caret-position="-470">
+              <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentsManagement.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/CommentsManagement.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+              <folding>
+                <element signature="e#211#245#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckPath.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckPath.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+              <folding>
+                <element signature="e#203#234#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetChapterNavigation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/GetChapterNavigation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
+              <folding>
+                <element signature="e#215#246#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SendEmail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/SendEmail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckCache.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckCache.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/config/services.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -75,11 +147,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/css/app.css" />
-        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/post.html.twig" />
-        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Form/CommentType.php" />
-        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Controller/ApplicationController" />
-        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/DependencyInjection/ApplicationController" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/ApplicationControll" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Controller/ApplicationController.php" />
         <option value="$PROJECT_DIR$/var/SymfonyRequirements.php" />
@@ -112,7 +179,6 @@
         <option value="$PROJECT_DIR$/app/config/easyadmin/entities/pages.yml" />
         <option value="$PROJECT_DIR$/app/config/easyadmin/entities/users.yml" />
         <option value="$PROJECT_DIR$/app/config/pagination.yml" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -126,6 +192,12 @@
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/getChapterNavigation.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/sendEmail.php" />
         <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/SendEmail.php" />
+        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/GetChapterNavigation.php" />
+        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CommentsManagement.php" />
+        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckPath.php" />
+        <option value="$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckCache.php" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
       </list>
     </option>
   </component>
@@ -697,7 +769,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91611000" />
+    <option name="totallyTimeSpent" value="92168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1002" extended-state="6" />
@@ -707,7 +779,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32857144" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -751,7 +823,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkCache.php</url>
+          <url>file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckCache.php</url>
           <line>55</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -7477,14 +7549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="51" lean-forward="true" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/pagination.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -7544,14 +7608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkCache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="69" column="0" lean-forward="true" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
@@ -7568,48 +7624,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/checkPath.php">
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="e#203#234#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="-470">
+          <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/commentsManagement.php">
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/SendEmail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#211#245#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="266">
+          <caret line="14" column="15" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/getChapterNavigation.php">
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/GetChapterNavigation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="475">
+          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
           <folding>
             <element signature="e#215#246#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/sendEmail.php">
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/CommentsManagement.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="437">
+          <caret line="28" column="28" lean-forward="false" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding>
+            <element signature="e#211#245#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckPath.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="7" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="7" />
+          <folding>
+            <element signature="e#203#234#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Service/CheckCache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="28" column="5" lean-forward="true" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DMB/BlogBundle/Resources/views/Default/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-796">
-          <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="43" />
+        <state relative-caret-position="532">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>

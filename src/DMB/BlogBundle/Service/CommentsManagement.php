@@ -19,7 +19,7 @@ use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class commentsManagement
+class CommentsManagement
 {
     private $container;
     private $em;

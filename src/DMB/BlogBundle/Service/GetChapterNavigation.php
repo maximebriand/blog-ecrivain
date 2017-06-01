@@ -19,7 +19,7 @@ use DMB\BlogBundle\Entity\Post;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
-class getChapterNavigation
+class GetChapterNavigation
 {
 
     private $em;

@@ -18,7 +18,7 @@ use DMB\BlogBundle\Entity\Post;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class checkPath
+class CheckPath
 {
 
     public function isProtected($path, AuthorizationCheckerInterface $role, Post $post)

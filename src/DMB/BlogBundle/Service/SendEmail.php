@@ -12,8 +12,7 @@ namespace DMB\BlogBundle\Service;
 use Symfony\Component\Templating\EngineInterface;
 
 
-class sendEmail
-
+class SendEmail
 {
     protected $mailer;
 

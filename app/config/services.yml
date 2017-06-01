@@ -13,16 +13,16 @@ services:
         tags:
           - { name: form.type, alias: app_user_modification }
     dmb_blog.sendemail:
-        class: DMB\BlogBundle\Service\sendEmail
+        class: DMB\BlogBundle\Service\SendEmail
         arguments: ['@mailer', '@templating']
     dmb_blog.checkcache:
-        class: DMB\BlogBundle\Service\checkCache
+        class: DMB\BlogBundle\Service\CheckCache
         arguments: ['@posts_cache', '@dmb_blog.checkpath']
     dmb_blog.getchapternavigation:
-        class: DMB\BlogBundle\Service\getChapterNavigation
+        class: DMB\BlogBundle\Service\GetChapterNavigation
         arguments: ['@dmb_blog.checkcache', '@doctrine.orm.entity_manager']
     dmb_blog.checkpath:
-        class: DMB\BlogBundle\Service\checkPath
+        class: DMB\BlogBundle\Service\CheckPath
     dmb_blog.commentsmanagement:
-        class: DMB\BlogBundle\Service\commentsManagement
+        class: DMB\BlogBundle\Service\CommentsManagement
         arguments: ['@doctrine.orm.entity_manager']
