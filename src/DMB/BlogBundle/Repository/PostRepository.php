@@ -19,7 +19,7 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
     public function findAllActivePostsOrderByChapter()
     {
         return $this->createQueryBuilder('post')
-            ->where("post.isActivated = true")
+            ->where("post.activated = true")
             ->orderBy("post.chapterNumber")
             ->andWhere("post.publishedDate < CURRENT_TIMESTAMP()")
             ->getQuery()
@@ -40,7 +40,7 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->createQueryBuilder('post')
             ->where("post.chapterNumber = $chapterNumber")
-            ->andWhere("post.isActivated = true")
+            ->andWhere("post.activated = true")
             ->getQuery()
             ->getOneOrNullResult(); //use to fetch the object
     }
@@ -50,8 +50,8 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->createQueryBuilder('post')
             ->where("post.chapterNumber = $chapterNumber")
-            ->andWhere("post.isActivated = true")
-            ->andWhere("post.isPremium = false")
+            ->andWhere("post.activated = true")
+            ->andWhere("post.premium = false")
             ->getQuery()
             ->getOneOrNullResult(); //use to fetch the object
     }
@@ -59,8 +59,8 @@ class PostRepository extends \Doctrine\ORM\EntityRepository
     public function findChapterToNotify()
     {
         return $this->createQueryBuilder('post')
-            ->where("post.isActivated = true")
-            ->andWhere("post.isNotified = false")
+            ->where("post.activated = true")
+            ->andWhere("post.notified = false")
             ->andWhere("post.publishedDate < CURRENT_TIMESTAMP()")
             ->getQuery()
             ->getResult();
