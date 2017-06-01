@@ -51,3 +51,4 @@ blog
   6) php bin/console doctrine:schema:create
   7) php bin/console doctrine:fixtures:load
   
+  
