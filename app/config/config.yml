@@ -116,3 +116,7 @@ doctrine_cache:
   providers:
     posts_cache:
       type: %posts_cache_type%
+
+connections:
+  default:
+    server_version: 5.6
