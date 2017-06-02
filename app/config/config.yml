@@ -62,7 +62,7 @@ doctrine:
               port:                 '%database_port%'
               user:                 '%database_user%'
               password:             '%database_password%'
-              charset:              ~UTF8
+              charset:              UTF8
               path:                 ~
               memory:               ~
 
