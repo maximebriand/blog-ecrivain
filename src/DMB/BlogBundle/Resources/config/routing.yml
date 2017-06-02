@@ -1,22 +1,27 @@
 dmb_blog_homepage:
     path:     /
     defaults: { _controller: DMBBlogBundle:Default:index }
+    methods:  [GET, HEAD]:
 
 dmb_blog_post:
     path:     /post/{id}
     defaults: { _controller: DMBBlogBundle:Default:post }
+    methods:  [GET, HEAD]
 
 dmb_blog_page:
     path:     /page/{id}
     defaults: { _controller: DMBBlogBundle:Default:page }
+    methods:  [GET, HEAD]
 
 dmb_blog_draft_post:
     path:     /post-draft/{id}
     defaults: { _controller: DMBBlogBundle:Default:post }
+    methods:  [GET, HEAD]
 
 dmb_blog_premium_post:
     path:     /post-premium/{id}
     defaults: { _controller: DMBBlogBundle:Default:post }
+    methods:  [GET, HEAD]
 
 easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/AdminController.php"
