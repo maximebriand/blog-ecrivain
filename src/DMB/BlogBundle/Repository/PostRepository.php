@@ -1,7 +1,6 @@
 <?php
 
 namespace DMB\BlogBundle\Repository;
-use Doctrine\Common\Collections;
 
 /**
  * postRepository
