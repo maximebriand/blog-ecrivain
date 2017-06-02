@@ -1505,7 +1505,6 @@ if (jQuery) {
 
       // Initialize Tabs Content.
       if (options.swipeable) {
-        // TODO: Duplicate calls with swipeable? handle multiple div wrapping.
         $links.each(function () {
           var $curr_content = $(Materialize.escapeHash(this.hash));
           $curr_content.addClass('carousel-item');
