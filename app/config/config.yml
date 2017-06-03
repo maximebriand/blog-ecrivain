@@ -30,7 +30,6 @@ framework:
 #        assets_base_url: "http://http://localhost:8000/"
     default_locale: '%locale%'
     trusted_hosts: ~
-    trusted_proxies: ~
     session:
         # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
         name: blogjeanforteroche
