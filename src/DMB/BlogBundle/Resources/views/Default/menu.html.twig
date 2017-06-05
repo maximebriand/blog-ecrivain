@@ -1,0 +1,8 @@
+{% for page in pages %}
+    <li>
+        <a href="{{ path('dmb_blog_page', {'id': page.id}) }}">
+            {{ page.title }}
+        </a>
+    </li>
+{% endfor %}
+

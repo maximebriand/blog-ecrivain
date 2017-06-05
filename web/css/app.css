@@ -1,0 +1,300 @@
+/* CSS DIRECTORY
+	1. =GLOBAL
+	2. =PRIMARY
+	3. =HEADER
+	4. =SIDENAV
+	5. =FOOTER
+	6. =INDEX
+	7. =POST
+	8. =COMMENTS
+	9. =RESPONSIVE
+*/
+
+/* 1. =GLOBAL
+   ============================= */
+img {
+    border: 0;
+    max-width: 100%;
+}
+
+/*used to custom submit without editing the form template*/
+input[type="submit"] {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    transition: .3s ease-out;
+
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out;
+    cursor: pointer;
+
+    font-size: 1rem;
+    outline: 0;
+
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+/* 3. =HEADER
+   ============================= */
+header{
+    height: 350px;
+    background: #28b5f4;
+}
+
+header nav {
+    background: #0085c1;
+}
+
+header nav div.logo{
+    display: flex;
+}
+
+header nav ul li {
+    padding: 0 15px;
+    cursor: pointer;
+    display: flex;
+    height: 63px; /*define in order to verticaly align items*/
+}
+
+header nav ul li div.circle {
+    height: 55px;
+    width: 55px;
+    overflow: hidden;
+}
+
+header nav ul li div.circle img {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+header nav ul li a.avatar {
+    line-height: 2;
+}
+
+header nav ul li.active a:hover{
+    background-color: transparent;
+}
+
+header h1 {
+    text-align: center;
+    color: #fff;
+    margin-top: 0;
+}
+
+header div.titles {
+    position: relative;
+    padding-top: 90px;
+    height:calc(100% - 65px); /*remove header height*/
+}
+header div.subheading {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
+/* 4. =SIDENAV
+   ============================= */
+
+div.side-nav div.connected_card {
+    background: #0085c1;
+    text-align: center;
+    height: 250px;
+    padding-top: 25px;
+}
+div.side-nav div.connected_card div.circle {
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+    margin: auto;
+}
+div.side-nav div.connected_card p {
+    font-size: 18px;
+    line-height: 18px;
+}
+
+
+
+
+
+/* 6. =INDEX
+   ============================= */
+
+div.list_posts {
+    margin-top: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+div.list_posts .row {
+    width:45%;
+    /*
+    margin-left: 45px;
+    */
+}
+
+div.list_posts div.img_card {
+    height: 250px;
+    overflow: hidden;
+}
+
+div.list_posts div.img_card img {
+    height: auto;
+    width: 100%;
+}
+
+div.list_posts .row .chapter_number {
+    text-align: center;
+}
+
+div.list_posts .card div.overlay {
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(176, 198, 207, 0.49);
+    z-index: 2;
+}
+
+div.list_posts .inactive .card-action {
+    z-index: 3;
+}
+
+div.list_posts div.pagination {
+    clear: both;
+}
+
+
+/* 7. =POST
+   ============================= */
+div.container div.post img{
+    max-width: 33%;
+    height:auto;
+    float: left;
+    margin-right: 15px;
+}
+div.container div.post {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    line-height:33px;
+}
+
+div.container div.post_content::first-letter {
+    font-weight: 500;
+    font-size: 250%;
+}
+
+
+div.container div.post_content {
+    text-align: justify;
+}
+
+div.container div.chapter_navigation {
+    padding-top: 25px;
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.container div.chapter_navigation.right_navigation {
+    justify-content: flex-end;
+}
+
+/* 8. =COMMENTS
+   ============================= */
+div.comments {
+    clear: both;
+    margin-top: 25px;
+}
+p.comment_heading {
+    color: #0085c1;
+    font-weight: 500;
+}
+
+div.comments div.form_submit_comment {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.comments div.form_submit_comment button {
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+
+div.comments div.form_submit_comment div:first-child {
+    width:80%;
+}
+
+/* 8. =ALERTS
+   ============================= */
+
+div.alert {
+    background: #72e7ff;
+    padding: 5px 30px;
+    margin: 25px auto 35px;
+}
+div.alert-danger {
+    background: #ff72a2;
+}
+
+
+/* 9. =RESPONSIVE
+   ============================= */
+
+@media screen and (max-width: 1350px) {
+    header nav ul li {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1140px) {
+    div.logo.col.l3.brand-logo{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    div.list_posts {
+        flex-direction: column;
+    }
+    div.list_posts .row {
+        margin: auto;
+        width:100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    div.chapter_navigation a {
+        font-size: 0.8rem;
+    }
+
+    div.form_submit_comment {
+        display: flex;
+        flex-direction: column;
+    }
+}

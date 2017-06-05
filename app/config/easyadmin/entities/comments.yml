@@ -1,0 +1,19 @@
+easy_admin:
+    entities:
+        Posts:
+            class: DMB\BlogBundle\Entity\Comment
+            label: 'Moderation'
+
+            list:
+              title: "All comments"
+              fields:
+                - {property: 'post', label: 'Chapter'}
+                - {property: 'date', label: 'Posted on'}
+                - {property: 'member', label: 'Member'}
+
+            form:
+              fields:
+                - {property: 'post', label: 'Chapter'}
+                - {property: 'date', label: 'Posted on'}
+                - {property: 'member', label: 'Member'}
+                - {property: 'content', label: 'Content'}

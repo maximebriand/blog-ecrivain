@@ -1,0 +1,106 @@
+{% extends "DMBBlogBundle::layout.html.twig" %}
+
+{% block main_title %}
+    Chapitre n°{{ post.chapterNumber }} :
+    {{ post.title }}
+{% endblock %}
+{% block subheading %}
+    <p>
+        Publié par {{ post.author }} le {{ post.publishedDate|date }}.
+    </p>
+{% endblock %}
+
+{% block content %}
+    {% for message in app.session.flashbag.get('notice') %}
+        <div class="alert">
+            <p>
+                {{ message }}
+            </p>
+        </div>
+    {% endfor %}
+    <div class="post">
+        <div class="post_content">
+            <img src="{{ vich_uploader_asset(post, 'imageFile') }}" alt="Illustration Chapitre n° {{ post.chapternumber }} du super livre">
+            {{ post.content|raw }}
+        </div>
+
+        {% if nextChapter and previousChapter %}
+            <div class="chapter_navigation">
+                <a href="{{ previousChapter.Url }}" class="waves-effect waves-light btn">
+                    Chapitre Précédent
+                </a>
+                <a href="{{ nextChapter.Url }}" class="waves-effect waves-light btn">
+                    Chapitre Suivant
+                </a>
+            </div>
+        {% elseif previousChapter and nextChapter == null %}
+        <div class="chapter_navigation">
+            <a href="{{ previousChapter.Url }}" class="waves-effect waves-light btn">
+                Chapitre Précédent
+            </a>
+        </div>
+
+        {% elseif nextChapter and previousChapter == null%}
+            <div class="chapter_navigation right_navigation">
+                <a href="{{ nextChapter.Url }}" class="waves-effect waves-light btn">
+                    Chapitre Suivant
+                </a>
+            </div>
+        {% endif %}
+
+    </div>
+
+    <div class="comments row">
+        <h4 id="comments">Les commentaires sur ce chapitre</h4>
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <form action="{{ path('dmb_blog_post', {'id': post.id}) }}" method="post" class="col s12">
+                <div class="col s12 form_id row">
+                    <div class="col s12">
+                        <p>Commenter en tant que {{ app.user.username }}</p>
+                        <p>Ce n'est pas vous ? <a href="{{ path('fos_user_security_logout') }}"> Se déconnecter</a></p>
+                    </div>
+                    <div class="col s12 m12 l12 form_submit_comment">
+                        <div>
+                            {{ form_label(form.content, "Your comment") }}
+                            {{ form_errors(form.content) }}
+                            {{ form_widget(form.content, {'attr': {'class': 'materialize-textarea'}}) }}
+                        </div>
+                        {{ form_widget(form.save, { 'label': 'Validate'}) }}
+                        {{ form_rest(form) }}
+                    </div>
+                </div>
+            </form>
+        {% else %}
+            <p>Veuillez vous <a href="{{ path('fos_user_security_login') }}">connecter</a> ou vous <a href="{{ path('fos_user_registration_register') }}">enregistrer</a> afin de commenter.</p>
+        {% endif %}
+        <ul class="collection">
+            {% for comment in comments %}
+                <li class="collection-item avatar">
+                    <div class="circle valign-wrapper">
+                        <img src="{{ vich_uploader_asset(comment.member, 'imageFile')}}" alt="avatar de {{ comment.member.username }}"/>
+                    </div>
+                    <div>
+                        <p class="comment_heading">
+                            Le {{ comment.date|date }},
+                            par {{ comment.member.username }}
+
+                        </p>
+                        {{ comment.content }}
+
+                    </div>
+                </li>
+            {% else %}
+                <li>Il n'y a pas encore de commentaire pour ce chapitre.</li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+    <div class="fixed-action-btn">
+        <a href="#comments" class="btn-floating btn-large red">
+            <i class="large material-icons">comment</i>
+        </a>
+    </div>
+
+
+{% endblock %}
