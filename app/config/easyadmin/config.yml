@@ -1,7 +1,0 @@
-easy_admin:
-    design:
-            form_theme: ['horizontal', 'VichUploaderBundle:Form:fields.html.twig']
-            assets:
-                  css:
-                      - 'css/admin.css'
-    site_name: 'Jean Forteroche'

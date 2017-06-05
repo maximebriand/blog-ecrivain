@@ -15,24 +15,18 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new DMB\BlogBundle\DMBBlogBundle(),
-            new JavierEguiluz\Bundle\EasyAdminBundle\EasyAdminBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
-            new DMB\UserBundle\DMBUserBundle(),
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
-            new Vich\UploaderBundle\VichUploaderBundle(),
-            new Liip\ImagineBundle\LiipImagineBundle(),
-            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
-            new Cron\CronBundle\CronCronBundle(),
-            new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
+            new AppBundle\AppBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
-            $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-            $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+
+            if ('dev' === $this->getEnvironment()) {
+                $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+                $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
+            }
         }
 
         return $bundles;
