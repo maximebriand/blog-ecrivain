@@ -68,13 +68,13 @@ class GetChapterNavigation
                     ->checkIfStoredInCache($key_post_previous_anon,
                         $this->em
                             ->getRepository('DMBBlogBundle:Post')
-                            ->findByIdChapterNumberUser($chapterNumber - 1)
+                            ->findByIdChapterNumberAnon($chapterNumber - 1)
                     );
                 $nextChapter = $this->cache
                     ->checkIfStoredInCache($key_post_next_anon,
                         $this->em
                             ->getRepository('DMBBlogBundle:Post')
-                            ->findByIdChapterNumberUser($chapterNumber + 1)
+                            ->findByIdChapterNumberAnon($chapterNumber + 1)
                     );
             }
         }
