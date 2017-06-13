@@ -291,6 +291,9 @@ div.alert-danger {
 
     div.chapter_navigation a {
         font-size: 0.8rem;
+        max-width: 40%;
+        height: auto;
+        line-height: 2;
     }
 
     div.form_submit_comment {
