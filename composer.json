@@ -39,7 +39,8 @@
     "symfony/symfony":"3.3.0",
     "twig/twig":"^1.0||^2.0",
     "vich/uploader-bundle":"^1.5",
-    "cron/cron-bundle":"^1.2"
+    "cron/cron-bundle":"^1.2",
+    "doctrine/doctrine-fixtures-bundle": "dev-master"
   },
   "require-dev":{
     "doctrine/doctrine-fixtures-bundle": "^2.3",
